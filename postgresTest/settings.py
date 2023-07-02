@@ -80,16 +80,16 @@ WSGI_APPLICATION = 'postgresTest.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'mpsn_data_poc7',
-#         'USER': 'mpsn_data_poc7_user',
-#         'PASSWORD': 'lv94lwsO8qQ7AZy80YXAwWAgx8vq8TOx',
-#         'HOST': '35.227.164.209',
-#         'PORT': '5432',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mpsn_data_poc7',
+        'USER': 'mpsn_data_poc7_user',
+        'PASSWORD': 'lv94lwsO8qQ7AZy80YXAwWAgx8vq8TOx',
+        'HOST': '35.227.164.209',
+        'PORT': '5432',
+    }
+}
 
 
 # DATABASES = {
@@ -114,12 +114,12 @@ SECURE_SSL_REDIRECT = True
 SECURE_HSTS_SECONDS = 31536000  # 1 year
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
-import dj_database_url
+# import dj_database_url
 
 
-DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL', "postgres://mpsn_data_poc7_user:lv94lwsO8qQ7AZy80YXAwWAgx8vq8TOx@dpg-cigcoud9aq012ev1fn0g-a.oregon-postgres.render.com/mpsn_data_poc7"), conn_max_age=60)
-}
+# DATABASES = {
+#     'default': dj_database_url.config(default=os.getenv('DATABASE_URL', "postgres://mpsn_data_poc7_user:lv94lwsO8qQ7AZy80YXAwWAgx8vq8TOx@dpg-cigcoud9aq012ev1fn0g-a.oregon-postgres.render.com/mpsn_data_poc7"), conn_max_age=60)
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
