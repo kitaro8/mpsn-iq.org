@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView
-from .models import Post, Focal, Report, Paper
+from .models import Post, Focal, Report, Paper, stations
 from django.contrib.auth.models import User
 from .forms import FileForm, FileForm2, ImageForm, NameForm, FocalForm, ContactForm, ReportForm, PaperForm
 from django.db.models import Q
@@ -722,6 +722,12 @@ class PostListView5(ListView):
 	model = Paper
 	template_name = 'testdb/paper.html'
 	context_object_name = 'paper'
+	paginate_by = 5
+
+class PostListView6(ListView):
+	model = stations
+	template_name = 'testdb/Seismic.html'
+	context_object_name = 'stations'
 	paginate_by = 5
 
 # class PostCreateView(LoginRequiredMixin, CreateView):
