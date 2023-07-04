@@ -75,7 +75,7 @@
 			<td>CMG-40T/DM24</td>
 			{% for stations in stations %}
 
-				<td><a href="{{ stations.file }}"  target="_blank">Download</a></td>
+				<td><a href="{{ stations.0.file.url }}"  target="_blank">Download</a></td>
 	
 			{% endfor %}
 			<td></td>
@@ -91,7 +91,7 @@
 			<td>CMG-40T/DM24<br>CMG-3ESP/DM24</td>
 			{% for stations in stations %}
 
-				<td><a href="{{ stations.file }}"  target="_blank">Download</a></td>
+				<td><a href="{{ stations.1.file.url }}"  target="_blank">Download</a></td>
 	
 			{% endfor %}
 			<td></td>
