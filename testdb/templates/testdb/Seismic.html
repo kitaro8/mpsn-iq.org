@@ -62,7 +62,7 @@
 			<th>Start Y/M/D</th>
 			<th>End Y/M/D</th>
 			<th>Sensor/digitizer type</th>
-			<th></th>
+			<th>Files</th>
 			<th></th>
 		</tr>
 		<tr>
@@ -76,7 +76,7 @@
 			<td>CMG-40T/DM24</td>
 			{% for stations in stations %}
 
-				<td><a href="{{ stations.file.url.0 }}"  target="_blank" download="{{ stations.file.url.0 }}">Download</a><td>
+				<td><a href="{{ stations.file.0.url }}"  target="_blank" download="{{ stations.file.url.0 }}">Download</a><td>
 	
 			{% endfor %}
 			<td></td>
