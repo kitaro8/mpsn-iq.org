@@ -15,6 +15,8 @@
       <p><strong>Location uncertainty: </strong>+/-{{ post.lu1 }} in N-S | +/-{{ post.lu2 }} in E-W </p>
       <p><strong>RMS error: </strong>{{ post.RMS }}</p>
       <a href="{% url 'post_phase' post.id %}">Phase (Arrival times)</a><br>
+      <a href="{{ post.file2.url }}"  target="_blank"><h4 style="display: inline-block;">Sac Download</h4></a><hr>
+
       <img  width="70%" height="70%" src="{{ object.image.url }}">
     </div>
     <br> 
