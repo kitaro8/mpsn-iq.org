@@ -7,6 +7,12 @@ class FileForm(forms.ModelForm):
 		model = Post
 		fields = ['file']
 
+
+class FileForm2(forms.ModelForm):
+	class Meta:
+		model = Post
+		fields = ['file2']
+
 class ImageForm(forms.ModelForm):
 	class Meta:
 		model = Post
