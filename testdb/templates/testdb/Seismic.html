@@ -62,7 +62,11 @@
 			<th>Start Y/M/D</th>
 			<th>End Y/M/D</th>
 			<th>Sensor/digitizer type</th>
-			<th>Xml Files</th>
+			{% for stations in stations %}
+
+				<a href="{{ stations.file.0 }}"  download="{{ stations.file.0 }}">Download All</a>
+	
+			{% endfor %}
 			<th></th>
 		</tr>
 		<tr>
