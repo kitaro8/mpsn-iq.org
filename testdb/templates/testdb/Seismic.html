@@ -77,7 +77,7 @@
 			<td>CMG-40T/DM24</td>
 			{% for stations in stations %}
 
-				<a href="{{ stations.file.url }}"  target="_blank"><h4 style="display: inline-block;">Download</h4></a><hr>
+				<a href="{{ stations.file.url }}"  target="_blank" download="{{ stations.file.url }}"><h4 style="display: inline-block;">Download</h4></a><hr>
 	
 			{% endfor %}
 			<td></td>
