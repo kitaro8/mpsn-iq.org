@@ -36,7 +36,7 @@
     padding: 40px;">
     {% for report in report %}
 
-        <a href="{{ report.file.url }}" download="{{ report.file.url }}"><h4 style="display: inline-block;">{{ report.date }} ,</h4><h4 style="display: inline-block;">{{ report.title }}</h4></a><hr>
+        <a href="{{ report.file.url }}"  target="_blank"><h4 style="display: inline-block;">{{ report.date }} ,</h4><h4 style="display: inline-block;">{{ report.title }}</h4></a><hr>
 
     {% endfor %}
   </div>
