@@ -75,9 +75,6 @@
 					<td>2015/03/06</td>
 					<td>2015/10/31</td>
 					<td>CMG-40T/DM24</td>
-					{% for report in report %}
-						<td><a href="{{ report.file.url }}">Download</a></td>
-					{% endfor %}
 					<td></td>
 				</tr>
 				<tr>
@@ -259,7 +256,9 @@
 			</table>
 
     	
-
+		{% for report in report %}
+			<td><a href="{{ report.file.url }}">Download</a></td>
+		{% endfor %}
 </div>
 <br>
 <p style="margin-left: 320px; text-align: justify; margin-top: -830px; position: relative; font-size: 19px; font-family: time new romane; width: 100%"><strong>Table 1: </strong>Information on the broadband seismic stations of the MPSN.</p>
