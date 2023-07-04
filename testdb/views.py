@@ -779,6 +779,9 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 def about(request):
     return render(request, 'testdb/about.html', {'title': 'About'})
 
+def publications(request):
+    return render(request, 'testdb/publications.html', {'title': 'Publications'})
+
 def seismic(request):
     return render(request, 'testdb/Seismic.html', {'title': 'Seismic'})
 

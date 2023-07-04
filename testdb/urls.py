@@ -27,5 +27,6 @@ urlpatterns = [
     
     path('seismic/', views.seismic, name='testdb-seismic'),
     path("contact/", views.contact, name="contact"),
-    path('about/', views.about, name='testdb-about')
+    path('about/', views.about, name='testdb-about'),
+    path('publications/', views.publications, name='testdb-publications')
 ]
