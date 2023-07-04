@@ -75,8 +75,8 @@
 					<td>2015/03/06</td>
 					<td>2015/10/31</td>
 					<td>CMG-40T/DM24</td>
-					{% for stations in stations %}
-						<td><a href="{{ stations.file.url }}">Download</a></td>
+					{% for report in report %}
+						<td><a href="{{ report.file.url }}">Download</a></td>
 					{% endfor %}
 					<td></td>
 				</tr>
