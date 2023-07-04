@@ -73,6 +73,11 @@
 			<td>2015/03/06</td>
 			<td>2015/10/31</td>
 			<td>CMG-40T/DM24</td>
+			{% for stations in stations %}
+
+				<td><a href="{{ stations.file.url }}"  target="_blank"><h4 style="display: inline-block;">Download</a><hr><td>
+	
+			{% endfor %}
 			<td></td>
 		</tr>
 		<tr>
