@@ -1,0 +1,47 @@
+{% extends "testdb/base.html" %}
+{% block content %}
+  <title>Publications</title>
+<style type="text/css">
+  input[type=text], select, textarea {
+    width: 40%; 
+    padding: 5px; 
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+  }
+
+  input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  .focal_search {
+    border-radius: 20px;
+    background-color: #d5e2f0;
+    padding: 40px;
+  }
+</style>
+
+  <br>
+
+  <div style="margin-left: 80px; border-radius: 20px;
+    background-color: #d5e2f0;
+    padding: 40px;">
+
+      <a class="nav-item nav-link {% if url_name == 'report' %}active{% endif %}" href="{% url 'report' %}">Reports</a>
+      <a class="nav-item nav-link {% if url_name == 'paper' %}active{% endif %}" href="{% url 'paper' %}">Papers</a>
+
+
+  </div>
+  <br>
+
+  </div>
+  <br>
+{% endblock content %}
