@@ -76,8 +76,8 @@ class Report(models.Model):
 
 
 class Paper(models.Model):
-    title = models.CharField(max_length=100)
-    link = models.CharField(max_length=100)
+    title = models.TextField()
+    link = models.CharField(max_length=9999999)
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
