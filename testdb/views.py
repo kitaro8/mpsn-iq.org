@@ -527,15 +527,14 @@ def upload_report(request):
 
 
 def upload_paper(request):
-	form = PaperForm(request.POST, request.FILES)
+	form = PaperForm(request.POST)
 	if request.method =='POST':
 		if form.is_valid():
 			title = request.POST['title']
-			date = request.POST['date']
-			file = request.FILES['file']
+			link = request.POST['link']
 
 			current_user = request.user
-			upload=Paper(title=title, file=file, author=current_user, date_posted=date, date=date)
+			upload=Paper(title=title, author=current_user, link=link)
 			upload.save()
 	return render(request, 'testdb/paper_form.html')
 

@@ -30,7 +30,7 @@ class ReportForm(forms.ModelForm):
 class PaperForm(forms.ModelForm):
 	class Meta:
 		model = Paper
-		fields = ['title', 'date', 'file']
+		fields = ['title', 'link']
 		
 class ContactForm(forms.Form):
 	first_name = forms.CharField(max_length = 50)

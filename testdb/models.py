@@ -77,8 +77,7 @@ class Report(models.Model):
 
 class Paper(models.Model):
     title = models.CharField(max_length=100)
-    date = models.CharField(max_length=100)
-    file = models.FileField(upload_to='paper')
+    link = models.CharField(max_length=100)
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
