@@ -62,15 +62,12 @@
 			<th>Start Y/M/D</th>
 			<th>End Y/M/D</th>
 			<th>Sensor/digitizer type</th>
-			{% for stations in stations %}
-
-				<th><a href="{{ stations.file.url }}"  target="_blank">Download All</a></th>
-	
-			{% endfor %}
+			<th></th>
+			<th></th>
 		</tr>
 		<tr>
 			<td>AMR1</td>
-			<td>Amarah 1</td>
+			<td>Amarah</td>
 			<td>31.9590</td>
 			<td>46.9286</td>
 			<td>9</td>
@@ -79,14 +76,14 @@
 			<td>CMG-40T/DM24</td>
 			{% for stations in stations %}
 
-				<td><a href="{{ stations.file.url }}"  target="_blank">Download</a></td>
+				<td><a href="{{ stations.file.url }}"  target="_blank" download="{{ stations.file.url }}">Download</a><td>
 	
 			{% endfor %}
 			<td></td>
 		</tr>
 		<tr>
 			<td>AMR2</td>
-			<td>Amarah 2</td>
+			<td>Amarah</td>
 			<td>31.9899</td>
 			<td>47.1902</td>
 			<td>9</td>
@@ -102,7 +99,7 @@
 		</tr>
 		<tr>
 			<td>ANB1</td>
-			<td>Anbar 1</td>
+			<td>Anbar</td>
 			<td>33.4018</td>
 			<td>43.2576</td>
 			<td>52</td>
