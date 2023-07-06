@@ -63,14 +63,14 @@ def upload(request):
 				elif b'Latitude' in item:
 					Latitude = item[32:40].strip()
 					Latitude = Latitude.decode()
-					lu1 = item[63:73].strip()
+					lu1 = item[61:73].strip()
 					lu1 = lu1.decode()
 			        
 
 				elif b'Longitude' in item:
 					Longitude = item[32:40].strip()
 					Longitude = Longitude.decode()
-					lu2 = item[63:73].strip()
+					lu2 = item[61:73].strip()
 					lu2 = lu2.decode()
 
 			        
