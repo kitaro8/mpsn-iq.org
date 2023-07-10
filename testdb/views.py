@@ -351,7 +351,7 @@ def upload(request):
 				elif b'ANB2' in item:
 					zne = item[8:9]
 					zne = zne.decode()
-					station.append('SLY1')
+					station.append('ANBB2')
 					comp.append(zne)
 					dis = item[11:17]
 					dis = dis.decode()
@@ -414,7 +414,7 @@ def upload(request):
 				elif b'SAM2' in item:
 					zne = item[8:9]
 					zne = zne.decode()
-					station.append('SLY1')
+					station.append('SAM2')
 					comp.append(zne)
 					dis = item[11:17]
 					dis = dis.decode()
@@ -516,10 +516,10 @@ def upload(request):
 					phase = phase.decode()
 					PHASE.append(phase)
 
-				elif b'KAR1' in item:
+				elif b'KAR2' in item:
 					zne = item[8:9]
 					zne = zne.decode()
-					station.append('SLY1')
+					station.append('KAR2')
 					comp.append(zne)
 					dis = item[11:17]
 					dis = dis.decode()
