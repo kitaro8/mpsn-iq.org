@@ -485,7 +485,7 @@ def upload(request):
 				Magnitude=Magnitude, 
 				Region=Region, 
 				image=upload_image,
-				file2=upload_file2, 
+	
 				station=station, 
 				comp=comp, 
 				DIS=DIS, 
