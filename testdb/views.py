@@ -347,7 +347,28 @@ def upload(request):
 					phase = item[65:68]
 					phase = phase.decode()
 					PHASE.append(phase)
-
+					
+				elif b'ANB2' in item:
+					zne = item[8:9]
+					zne = zne.decode()
+					station.append('SLY1')
+					comp.append(zne)
+					dis = item[11:17]
+					dis = dis.decode()
+					DIS.append(dis)
+					azm = item[17:21]
+					azm = azm.decode()
+					AZM.append(azm)
+					arr_time = item[28:32] + b'-' + item[32:34] + b'-' + item[34:36] + b' ' + item[36:38] + b':' + item[38:40] + b':' + item[40:46]
+					arr_time = arr_time.decode()
+					ARR_TIME.append(arr_time)
+					res = item[55:59]
+					res = res.decode()
+					RES.append(res)
+					phase = item[65:68]
+					phase = phase.decode()
+					PHASE.append(phase)
+					
 				elif b'DHK1' in item:
 					zne = item[8:9]
 					zne = zne.decode()
@@ -373,6 +394,27 @@ def upload(request):
 					zne = item[8:9]
 					zne = zne.decode()
 					station.append('SAM1')
+					comp.append(zne)
+					dis = item[11:17]
+					dis = dis.decode()
+					DIS.append(dis)
+					azm = item[17:21]
+					azm = azm.decode()
+					AZM.append(azm)
+					arr_time = item[28:32] + b'-' + item[32:34] + b'-' + item[34:36] + b' ' + item[36:38] + b':' + item[38:40] + b':' + item[40:46]
+					arr_time = arr_time.decode()
+					ARR_TIME.append(arr_time)
+					res = item[55:59]
+					res = res.decode()
+					RES.append(res)
+					phase = item[65:68]
+					phase = phase.decode()
+					PHASE.append(phase)
+
+				elif b'SAM2' in item:
+					zne = item[8:9]
+					zne = zne.decode()
+					station.append('SLY1')
 					comp.append(zne)
 					dis = item[11:17]
 					dis = dis.decode()
@@ -472,7 +514,29 @@ def upload(request):
 					RES.append(res)
 					phase = item[65:68]
 					phase = phase.decode()
-					PHASE.append(phase)				
+					PHASE.append(phase)
+
+				elif b'KAR1' in item:
+					zne = item[8:9]
+					zne = zne.decode()
+					station.append('SLY1')
+					comp.append(zne)
+					dis = item[11:17]
+					dis = dis.decode()
+					DIS.append(dis)
+					azm = item[17:21]
+					azm = azm.decode()
+					AZM.append(azm)
+					arr_time = item[28:32] + b'-' + item[32:34] + b'-' + item[34:36] + b' ' + item[36:38] + b':' + item[38:40] + b':' + item[40:46]
+					arr_time = arr_time.decode()
+					ARR_TIME.append(arr_time)
+					res = item[55:59]
+					res = res.decode()
+					RES.append(res)
+					phase = item[65:68]
+					phase = phase.decode()
+					PHASE.append(phase)
+					
 
 			current_user = request.user
 			upload=Post(RMS=RMS, 
