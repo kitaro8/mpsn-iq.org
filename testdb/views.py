@@ -90,7 +90,7 @@ def upload(request):
 					event = event.decode()
 			        
 				elif b'Magnitude' in item:
-					Magnitude = item[10:12]
+					Magnitude = item[10:16]
 					Magnitude = Magnitude.decode()
 					
 
