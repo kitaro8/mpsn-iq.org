@@ -8,12 +8,21 @@
           <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post_delete' object.id %}">Delete</a>
         </div>
       {% endif %}
-      <p><strong>Date - Time: </strong>{{ post.event }}</p>
-      <p><strong>Magnitude type: </strong> ML</p>
-      <p><strong>Depth: </strong>{{ post.Depth }}</p>
-      <p><strong>Magnitude: </strong>{{ post.Magnitude }}</p>
-      <p><strong>Location uncertainty: </strong>+/-{{ post.lu1 }} in N-S | +/-{{ post.lu2 }} in E-W </p>
+      <p><strong>Date - Time (UTC): </strong>{{ post.event }}</p>
+
+      {% if depth == 0.00 %}
+          {% with 10 as depth %}
+              <p><strong>Depth: </strong>{{ post.Depth }}</p>
+          {% endwith %}
+      {% else %}
+
+      {% endif %}
+
+      <p><strong>Magnitude: </strong>{{ post.Magnitude }} ML</p>
+      <p><strong>Location: </strong>{{ post.Latitude }}, {{ post.Longitude }}</p>
+      <p><strong>Location uncertainty: </strong>+/-{{ post.lu1 }} in N-S Direction | +/-{{ post.lu2 }} in E-W Direction</p>
       <p><strong>RMS error: </strong>{{ post.RMS }}</p>
+      <p><strong>Azimuthal Gap: </strong>{{ post.Gap }}</p>
       <a href="{% url 'post_phase' post.id %}">Phase (Arrival times)</a><br>
       <a href="{{ post.file2.url }}"  target="_blank"><h4 style="display: inline-block;">Wave File Download</h4></a><hr>
 
