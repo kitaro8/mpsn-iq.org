@@ -10,7 +10,7 @@
       {% endif %}
       <p><strong>Date - Time (UTC): </strong>{{ post.event }}</p>
 
-      {% if post.Depth == 0.00 %}
+      {% if post.Depth == "0.00" %}
           <p><strong>Depth: </strong>10</p>
       {% else %}
           <p><strong>Depth: </strong>{{ post.Depth }}</p>
