@@ -21,6 +21,11 @@
             <td><a href="{% url 'post_detail' post.id %}">{{ post.event }}</a></td>
             <td>{{ post.Latitude }}</td>
             <td>{{ post.Longitude }}</td>
+            {% if post.Depth == "0.00" %}
+              <td>10</td>
+            {% else %}
+              <td>{{ post.Depth }}</td>
+            {% endif %}
             <td>{{ post.Depth }}</td>
             <td>{{ post.Magnitude }}</td>
             <td>{{ post.Region }}</td>
