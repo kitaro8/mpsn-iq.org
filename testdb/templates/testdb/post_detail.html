@@ -11,11 +11,9 @@
       <p><strong>Date - Time (UTC): </strong>{{ post.event }}</p>
 
       {% if Depth == 0.00 %}
-          {% with 10 as Depth %}
-              <p><strong>Depth: </strong>{{ post.Depth }}</p>
-          {% endwith %}
+              <p><strong>Depth: </strong>10</p>
       {% else %}
-
+          <p><strong>Depth: </strong>{{ post.Depth }}</p>
       {% endif %}
 
       <p><strong>Magnitude: </strong>{{ post.Magnitude }} ML</p>
