@@ -19,7 +19,7 @@
       <p><strong>Magnitude: </strong>{{ post.Magnitude }} ML</p>
       <p style="width: 100%;"><strong>Location uncertainty: </strong>+/-{{ post.lu1 }} in N-S Direction | +/-{{ post.lu2 }} in E-W Direction</p>
       <p><strong>RMS error: </strong>{{ post.RMS }}</p>
-      <p><strong>Azimuthal Gap: </strong>{{ post.Gap }}</p>
+      <p><strong>Azimuthal Gap: </strong>{{ post.Gap }}°</p>
       <p><strong>Source: </strong>Seismological Laboratory of the University of Basrah (SLUB)</p>
       <a href="{% url 'post_phase' post.id %}">Phase (Arrival times)</a><br>
       <a href="{{ post.file2.url }}"  target="_blank"><h4 style="display: inline-block;">Wave File Download</h4></a><hr>
