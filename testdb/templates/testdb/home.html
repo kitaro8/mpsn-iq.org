@@ -13,7 +13,7 @@
             <th>Latitude (deg-N)</th>
             <th>Longitude (deg-E)</th>
             <th>Depth (km)</th>
-            <th> Magnitude </th>
+            <th> Magnitude (ML)</th>
             <th>Region</th>
           </tr>
         {% for post in posts %}
@@ -26,7 +26,7 @@
             {% else %}
               <td>{{ post.Depth }}</td>
             {% endif %}
-            <td>{{ post.Magnitude }} (ML)</td>
+            <td>{{ post.Magnitude }}</td>
             <td>{{ post.Region }}</td>
           </tr>
         {% endfor %}
