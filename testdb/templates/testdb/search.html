@@ -45,7 +45,28 @@ input[type=submit]:hover {
     </form>
   </div>
 <br>
-
+<div class="table-responsive-lg">
+  <table style="width:1000px; margin-left: 80px;">
+      <tr>
+        <th>Origin Time (UTC)</th>
+        <th>Latitude (deg-N)</th>
+        <th>Longitude (deg-E)</th>
+        <th>Depth (km)</th>
+        <th> Magnitude </th>
+        <th>Region</th>
+      </tr>
+    {% for post in posts %}
+      <tr>
+        <td><a  href="{% url 'post_detail' post.id %}">{{ post.event }}</a></td>
+        <td>{{ post.Latitude }}</td>
+        <td>{{ post.Longitude }}</td>
+        <td>{{ post.Depth }}</td>
+        <td>{{ post.Magnitude }}</td>
+        <td>{{ post.Region }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+</div>
   <br>
   <div style="margin-left: 80px;">
     {% if is_paginated %}
