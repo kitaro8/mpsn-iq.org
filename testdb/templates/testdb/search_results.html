@@ -1,7 +1,7 @@
 {% extends "testdb/base.html" %}
 {% block content %}
 
-		{% for post in posts %}
+		<!-- {% for post in posts %}
 		{% csrf_token %}
 	      <table style="width:100%; font-family: Times New Roman;">
 	        <tr>
@@ -25,6 +25,18 @@
 	          <td>{{ post.Region }}</td>
 	        </tr>
 	      </table>
+		{% endfor %} -->
+
+		{% for data in results %}
+			<p>{{ data.date }}</p>
+			<p>{{ data.latitude }}</p>
+			<p>{{ data.longitude }}</p>
+			<p>{{ data.depth }}</p>
+			<p>{{ data.magnitude }}</p>
+		<!-- other data fields... -->
+		{% empty %}
+			<p>No results found</p>
 		{% endfor %}
+	
 {% endblock content %}
 

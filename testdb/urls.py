@@ -13,7 +13,7 @@ urlpatterns = [
     path('phase/<int:pk>/', views.PostDetailView2.as_view(), name='post_phase'),
     
     path('search/', PostListView3.as_view(), name='search'),
-    path('results', views.search_posts, name='search_results'),
+    # path('results', views.search_posts, name='search_results'),
     path('search/focal', views.search_focal, name='search_focal'),
     
     path('focal/new/', views.upload_focal, name='focal_create'),
@@ -28,5 +28,8 @@ urlpatterns = [
     path('seismic/', PostListView6.as_view(), name='testdb-seismic'),
     path("contact/", views.contact, name="contact"),
     path('about/', views.about, name='testdb-about'),
-    path('publications/', views.publications, name='publications')
+    path('publications/', views.publications, name='publications'),
+    path('search_results/', views.search_results, name='search_results'),
+
+    
 ]

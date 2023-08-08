@@ -629,86 +629,123 @@ def search_focal(request):
 
 
 
-def search_posts(request):
+# def search_posts(request):
 
-	template = 'testdb/search.html'
+# 	template = 'testdb/search.html'
 
-	datef = request.GET.get('datef')
-	datet = request.GET.get('datet')
+# 	datef = request.GET.get('datef')
+# 	datet = request.GET.get('datet')
 
-	Magnitudef = request.GET.get('Magnitudef')
-	Magnitudet = request.GET.get('Magnitudet')
+# 	Magnitudef = request.GET.get('Magnitudef')
+# 	Magnitudet = request.GET.get('Magnitudet')
 
-	Latitudef = request.GET.get('Latitudef')
-	Latitudet = request.GET.get('Latitudet')
+# 	Latitudef = request.GET.get('Latitudef')
+# 	Latitudet = request.GET.get('Latitudet')
 
-	Longitudef = request.GET.get('Longitudef')
-	Longitudet = request.GET.get('Longitudet')
+# 	Longitudef = request.GET.get('Longitudef')
+# 	Longitudet = request.GET.get('Longitudet')
 
-	Depthf = request.GET.get('Depthf')
-	Deptht = request.GET.get('Deptht')
+# 	Depthf = request.GET.get('Depthf')
+# 	Deptht = request.GET.get('Deptht')
 
-	search = {
-		'datef':datef,
-		'datet':datet,
-		'Latitudef':Latitudef,
-		'Latitudet':Latitudet,
-		'Longitudef':Longitudef,
-		'Longitudet':Longitudet,
-	}
+# 	search = {
+# 		'datef':datef,
+# 		'datet':datet,
+# 		'Latitudef':Latitudef,
+# 		'Latitudet':Latitudet,
+# 		'Longitudef':Longitudef,
+# 		'Longitudet':Longitudet,
+# 	}
 
-	search1 = {
-		'Magnitudef':Magnitudef,
-		'Magnitudet':Magnitudef,
-		'Depthf':Depthf,
-		'Deptht':Deptht
-	}
-
-
-	if search:
-		results = Post.objects.filter(
-			Q(date_posted__gte=datef), Q (date_posted__lte=datet)
-			& Q(Latitude__gte=Latitudef), Q(Latitude__lte=Latitudet)
-			& Q(Longitude__gte=Longitudef), Q(Longitude__lte=Longitudet)
-			)
-
-	elif search1:
-		results = Post.objects.filter(
-			Q(date_posted__gte=datef), Q (date_posted__lte=datet)
-			& Q(Latitude__gte=Latitudef), Q(Latitude__lte=Latitudet)
-			& Q(Longitude__gte=Longitudef), Q(Longitude__lte=Longitudet)
-			& Q(Magnitude__gte=Magnitudef), Q(Magnitude__lte=Magnitudet)
-			& Q(Depth__gte=Depthf), Q(Depth__lte=Deptht)
-			)
+# 	search1 = {
+# 		'Magnitudef':Magnitudef,
+# 		'Magnitudet':Magnitudef,
+# 		'Depthf':Depthf,
+# 		'Deptht':Deptht
+# 	}
 
 
+# 	if search:
+# 		results = Post.objects.filter(
+# 			Q(date_posted__gte=datef), Q (date_posted__lte=datet)
+# 			& Q(Latitude__gte=Latitudef), Q(Latitude__lte=Latitudet)
+# 			& Q(Longitude__gte=Longitudef), Q(Longitude__lte=Longitudet)
+# 			)
+
+# 	elif search1:
+# 		results = Post.objects.filter(
+# 			Q(date_posted__gte=datef), Q (date_posted__lte=datet)
+# 			& Q(Latitude__gte=Latitudef), Q(Latitude__lte=Latitudet)
+# 			& Q(Longitude__gte=Longitudef), Q(Longitude__lte=Longitudet)
+# 			& Q(Magnitude__gte=Magnitudef), Q(Magnitude__lte=Magnitudet)
+# 			& Q(Depth__gte=Depthf), Q(Depth__lte=Deptht)
+# 			)
 
 
-	elif Magnitudef and Magnitudet:
-		results = Post.objects.filter(
-			Q(date_posted__gte=datef), Q (date_posted__lte=datet)
-			& Q(Latitude__gte=Latitudef), Q(Latitude__lte=Latitudet)
-			& Q(Longitude__gte=Longitudef), Q(Longitude__lte=Longitudet)
-			& Q(Magnitude__gte=Magnitudef), Q(Magnitude__lte=Magnitudet)
-			)
-
-	elif Depthf and Deptht:
-		results = Post.objects.filter(
-			Q(date_posted__gte=datef), Q (date_posted__lte=datet)
-			& Q(Latitude__gte=Latitudef), Q(Latitude__lte=Latitudet)
-			& Q(Longitude__gte=Longitudef), Q(Longitude__lte=Longitudet)
-			& Q(Depth__gte=Depthf), Q(Depth__lte=Deptht)
-			)
 
 
-	else:
-		results = Post.objects.all()
+# 	elif Magnitudef and Magnitudet:
+# 		results = Post.objects.filter(
+# 			Q(date_posted__gte=datef), Q (date_posted__lte=datet)
+# 			& Q(Latitude__gte=Latitudef), Q(Latitude__lte=Latitudet)
+# 			& Q(Longitude__gte=Longitudef), Q(Longitude__lte=Longitudet)
+# 			& Q(Magnitude__gte=Magnitudef), Q(Magnitude__lte=Magnitudet)
+# 			)
 
-	context = {
-        'posts': results
-    }
+# 	elif Depthf and Deptht:
+# 		results = Post.objects.filter(
+# 			Q(date_posted__gte=datef), Q (date_posted__lte=datet)
+# 			& Q(Latitude__gte=Latitudef), Q(Latitude__lte=Latitudet)
+# 			& Q(Longitude__gte=Longitudef), Q(Longitude__lte=Longitudet)
+# 			& Q(Depth__gte=Depthf), Q(Depth__lte=Deptht)
+# 			)
 
-	return render(request, template, context)
+
+# 	else:
+# 		results = Post.objects.all()
+
+# 	context = {
+#         'posts': results
+#     }
+
+# 	return render(request, template, context)
+
+
+from django.db.models import Q
+from django.shortcuts import render
+from .models import Data
+
+def search_results(request):
+    queryset = Data.objects.all()
+
+    date_from = request.GET.get('date_from')
+    date_to = request.GET.get('date_to')
+    latitude_min = request.GET.get('latitude_min')
+    latitude_max = request.GET.get('latitude_max')
+    longitude_min = request.GET.get('longitude_min')
+    longitude_max = request.GET.get('longitude_max')
+    depth_min = request.GET.get('depth_min')
+    depth_max = request.GET.get('depth_max')
+    magnitude_min = request.GET.get('magnitude_min')
+    magnitude_max = request.GET.get('magnitude_max')
+
+    if date_from and date_to:
+        queryset = queryset.filter(Q(date__range=[date_from, date_to]))
+
+    if latitude_min and latitude_max:
+        queryset = queryset.filter(Q(latitude__range=[latitude_min, latitude_max]))
+
+    if longitude_min and longitude_max:
+        queryset = queryset.filter(Q(longitude__range=[longitude_min, longitude_max]))
+
+    if depth_min and depth_max:
+        queryset = queryset.filter(Q(depth__range=[depth_min, depth_max]))
+
+    if magnitude_min and magnitude_max:
+        queryset = queryset.filter(Q(magnitude__range=[magnitude_min, magnitude_max]))
+
+    return render(request, 'search_results.html', {'results': queryset})
+
 
 
 
