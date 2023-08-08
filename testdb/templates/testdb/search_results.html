@@ -28,11 +28,28 @@
 		{% endfor %} -->
 
 		{% for data in results %}
-			<p>{{ data.date }}</p>
-			<p>{{ data.Latitude }}</p>
-			<p>{{ data.Longitude }}</p>
-			<p>{{ data.Depth }}</p>
-			<p>{{ data.Magnitude }}</p>
+		<table style="width:100%; font-family: Times New Roman;">
+	        <tr>
+	          <th>Origin Time (UTC)</th>
+	          <th>Latitude (deg-N)</th>
+	          <th>Longitude (deg-E)</th>
+	          <th>Depth (km)</th>
+			  <th> Magnitude </th>
+	          <th>Region</th>
+	        </tr>
+	        <tr>
+	          <td><a class="article-title" href="{% url 'post_detail' post.id %}">{{ data.event }}</a></td>
+	          <td>{{ data.Latitude }}</td>
+	          <td>{{ data.Longitude }}</td>
+	          {% if data.Depth == "0.00" %}
+                     <td>10</td>
+                  {% else %}
+                     <td>{{ data.Depth }}</td>
+                  {% endif %}
+	          <td>{{ data.Magnitude }}</td>
+	          <td>{{ data.Region }}</td>
+	        </tr>
+	      </table>
 		<!-- other data fields... -->
 		{% empty %}
 			<p>No results found</p>
