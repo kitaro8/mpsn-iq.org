@@ -730,19 +730,19 @@ def search_results(request):
     magnitude_max = request.GET.get('magnitude_max')
 
     if date_from and date_to:
-        queryset = queryset.filter(Q(date__range=[date_from, date_to]))
+        queryset = queryset.filter(Q(date_posted__range=[date_from, date_to]))
 
     if latitude_min and latitude_max:
-        queryset = queryset.filter(Q(latitude__range=[latitude_min, latitude_max]))
+        queryset = queryset.filter(Q(Latitude__range=[latitude_min, latitude_max]))
 
     if longitude_min and longitude_max:
-        queryset = queryset.filter(Q(longitude__range=[longitude_min, longitude_max]))
+        queryset = queryset.filter(Q(Longitude__range=[longitude_min, longitude_max]))
 
     if depth_min and depth_max:
-        queryset = queryset.filter(Q(depth__range=[depth_min, depth_max]))
+        queryset = queryset.filter(Q(Depth__range=[depth_min, depth_max]))
 
     if magnitude_min and magnitude_max:
-        queryset = queryset.filter(Q(magnitude__range=[magnitude_min, magnitude_max]))
+        queryset = queryset.filter(Q(Magnitude__range=[magnitude_min, magnitude_max]))
 
     return render(request, 'search_results.html', {'results': queryset})
 
