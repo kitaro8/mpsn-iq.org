@@ -744,7 +744,7 @@ def search_results(request):
     if magnitude_min and magnitude_max:
         queryset = queryset.filter(Q(Magnitude__range=[magnitude_min, magnitude_max]))
 
-    return render(request, 'search_results.html', {'results': queryset})
+    return render(request, 'testdb/search_results.html', {'results': queryset})
 
 
 
