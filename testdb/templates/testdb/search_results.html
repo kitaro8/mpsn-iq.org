@@ -38,7 +38,7 @@
 	          <th>Region</th>
 	        </tr>
 	        <tr>
-	          <td><a class="article-title" href="{% url 'post_detail' post.id %}">{{ data.event }}</a></td>
+	          <td><a class="article-title" href="{% url 'post_detail' post.id %}">{{ post.event }}</a></td>
 	          <td>{{ data.Latitude }}</td>
 	          <td>{{ data.Longitude }}</td>
 	          {% if data.Depth == "0.00" %}
