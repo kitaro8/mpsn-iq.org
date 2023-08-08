@@ -713,10 +713,10 @@ def search_focal(request):
 
 from django.db.models import Q
 from django.shortcuts import render
-from .models import Data
+from .models import Post
 
 def search_results(request):
-    queryset = Data.objects.all()
+    queryset = Post.objects.all()
 
     date_from = request.GET.get('date_from')
     date_to = request.GET.get('date_to')
