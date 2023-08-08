@@ -28,6 +28,7 @@
 		{% endfor %} -->
 
 		{% for data in results %}
+		{% csrf_token %}
 		<table style="width:100%; font-family: Times New Roman;">
 	        <tr>
 	          <th>Origin Time (UTC)</th>
@@ -38,9 +39,9 @@
 	          <th>Region</th>
 	        </tr>
 	        <tr>
-			<!-- {% for post in posts %}	
+			{% for post in posts %}	
 	          <td><a class="article-title" href="{% url 'post_detail' post.id %}">{{ post.event }}</a></td>
-			{% endfor %} -->
+			{% endfor %}
 	          <td>{{ data.Latitude }}</td>
 	          <td>{{ data.Longitude }}</td>
 	          {% if data.Depth == "0.00" %}
