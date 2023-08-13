@@ -29,7 +29,8 @@
 
 		{% for data in results %}
 		{% csrf_token %}
-		<table style="width:100%; font-family: Times New Roman;">
+	<div class="table-responsive-lg">
+		<table style="width:1000px; margin-left: 70px; font-family: Times New Roman;">
 	        <tr>
 	          <th>Origin Time (UTC)</th>
 	          <th>Latitude (deg-N)</th>
@@ -53,6 +54,7 @@
 	          <td>{{ data.Region }}</td>
 	        </tr>
 	      </table>
+	</div>
 		<!-- other data fields... -->
 		{% empty %}
 			<p>No results found</p>
