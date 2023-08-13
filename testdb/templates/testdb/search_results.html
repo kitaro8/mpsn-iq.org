@@ -39,21 +39,21 @@
 			  <th> Magnitude </th>
 	          <th>Region</th>
 	        </tr>
-		{% for data in results %}
-	        <tr>
-	          <td><a class="article-title" href="{% url 'post_detail' data.id %}">{{ data.event }}</a></td>
-	          <td>{{ data.Latitude }}</td>
-	          <td>{{ data.Longitude }}</td>
-	          {% if data.Depth == "0.00" %}
-                     <td>10</td>
-                  {% else %}
-                     <td>{{ data.Depth }}</td>
-                  {% endif %}
-	          <td>{{ data.Magnitude }}</td>
-	          <td>{{ data.Region }}</td>
-	        </tr>
-	      </table>
-	
+			{% for data in results %}
+				<tr>
+				<td><a class="article-title" href="{% url 'post_detail' data.id %}">{{ data.event }}</a></td>
+				<td>{{ data.Latitude }}</td>
+				<td>{{ data.Longitude }}</td>
+				{% if data.Depth == "0.00" %}
+						<td>10</td>
+					{% else %}
+						<td>{{ data.Depth }}</td>
+					{% endif %}
+				<td>{{ data.Magnitude }}</td>
+				<td>{{ data.Region }}</td>
+				</tr>
+		</table>
+		
 		<!-- other data fields... -->
 		{% empty %}
 			<p>No results found</p>
