@@ -39,9 +39,10 @@
 			  <th> Magnitude </th>
 	          <th>Region</th>
 	        </tr>
-	        <tr>
 		{% for data in results %}
 		{% csrf_token %}
+	        <tr>
+
 	          <td><a class="article-title" href="{% url 'post_detail' data.id %}">{{ data.event }}</a></td>
 	          <td>{{ data.Latitude }}</td>
 	          <td>{{ data.Longitude }}</td>
