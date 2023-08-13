@@ -27,8 +27,7 @@
 	      </table>
 		{% endfor %} -->
 
-		{% for data in results %}
-		{% csrf_token %}
+
 	<br><br>
 	<div class="table-responsive-lg">
 		<table style="width:1000px; margin-left: 70px; font-family: Times New Roman;">
@@ -41,6 +40,8 @@
 	          <th>Region</th>
 	        </tr>
 	        <tr>
+		{% for data in results %}
+		{% csrf_token %}
 	          <td><a class="article-title" href="{% url 'post_detail' data.id %}">{{ data.event }}</a></td>
 	          <td>{{ data.Latitude }}</td>
 	          <td>{{ data.Longitude }}</td>
