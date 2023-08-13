@@ -39,7 +39,10 @@
 			  <th> Magnitude </th>
 	          <th>Region</th>
 	        </tr>
-			{% for data in results %}
+		</table>
+		
+		{% for data in results %}
+		<table style="width:1000px; margin-left: 70px; font-family: Times New Roman;">
 				<tr>
 				<td><a class="article-title" href="{% url 'post_detail' data.id %}">{{ data.event }}</a></td>
 				<td>{{ data.Latitude }}</td>
