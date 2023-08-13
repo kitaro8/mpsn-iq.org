@@ -32,7 +32,7 @@
     <br>
   <div class="focal_search" style="margin-left: 80px; font-family: Times New Roman;">
     <form method="GET" action="{% url 'search_focal' %}">
-      <p>Date:</p><input placeholder="From" type="text" name="datef" value="{{ request.GET.datef }}">
+      <p>Date:</p><input placeholder="From" type="date" name="datef" value="{{ request.GET.datef }}">
       <input placeholder="To" type="date" name="datet" value="{{ request.GET.datet }}">
       <br><hr>
       <input class="btn btn-info" type="submit"></input>
