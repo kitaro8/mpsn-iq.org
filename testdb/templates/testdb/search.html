@@ -32,29 +32,34 @@ input[type=submit]:hover {
 <div class="search" style="margin-left: 80px; font-family: Times New Roman;">
   <form method="GET" action="{% url 'search_results' %}">
 
-    <p>Date:</p>
+    <p style="margin-bottom: 0px;">Date:</p>
     <input placeholder="From" type="date" id="date_from" name="date_from">
     <input placeholder="To" type="date" id="date_to" name="date_to">
-    
+    <br>
+    <br>
     <!-- Latitude -->
-    <p>Latitude:</p>
+    <p style="margin-bottom: 0px;">Latitude:</p>
     <input placeholder="Min" type="number" step="any" id="latitude_min" name="latitude_min">
     <input placeholder="Max" type="number" step="any" id="latitude_max" name="latitude_max">
-
+    <br>
+    <br>
     <!-- Longitude -->
-    <p>Longitude:</p>
+    <p style="margin-bottom: 0px;">Longitude:</p>
     <input placeholder="Min" type="number" step="any" id="longitude_min" name="longitude_min">
     <input placeholder="Max" type="number" step="any" id="longitude_max" name="longitude_max">
-
+    <br>
+    <br>
     <!-- Depth -->
-    <p>Depth:</p>
+    <p style="margin-bottom: 0px;">Depth:</p>
     <input placeholder="Min" type="number" step="any" id="depth_min" name="depth_min">
     <input placeholder="Max" type="number" step="any" id="depth_max" name="depth_max">
-
+    <br>
+    <br>
     <!-- Magnitude -->
-    <p>Magnitude:</p>
+    <p style="margin-bottom: 0px;">Magnitude:</p>
     <input placeholder="Min" type="number" step="any" id="magnitude_min" name="magnitude_min">
     <input placeholder="Max" type="number" step="any" id="magnitude_max" name="magnitude_max">
+    <br>
     <br>
     <input type="submit" value="Search">
   </form>
