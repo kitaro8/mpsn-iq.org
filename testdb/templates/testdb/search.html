@@ -31,44 +31,34 @@ input[type=submit]:hover {
   <br>
 <div class="search" style="margin-left: 80px; font-family: Times New Roman;">
   <form method="GET" action="{% url 'search_results' %}">
-    <label for="date_from">Date From:</label>
-    <input type="date" id="date_from" name="date_from">
-    
-    <label for="date_to">Date To:</label>
-    <input type="date" id="date_to" name="date_to">
+
+    <p>Date:</p>
+    <input placeholder="From" type="date" id="date_from" name="date_from">
+    <input placeholder="To" type="date" id="date_to" name="date_to">
     
     <!-- Latitude -->
-    <label for="latitude_min">Min Latitude:</label>
-    <input type="number" step="any" id="latitude_min" name="latitude_min">
-    
-    <label for="latitude_max">Max Latitude:</label>
-    <input type="number" step="any" id="latitude_max" name="latitude_max">
+    <p>Latitude:</p>
+    <input placeholder="Min" type="number" step="any" id="latitude_min" name="latitude_min">
+    <input placeholder="Max" type="number" step="any" id="latitude_max" name="latitude_max">
 
     <!-- Longitude -->
-    <label for="longitude_min">Min Longitude:</label>
-    <input type="number" step="any" id="longitude_min" name="longitude_min">
-    
-    <label for="longitude_max">Max Longitude:</label>
-    <input type="number" step="any" id="longitude_max" name="longitude_max">
+    <p>Longitude:</p>
+    <input placeholder="Min" type="number" step="any" id="longitude_min" name="longitude_min">
+    <input placeholder="Max" type="number" step="any" id="longitude_max" name="longitude_max">
 
     <!-- Depth -->
-    <label for="depth_min">Min Depth:</label>
-    <input type="number" step="any" id="depth_min" name="depth_min">
-    
-    <label for="depth_max">Max Depth:</label>
-    <input type="number" step="any" id="depth_max" name="depth_max">
+    <p>Depth:</p>
+    <input placeholder="Min" type="number" step="any" id="depth_min" name="depth_min">
+    <input placeholder="Max" type="number" step="any" id="depth_max" name="depth_max">
 
     <!-- Magnitude -->
-    <label for="magnitude_min">Min Magnitude</label>
-    <input type="number" step="any" id="magnitude_min" name="magnitude_min" min="4.0">
-    
-    <label for="magnitude_max">Max Magnitude:</label>
-    <input type="number" step="any" id="magnitude_max" name="magnitude_max" min="4.0">
+    <label for="magnitude_min">Magnitude:</label>
+    <input placeholder="Min" type="number" step="any" id="magnitude_min" name="magnitude_min">
+    <input placeholder="Max" type="number" step="any" id="magnitude_max" name="magnitude_max">
 
     <input type="submit" value="Search">
   </form>
 </div>
-
 <br>
 
   
