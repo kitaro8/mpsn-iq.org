@@ -27,15 +27,27 @@ input[type=submit]:hover {
   background-color: #d5e2f0;
   padding: 40px;
 }
+
+.date-input-container {
+    display: flex;
+    align-items: center;
+}
+
+.date-input-container p {
+    margin-right: 10px;
+}
+
 </style>
   <br>
 <div class="search" style="margin-left: 80px; font-family: Times New Roman;">
   <form method="GET" action="{% url 'search_results' %}">
 
+  <div class="date-input-container">
     <p>Date:</p>
     <input placeholder="From" type="date" id="date_from" name="date_from">
     <input placeholder="To" type="date" id="date_to" name="date_to">
-    
+  </div>
+
     <!-- Latitude -->
     <p>Latitude:</p>
     <input placeholder="Min" type="number" step="any" id="latitude_min" name="latitude_min">
@@ -55,7 +67,7 @@ input[type=submit]:hover {
     <label for="magnitude_min">Magnitude:</label>
     <input placeholder="Min" type="number" step="any" id="magnitude_min" name="magnitude_min">
     <input placeholder="Max" type="number" step="any" id="magnitude_max" name="magnitude_max">
-
+    <br>
     <input type="submit" value="Search">
   </form>
 </div>
