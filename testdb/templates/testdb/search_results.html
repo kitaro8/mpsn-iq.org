@@ -40,9 +40,7 @@
 	          <th>Region</th>
 	        </tr>
 	        <tr>
-			{% for post in posts %}	
-	          <td><a class="article-title" href="{% url 'post_detail' post.id %}">{{ post.event }}</a></td>
-			{% endfor %}
+	          <td><a class="article-title" href="{% url 'post_detail' data.id %}">{{ data.event }}</a></td>
 	          <td>{{ data.Latitude }}</td>
 	          <td>{{ data.Longitude }}</td>
 	          {% if data.Depth == "0.00" %}
