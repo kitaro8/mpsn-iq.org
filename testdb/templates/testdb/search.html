@@ -34,8 +34,7 @@ input[type=submit]:hover {
 
     <p style="margin-bottom: 0px;">Date:</p>
     <input placeholder="From" type="date" id="date_from" name="date_from">
-    <!-- Input for the To date -->
-    <input placeholder="To" type="text" id="date_to" name="date_to" oninput="formatDateInput(this)">
+    <input placeholder="To" type="date" id="date_to" name="date_to">
     <br>
     <br>
     <!-- Latitude -->
@@ -66,15 +65,7 @@ input[type=submit]:hover {
   </form>
 </div>
 <br>
-<script>
-  function formatDateInput(input) {
-    var parts = input.value.split("-");
-    if (parts.length === 3) {
-      var newValue = parts[0] + "/" + parts[1] + "/" + parts[2];
-      input.value = newValue;
-    }
-  }
-</script>
+
   
 
   </div>
