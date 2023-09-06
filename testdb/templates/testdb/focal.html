@@ -28,13 +28,12 @@
     padding: 40px;
   }
 </style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
     <br>
   <div class="focal_search" style="margin-left: 80px; font-family: Times New Roman;">
     <form method="GET" action="{% url 'search_focal' %}">
-      <p>Date:</p><input placeholder="From" type="date" name="datef" class="datepicker" value="{{ request.GET.datef }}">
-      <input placeholder="To" type="date" name="datet" class="datepicker" value="{{ request.GET.datet }}">
+      <p>Date:</p><input placeholder="From" type="date" name="datef" value="{{ request.GET.datef }}">
+      <input placeholder="To" type="date" name="datet" value="{{ request.GET.datet }}">
       <br><hr>
       <input class="btn btn-info" type="submit"></input>
     </form>

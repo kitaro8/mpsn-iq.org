@@ -28,49 +28,58 @@ input[type=submit]:hover {
   padding: 40px;
 }
 
-.flatpickr-style {
-  width: 40%;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-}
 
+input[type="date"] {
+      /* Hide the browser's default date picker arrow */
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      width: 100px; /* Adjust the width as needed */
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      text-align: center;
+      font-family: Arial, sans-serif; /* Use your desired font */
+    }
+
+    /* Style the date input value */
+    input[type="date"]::before {
+      content: "yyyy/mm/dd";
+      color: #888; /* Adjust the color as needed */
+    }
+    
 </style>
   <br>
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  
 <div class="search" style="margin-left: 80px; font-family: Times New Roman;">
   <form method="GET" action="{% url 'search_results' %}">
 
     <p style="margin-bottom: 0px;">Date:</p>
-    <input placeholder="From" type="text" id="date_from" name="date_from" class="datepicker">
-    <input placeholder="To" type="date" id="date_to" name="date_to" class="datepicker">
+    <input placeholder="From" type="date" id="date_from" name="date_from">
+    <input placeholder="To" type="date" id="date_to" name="date_to">
     <br>
     <br>
     <!-- Latitude -->
     <p style="margin-bottom: 0px;">Latitude:</p>
-    <input placeholder="Min" type="number" step="any" id="latitude_min" name="latitude_min" class="flatpickr-style">
-    <input placeholder="Max" type="number" step="any" id="latitude_max" name="latitude_max" class="flatpickr-style">
+    <input placeholder="Min" type="number" step="any" id="latitude_min" name="latitude_min">
+    <input placeholder="Max" type="number" step="any" id="latitude_max" name="latitude_max">
     <br>
     <br>
     <!-- Longitude -->
     <p style="margin-bottom: 0px;">Longitude:</p>
-    <input placeholder="Min" type="number" step="any" id="longitude_min" name="longitude_min" class="flatpickr-style">
-    <input placeholder="Max" type="number" step="any" id="longitude_max" name="longitude_max" class="flatpickr-style">
+    <input placeholder="Min" type="number" step="any" id="longitude_min" name="longitude_min">
+    <input placeholder="Max" type="number" step="any" id="longitude_max" name="longitude_max">
     <br>
     <br>
     <!-- Depth -->
     <p style="margin-bottom: 0px;">Depth:</p>
-    <input placeholder="Min" type="number" step="any" id="depth_min" name="depth_min" class="flatpickr-style">
-    <input placeholder="Max" type="number" step="any" id="depth_max" name="depth_max" class="flatpickr-style">
+    <input placeholder="Min" type="number" step="any" id="depth_min" name="depth_min">
+    <input placeholder="Max" type="number" step="any" id="depth_max" name="depth_max">
     <br>
     <br>
     <!-- Magnitude -->
     <p style="margin-bottom: 0px;">Magnitude:</p>
-    <input placeholder="Min" type="number" step="any" id="magnitude_min" name="magnitude_min" class="flatpickr-style">
-    <input placeholder="Max" type="number" step="any" id="magnitude_max" name="magnitude_max" class="flatpickr-style">
+    <input placeholder="Min" type="number" step="any" id="magnitude_min" name="magnitude_min">
+    <input placeholder="Max" type="number" step="any" id="magnitude_max" name="magnitude_max">
     <br>
     <br>
     <input type="submit" value="Search">
@@ -81,11 +90,4 @@ input[type=submit]:hover {
   
 
   </div>
-
-  <script>
-    flatpickr(".datepicker", {
-        dateFormat: "Y/m/d",
-    });
-</script>
-
 {% endblock content %}
