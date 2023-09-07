@@ -34,8 +34,8 @@ input[type=submit]:hover {
   <form method="GET" action="{% url 'search_results' %}">
 
     <p style="margin-bottom: 0px;">Date:</p>
-    <input placeholder="From" type="date" id="date_from" name="date_from">
-    <input placeholder="To" type="date" id="date_to" name="date_to">
+    <input placeholder="From" type="date" id="date_from" name="date_from" class="flatpickr">
+    <input placeholder="To" type="date" id="date_to" name="date_to" class="flatpickr">
     <br>
     <br>
     <!-- Latitude -->
@@ -67,7 +67,12 @@ input[type=submit]:hover {
 </div>
 <br>
 
-  
+<script>
+  flatpickr(".flatpickr", {
+      dateFormat: "mm/dd/yyy", // Set your desired date format here
+  });
+</script>
+
 
   </div>
 {% endblock content %}
