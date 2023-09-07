@@ -31,15 +31,13 @@ input[type=submit]:hover {
 </style>
   <br>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 <div class="search" style="margin-left: 80px; font-family: Times New Roman;">
   <form method="GET" action="{% url 'search_results' %}">
 
     <p style="margin-bottom: 0px;">Date:</p>
-    <input placeholder="From" type="date" id="date_from" name="date_from" class="datepicker">
-    <input placeholder="To" type="date" id="date_to" name="date_to" class="datepicker">
+    <input placeholder="From" type="date" id="date_from" name="date_from">
+    <input placeholder="To" type="date" id="date_to" name="date_to">
     <br>
     <br>
     <!-- Latitude -->
@@ -71,11 +69,6 @@ input[type=submit]:hover {
 </div>
 <br>
 
-<script>
-  flatpickr(".datepicker", {
-      dateFormat: "y-m-d", // Set your desired date format here
-  });
-</script>
 
 
   </div>
