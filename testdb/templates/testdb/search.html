@@ -28,22 +28,6 @@ input[type=submit]:hover {
   padding: 40px;
 }
 
-
-input[type="date"] {
-  /* Hide the browser's default date picker arrow */
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  width: 150px; /* Adjust the width as needed */
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  text-align: center;
-  font-family: Arial, sans-serif; /* Use your desired font */
-  background-color: white; /* Ensure the input is not disabled */
-  cursor: pointer; /* Show pointer cursor to indicate interactivity */
-}
-
 </style>
   <br>
 <div class="search" style="margin-left: 80px; font-family: Times New Roman;">
@@ -83,24 +67,6 @@ input[type="date"] {
 </div>
 <br>
 
-<script>
-  // JavaScript to manipulate the date format
-  document.getElementById('date_from').addEventListener('input', function() {
-    var dateParts = this.value.split('-');
-    if (dateParts.length === 3) {
-      var formattedDate = dateParts[1] + '/' + dateParts[2] + '/' + dateParts[0];
-      this.value = formattedDate;
-    }
-  });
-
-  document.getElementById('date_to').addEventListener('input', function() {
-    var dateParts = this.value.split('-');
-    if (dateParts.length === 3) {
-      var formattedDate = dateParts[1] + '/' + dateParts[2] + '/' + dateParts[0];
-      this.value = formattedDate;
-    }
-  });
-</script>
   
 
   </div>
