@@ -28,46 +28,19 @@ input[type=submit]:hover {
   padding: 40px;
 }
 
-#datePicker {
-    width: 150px;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-
-  /* Style the date picker calendar */
-  .flatpickr-calendar {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  /* Style the selected date */
-  .flatpickr-day.selected {
-    background-color: #007bff;
-    color: #fff;
-  }
-
-  /* Style the today's date */
-  .flatpickr-day.today {
-    background-color: #f5f5f5;
-  }
 
 </style>
   <br>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 <div class="search" style="margin-left: 80px; font-family: Times New Roman;">
   <form method="GET" action="{% url 'search_results' %}">
 
     <p style="margin-bottom: 0px;">Date:</p>
-    <input placeholder="From" type="text"  name="date_from" id="datePicker">
-    <input placeholder="To" type="text"  name="date_to" id="datePicker">
+    <input placeholder="From" type="text" id="date_from" name="date_from" class="datepicker">
+    <input placeholder="To" type="text" id="date_to" name="date_to" class="datepicker">
     <br>
     <br>
     <!-- Latitude -->
@@ -100,10 +73,12 @@ input[type=submit]:hover {
 <br>
 
 <script>
-  flatpickr("#datePicker", {
-    dateFormat: "Y-m-d", // Set your desired date format here
+  flatpickr(".datepicker", {
+      dateFormat: "Y/m/d", // Set your desired date format here
   });
 </script>
+
+  
 
   </div>
 {% endblock content %}
