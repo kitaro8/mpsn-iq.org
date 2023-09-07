@@ -83,6 +83,24 @@ input[type="date"] {
 </div>
 <br>
 
+<script>
+  // JavaScript to manipulate the date format
+  document.getElementById('date_from').addEventListener('input', function() {
+    var dateParts = this.value.split('-');
+    if (dateParts.length === 3) {
+      var formattedDate = dateParts[1] + '/' + dateParts[2] + '/' + dateParts[0];
+      this.value = formattedDate;
+    }
+  });
+
+  document.getElementById('date_to').addEventListener('input', function() {
+    var dateParts = this.value.split('-');
+    if (dateParts.length === 3) {
+      var formattedDate = dateParts[1] + '/' + dateParts[2] + '/' + dateParts[0];
+      this.value = formattedDate;
+    }
+  });
+</script>
   
 
   </div>
