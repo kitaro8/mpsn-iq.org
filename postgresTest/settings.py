@@ -173,7 +173,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # AWS_STORAGE_BUCKET_NAME = 'mpsniq'
 # AWS_ACCESS_KEY_ID = '22a34f8a6bd9'
 # AWS_SECRET_ACCESS_KEY = '0056eb1268619cb1888b77de11a5c32b2fa8a06202'
-AWS_URL='s3.us-east-005.backblazeb2.com'
+# AWS_URL='s3.us-east-005.backblazeb2.com'
 # AWS_DEFAULT_ACL = None
 # AWS_S3_REGION_NAME = 'us-east-005'
 # AWS_S3_SIGNATURE_VERSION = 's3v4'
@@ -233,8 +233,8 @@ STATICFILES_STORAGE = 'b2_storage.storage.B2Storage'
 
 
 
-STATIC_URL = AWS_URL + '/static/'
-MEDIA_URL = AWS_URL + '/media/'
+# STATIC_URL = AWS_URL + '/static/'
+# MEDIA_URL = AWS_URL + '/media/'
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
