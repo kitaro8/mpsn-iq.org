@@ -225,8 +225,8 @@ import django_backblaze_b2.storage
 from b2_storage.storage import B2Storage
 
 
-DEFAULT_FILE_STORAGE = 'b2_storage.storage.B2Storage'
-STATICFILES_STORAGE = 'b2_storage.storage.B2Storage'
+DEFAULT_FILE_STORAGE = 'b2_storage.storage.BackBlazeB2Storage'
+STATICFILES_STORAGE = 'b2_storage.storage.BackBlazeB2Storage'
 
 
 
