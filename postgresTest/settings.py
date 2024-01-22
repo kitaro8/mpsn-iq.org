@@ -194,7 +194,7 @@ AZURE_ACCOUNT_KEY = 'Iff4wO/IO0IZE0FZiOksqM7xiqr1mScg85c413FYnyUPIYbwLcfG8DBG6Vm
 AZURE_CONTAINER = 'mpsn-container'
 
 # Azure Storage URL
-AZURE_STORAGE_URL = f'https://{mpsniq}.blob.core.windows.net/{mpsn-container}/'
+AZURE_STORAGE_URL = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/'
 
 # Use Azure Storage for default file storage.
 DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
