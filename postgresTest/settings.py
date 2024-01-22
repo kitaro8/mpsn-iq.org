@@ -210,11 +210,11 @@ BACKBLAZE_CONFIG = {
 # from django.conf import settings
 
 
-bucket_name = settings.BACKBLAZE_CONFIG['mpsniq']
-account_id = settings.BACKBLAZE_CONFIG['22a34f8a6bd9']
-application_key_id = settings.BACKBLAZE_CONFIG['22a34f8a6bd9']
-application_key = settings.BACKBLAZE_CONFIG['005ecc7b180e6bc54f680bb56e89ba445e315e5f24']
-bucket_endpoint = settings.BACKBLAZE_CONFIG['https://s3.us-east-005.backblazeb2.com']
+# bucket_name = settings.BACKBLAZE_CONFIG['mpsniq']
+# account_id = settings.BACKBLAZE_CONFIG['22a34f8a6bd9']
+# application_key_id = settings.BACKBLAZE_CONFIG['22a34f8a6bd9']
+# application_key = settings.BACKBLAZE_CONFIG['005ecc7b180e6bc54f680bb56e89ba445e315e5f24']
+# bucket_endpoint = settings.BACKBLAZE_CONFIG['https://s3.us-east-005.backblazeb2.com']
 
 
 
