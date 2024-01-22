@@ -185,6 +185,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # BACKBLAZEB2_BUCKET_NAME = 'mpsniq'
 # BACKBLAZEB2_BUCKET_ID = '4242aa33e4ef08ca86db0d19'
 
+from storages.backends.azure_storage import AzureStorage
 
 import os
 
@@ -200,8 +201,11 @@ AZURE_STORAGE_URL = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_
 DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
 
 # Set Azure Storage URLs for static and media files.
-STATIC_URL = AZURE_STORAGE_URL + 'static/'
-MEDIA_URL = AZURE_STORAGE_URL + 'media/'
+# Azure Storage URL for static files.
+STATIC_URL = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/static/'
+
+# Azure Storage URL for media files.
+MEDIA_URL = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/media/'
 
 # Optional: Set Azure Storage CDN endpoint if applicable.
 # AZURE_CUSTOM_DOMAIN = 'yourcdnendpoint.azureedge.net'
