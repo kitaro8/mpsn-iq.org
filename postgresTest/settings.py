@@ -207,6 +207,9 @@ STATIC_URL = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAIN
 # Azure Storage URL for media files.
 MEDIA_URL = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/media/'
 
+
+AZURE_CONNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=mpsniq;AccountKey=Iff4wO/IO0IZE0FZiOksqM7xiqr1mScg85c413FYnyUPIYbwLcfG8DBG6VmFneMvYrHwrU2Hlu9r+AStztOKhg==;EndpointSuffix=core.windows.net"
+
 # Optional: Set Azure Storage CDN endpoint if applicable.
 # AZURE_CUSTOM_DOMAIN = 'yourcdnendpoint.azureedge.net'
 
