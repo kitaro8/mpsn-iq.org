@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-y*rxe6-0%710fdy)#70qqilj3s0$5-xb_xy*h(bk!cr!&_^r+q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mpsn-iraq.onrender.com','mpsn-iq.onrender.com', '127.0.0.1', 'www.mpsn-iq.org', 'mpsn-iq.org', 'mpsn-iq:10000']
+ALLOWED_HOSTS = ['mpsn-iq.onrender.com', '127.0.0.1', 'www.mpsn-iq.org', 'mpsn-iq.org', 'mpsn-iq:10000']
 
 
 # Application definition
@@ -180,12 +180,18 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 BACKBLAZEB2_URL='s3.us-east-005.backblazeb2.com'
 BACKBLAZEB2_ACCOUNT_ID = '22a34f8a6bd9'
-BACKBLAZEB2_APP_KEY_ID = '00522a34f8a6bd90000000007'
-BACKBLAZEB2_APP_KEY = 'K005aVVWBza+IALEy6dPfrIqWrjYZ60'
+BACKBLAZEB2_APP_KEY_ID = '22a34f8a6bd9'
+BACKBLAZEB2_APP_KEY = '005ecc7b180e6bc54f680bb56e89ba445e315e5f24'
 BACKBLAZEB2_BUCKET_NAME = 'mpsniq'
 BACKBLAZEB2_BUCKET_ID = '4242aa33e4ef08ca86db0d19'
 
-
+B2_STORAGE_CONFIG = {
+    'B2_ACCOUNT_ID': BACKBLAZEB2_ACCOUNT_ID,
+    'B2_APP_KEY_ID': BACKBLAZEB2_APP_KEY_ID,
+    'B2_APP_KEY': BACKBLAZEB2_APP_KEY,
+    'B2_BUCKET_NAME': BACKBLAZEB2_BUCKET_NAME,
+    'B2_BUCKET_ID': BACKBLAZEB2_BUCKET_ID,
+}
 # test
 
 # pylint: disable=unused-import
@@ -194,8 +200,8 @@ import django_backblaze_b2.storage
 BACKBLAZE_CONFIG = {
     'bucket_name': 'mpsniq',
     'account_id': '22a34f8a6bd9',
-    'application_key_id': '00522a34f8a6bd90000000007',
-    'application_key': 'K005aVVWBza+IALEy6dPfrIqWrjYZ60',
+    'application_key_id': '22a34f8a6bd9',
+    'application_key': '005ecc7b180e6bc54f680bb56e89ba445e315e5f24',
     'bucket_id': '4242aa33e4ef08ca86db0d19',
     'bucket_endpoint': 'https://s3.us-east-005.backblazeb2.com',
 }
@@ -204,11 +210,11 @@ BACKBLAZE_CONFIG = {
 # from django.conf import settings
 
 
-# bucket_name = settings.BACKBLAZE_CONFIG['AWS_STORAGE_BUCKET_NAME']
-# account_id = settings.BACKBLAZE_CONFIG['AWS_ACCESS_KEY_ID']
-# application_key_id = settings.BACKBLAZE_CONFIG['AWS_ACCESS_KEY_ID']
-# application_key = settings.BACKBLAZE_CONFIG['AWS_SECRET_ACCESS_KEY']
-# bucket_endpoint = settings.BACKBLAZE_CONFIG['AWS_URL']
+bucket_name = settings.BACKBLAZE_CONFIG['mpsniq']
+account_id = settings.BACKBLAZE_CONFIG['22a34f8a6bd9']
+application_key_id = settings.BACKBLAZE_CONFIG['22a34f8a6bd9']
+application_key = settings.BACKBLAZE_CONFIG['005ecc7b180e6bc54f680bb56e89ba445e315e5f24']
+bucket_endpoint = settings.BACKBLAZE_CONFIG['https://s3.us-east-005.backblazeb2.com']
 
 
 
@@ -235,10 +241,10 @@ STATICFILES_STORAGE = 'b2_storage.storage.B2Storage'
 STATIC_URL = BACKBLAZEB2_URL + '/static/'
 MEDIA_URL = BACKBLAZEB2_URL + '/media/'
 
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+# MEDIA_URL = '/media/'
 
 
 # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
