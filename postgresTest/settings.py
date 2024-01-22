@@ -226,7 +226,7 @@ AZURE_CONNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=mpsniq;Acc
 # test
 
 # pylint: disable=unused-import
-import django_backblaze_b2.storage
+# import django_backblaze_b2.storage
 
 
 
@@ -245,7 +245,7 @@ import django_backblaze_b2.storage
 # DEFAULT_FILE_STORAGE = 'django_backblaze_b2.storage.B2Storage'
 # STATICFILES_STORAGE = 'django_backblaze_b2.storage.B2Storage'
 
-from b2_storage.storage import B2Storage
+# from b2_storage.storage import B2Storage
 
 DEFAULT_FILE_STORAGE = "storages.backends.azure_storage.AzureStorage"
 STATICFILES_STORAGE = "storages.backends.azure_storage.AzureStorage"
