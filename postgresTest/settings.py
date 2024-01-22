@@ -179,7 +179,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # AWS_S3_SIGNATURE_VERSION = 's3v4'
 
 BACKBLAZEB2_URL='s3.us-east-005.backblazeb2.com'
-BACKBLAZEB2_ACCOUNT_ID = '00522a34f8a6bd90000000007'
+BACKBLAZEB2_ACCOUNT_ID = '22a34f8a6bd9'
 BACKBLAZEB2_APP_KEY_ID = '00522a34f8a6bd90000000007'
 BACKBLAZEB2_APP_KEY = 'K005aVVWBza+IALEy6dPfrIqWrjYZ60'
 BACKBLAZEB2_BUCKET_NAME = 'mpsniq'
@@ -191,14 +191,14 @@ BACKBLAZEB2_BUCKET_ID = '4242aa33e4ef08ca86db0d19'
 # pylint: disable=unused-import
 import django_backblaze_b2.storage
 
-# BACKBLAZE_CONFIG = {
-#     'bucket_name': 'mpsniq',
-#     'account_id': '22a34f8a6bd9',
-#     'application_key_id': '22a34f8a6bd9',
-#     'application_key': '0056eb1268619cb1888b77de11a5c32b2fa8a06202',
-#     'bucket_id': 'd242fa3344ef589a867b0d19',
-#     'bucket_endpoint': 'https://s3.us-east-005.backblazeb2.com',
-# }
+BACKBLAZE_CONFIG = {
+    'bucket_name': 'mpsniq',
+    'account_id': '22a34f8a6bd9',
+    'application_key_id': '00522a34f8a6bd90000000007',
+    'application_key': 'K005aVVWBza+IALEy6dPfrIqWrjYZ60',
+    'bucket_id': '4242aa33e4ef08ca86db0d19',
+    'bucket_endpoint': 'https://s3.us-east-005.backblazeb2.com',
+}
 
 
 # from django.conf import settings
