@@ -189,10 +189,13 @@ from storages.backends.azure_storage import AzureStorage
 
 import os
 
+
+/subscriptions/<subscription>/resourceGroups/mpsniq-group/providers/Microsoft.Storage/mpsniq/<storage-account>/blobServices/default/containers/mpsn-container
+
 # Replace the following values with your Azure Storage account details
-AZURE_ACCOUNT_NAME = 'mpsniq'
-AZURE_ACCOUNT_KEY = 'Iff4wO/IO0IZE0FZiOksqM7xiqr1mScg85c413FYnyUPIYbwLcfG8DBG6VmFneMvYrHwrU2Hlu9r+AStztOKhg=='
-AZURE_CONTAINER = 'mpsn-container'
+AZURE_ACCOUNT_NAME = 'mpsniraq'
+AZURE_ACCOUNT_KEY = 'Y5fsJ8m6jPR0dLxyVyrtbLlbgWLsw+UsG4g/4XoAyAqeH4yzosJhJgE/VaIa/sKANsUezUCOaBxC+AStY4ebuA=='
+AZURE_CONTAINER = 'mpsniraq-co'
 
 # Azure Storage URL
 AZURE_STORAGE_URL = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/'
@@ -208,7 +211,7 @@ STATIC_URL = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAIN
 MEDIA_URL = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/media/'
 
 
-AZURE_CONNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=mpsniq;AccountKey=Iff4wO/IO0IZE0FZiOksqM7xiqr1mScg85c413FYnyUPIYbwLcfG8DBG6VmFneMvYrHwrU2Hlu9r+AStztOKhg==;EndpointSuffix=core.windows.net"
+AZURE_CONNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=mpsniraq;AccountKey=Y5fsJ8m6jPR0dLxyVyrtbLlbgWLsw+UsG4g/4XoAyAqeH4yzosJhJgE/VaIa/sKANsUezUCOaBxC+AStY4ebuA==;EndpointSuffix=core.windows.net"
 
 # Optional: Set Azure Storage CDN endpoint if applicable.
 # AZURE_CUSTOM_DOMAIN = 'yourcdnendpoint.azureedge.net'
