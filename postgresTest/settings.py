@@ -267,10 +267,10 @@ STATICFILES_STORAGE = "storages.backends.azure_storage.AzureStorage"
 # STATIC_URL = BACKBLAZEB2_URL + '/static/'
 # MEDIA_URL = BACKBLAZEB2_URL + '/media/'
 
-# # STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# # MEDIA_URL = '/media/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 
 # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
