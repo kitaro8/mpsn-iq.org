@@ -190,7 +190,6 @@ from storages.backends.azure_storage import AzureStorage
 import os
 
 
-/subscriptions/<subscription>/resourceGroups/mpsniq-group/providers/Microsoft.Storage/mpsniq/<storage-account>/blobServices/default/containers/mpsn-container
 
 # Replace the following values with your Azure Storage account details
 AZURE_ACCOUNT_NAME = 'mpsniraq'
