@@ -216,7 +216,7 @@ AZURE_CONNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=mpsniraq;A
 # AZURE_CUSTOM_DOMAIN = 'yourcdnendpoint.azureedge.net'
 
 # Uncomment the following lines if you want to use Azure Storage for Django storage as well.
-# STATICFILES_STORAGE = 'storages.backends.azure_storage.AzureStorage'
+STATICFILES_STORAGE = 'storages.backends.azure_storage.AzureStorage'
 # AZURE_STATIC_STORAGE_ACCOUNT_NAME = 'your_account_name'
 # AZURE_STATIC_STORAGE_ACCOUNT_KEY = 'your_account_key'
 # AZURE_STATIC_STORAGE_CONTAINER = 'your_static_container_name'
