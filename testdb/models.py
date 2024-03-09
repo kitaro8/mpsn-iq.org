@@ -16,7 +16,7 @@ class Post(models.Model):
     Gap = models.CharField(max_length=100)
     Magnitude = models.CharField(max_length=100)
     Region = models.CharField(max_length=100)
-    image = models.ImageField(default='default1.jpg', upload_to='image_maps')
+    image = models.ImageField(default='default1.jpg', upload_to='image_maps', blank=True)
     station = ArrayField(models.CharField(max_length=200), blank=True)
     comp = ArrayField(models.CharField(max_length=200), blank=True)
     DIS = ArrayField(models.CharField(max_length=200), blank=True)
