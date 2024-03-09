@@ -3,10 +3,11 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView
 from .models import Post, Focal, Report, Paper, stations
 from django.contrib.auth.models import User
-from .forms import FileForm, FileForm2, ImageForm, ImageForm2, NameForm, FocalForm, ContactForm, ReportForm, PaperForm
+from .forms import FileForm, FileForm2, ImageForm, NameForm, FocalForm, ContactForm, ReportForm, PaperForm
 from django.db.models import Q
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
+from testdb.forms import ImageForm2
 
 
 
