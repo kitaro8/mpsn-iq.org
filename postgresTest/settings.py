@@ -98,16 +98,16 @@ DATABASES = {
 }
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'postgres', 
-#         'USER': 'postgres', 
-#         'PASSWORD': 'k8k8k8k8',
-#         'HOST': 'localhost', 
-#         'PORT': '5432',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres', 
+        'USER': 'postgres', 
+        'PASSWORD': 'k8k8k8k8',
+        'HOST': 'localhost', 
+        'PORT': '5432',
+    }
+}
 
 # SECURE_SSL_CIPHERS = 'HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!3DES:!MD5:!PSK'
 # SECURE_SSL_PROTOCOLS = ['TLSv1.2', 'TLSv1.3']

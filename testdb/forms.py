@@ -18,6 +18,11 @@ class ImageForm(forms.ModelForm):
 		model = Post
 		fields = ['image']
 
+class ImageForm2(forms.ModelForm):
+	class Meta:
+		model = Post
+		fields = ['image2']
+
 class NameForm(forms.Form):
     Region = forms.CharField(label='Region', max_length=100)
 
