@@ -3,7 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView
 from .models import Post, Focal, Report, Paper, stations
 from django.contrib.auth.models import User
-from .forms import FileForm, FileForm2, ImageForm, ImageForm2, NameForm, FocalForm, ContactForm, ReportForm, PaperForm
+from .forms import FileForm, FileForm2, ImageForm, NameForm, FocalForm, ContactForm, ReportForm, PaperForm
 from django.db.models import Q
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
@@ -37,13 +37,11 @@ def upload(request):
 	form = FileForm(request.POST, request.FILES)
 	form = FileForm2(request.POST, request.FILES)
 	form = ImageForm(request.POST, request.FILES)
-	form = ImageForm2(request.POST, request.FILES)
 	form = NameForm(request.POST)
 	if request.method =='POST':
 		if form.is_valid():
 			Region = request.POST['Region']
 			upload_image = request.FILES['image']
-			upload_image2 = request.FILES['image2']
 			upload_file = request.FILES['file']
 			upload_file2 = request.FILES['file2']
 			lines = upload_file.read()
@@ -551,7 +549,6 @@ def upload(request):
 				Magnitude=Magnitude, 
 				Region=Region, 
 				image=upload_image,
-				image2=upload_image2,
 				file2=upload_file2, 
 				station=station, 
 				comp=comp, 
