@@ -18,7 +18,7 @@ class ImageForm(forms.ModelForm):
 		model = Post
 		fields = ['image']
 
-class ImageForm(forms.ModelForm):
+class ImageForm2(forms.ModelForm):
 	class Meta:
 		model = Post
 		fields = ['image2']
