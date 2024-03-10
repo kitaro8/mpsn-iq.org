@@ -92,6 +92,11 @@ def upload(request):
 				elif b'Magnitude' in item:
 					Magnitude = item[10:16]
 					Magnitude = Magnitude.decode()
+
+
+				elif b'Magnitude (Mw)' in item:
+					MagnitudeMw = item[10:16]
+					MagnitudeMw = MagnitudeMw.decode()
 					
 
 
@@ -547,6 +552,7 @@ def upload(request):
 				event=event, 
 				Gap=Gap, 
 				Magnitude=Magnitude, 
+				MagnitudeMw=MagnitudeMw,
 				Region=Region, 
 				image=upload_image,
 				file2=upload_file2, 
@@ -728,6 +734,8 @@ def search_results(request):
     depth_max = request.GET.get('depth_max')
     magnitude_min = request.GET.get('magnitude_min')
     magnitude_max = request.GET.get('magnitude_max')
+    magnitudemw_min = request.GET.get('magnitudemw_min')
+    magnitudemw_max = request.GET.get('magnitudemw_max')
 
     if date_from and date_to:
         queryset = queryset.filter(Q(date_posted__range=[date_from, date_to]))
@@ -743,6 +751,9 @@ def search_results(request):
 
     if magnitude_min and magnitude_max:
         queryset = queryset.filter(Q(Magnitude__range=[magnitude_min, magnitude_max]))
+
+    if magnitudemw_min and magnitudemw_max:
+        queryset = queryset.filter(Q(Magnitudemw__range=[magnitudemw_min, magnitudemw_max]))
 
     return render(request, 'testdb/search_results.html', {'results': queryset})
 
@@ -853,6 +864,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 	'event',
 	'Gap',
 	'Magnitude',
+	'MagnitudeMw'
 	'Region',
 	'image',
 	'station',
