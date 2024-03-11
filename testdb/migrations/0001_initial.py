@@ -46,6 +46,7 @@ class Migration(migrations.Migration):
                 ('MagnitudeMw', models.CharField(max_length=100, blank=True, size=None)),
                 ('Region', models.CharField(max_length=100)),
                 ('image', models.ImageField(default='default1.jpg', upload_to='image_maps')),
+                ('image2', models.ImageField(default='default1.jpg', upload_to='image_ml')),
                 ('station', django.contrib.postgres.fields.ArrayField(base_field=models.CharField(max_length=200), blank=True, size=None)),
                 ('comp', django.contrib.postgres.fields.ArrayField(base_field=models.CharField(max_length=200), blank=True, size=None)),
                 ('DIS', django.contrib.postgres.fields.ArrayField(base_field=models.CharField(max_length=200), blank=True, size=None)),
