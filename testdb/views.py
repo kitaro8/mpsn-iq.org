@@ -552,7 +552,7 @@ def upload(request):
 				event=event, 
 				Gap=Gap, 
 				Magnitude=Magnitude, 
-				# MagnitudeMw=MagnitudeMw,
+				MagnitudeMw=MagnitudeMw,
 				Region=Region, 
 				image=upload_image,
 				file2=upload_file2, 
