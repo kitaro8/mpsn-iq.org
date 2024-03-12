@@ -14,10 +14,10 @@ class FileForm2(forms.ModelForm):
 		fields = ['file2']
 
 
-class FileForm3(forms.ModelForm):
-	class Meta:
-		model = Post
-		fields = ['file3']
+# class FileForm3(forms.ModelForm):
+# 	class Meta:
+# 		model = Post
+# 		fields = ['file3']
 
 class ImageForm(forms.ModelForm):
 	class Meta:
