@@ -14,7 +14,7 @@ class Post(models.Model):
     Depth = models.CharField(max_length=100)
     event = models.CharField(max_length=100,)
     Gap = models.CharField(max_length=100)
-    Magnitude = models.CharField(max_length=100)
+    # Magnitude = models.CharField(max_length=100)
     MagnitudeMW = models.CharField(max_length=100, blank=True)
     Region = models.CharField(max_length=100)
     image = models.ImageField(default='default1.jpg', upload_to='image_maps', blank=True)
