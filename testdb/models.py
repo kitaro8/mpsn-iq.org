@@ -109,3 +109,22 @@ class stations(models.Model):
     def get_absolute_url(self):
         return reverse('stations', kwargs={'pk': self.pk})
 
+
+
+
+class Data(models.Model):
+    title = models.CharField(max_length=100)
+    date = models.CharField(max_length=100)
+    file = models.FileField(upload_to='data1')
+    date_posted = models.DateTimeField(default=timezone.now)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    class Meta:
+        ordering = ['-date_posted']
+
+    def __str__(self):
+        return str(self.title)
+
+    def get_absolute_url(self):
+        return reverse('data', kwargs={'pk': self.pk})
+    
