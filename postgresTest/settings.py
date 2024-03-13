@@ -84,10 +84,10 @@ WSGI_APPLICATION = 'postgresTest.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mpsn_data_poc7',
-        'USER': 'mpsn_data_poc7_user',
-        'PASSWORD': 'lv94lwsO8qQ7AZy80YXAwWAgx8vq8TOx',
-        'HOST': 'dpg-cigcoud9aq012ev1fn0g-a',
+        'NAME': 'test_lbh0',
+        'USER': 'test_lbh0_user',
+        'PASSWORD': 'dufNnXwLkqGRE06VzXzaQo0vLGa8NfXq',
+        'HOST': 'dpg-cnp0bki1hbls739tc96g-a',
         'PORT': '5432',
         'OPTIONS': {
             'sslmode': 'require',
