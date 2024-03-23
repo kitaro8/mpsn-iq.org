@@ -89,11 +89,11 @@ DATABASES = {
         'PASSWORD': 'lv94lwsO8qQ7AZy80YXAwWAgx8vq8TOx',
         'HOST': 'dpg-cigcoud9aq012ev1fn0g-a',
         'PORT': '5432',
-        'OPTIONS': {
-            'sslmode': 'require',
-            'sslrootcert': '/path/to/certificate.crt',
+        # 'OPTIONS': {
+        #     'sslmode': 'require',
+        #     'sslrootcert': '/path/to/certificate.crt',
 
-        },
+        # },
     }
 }
 
