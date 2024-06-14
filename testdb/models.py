@@ -28,7 +28,7 @@ class Post(models.Model):
     PHASE = ArrayField(models.CharField(max_length=200), blank=True)
     file = models.FileField(upload_to='data')
     file2 = models.FileField(upload_to='sac', blank=True)
-    # file3 = models.FileField(upload_to='data2', blank=True)
+    file3 = models.FileField(upload_to='data2', blank=True)
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
