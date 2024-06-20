@@ -81,29 +81,29 @@ WSGI_APPLICATION = 'postgresTest.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'test60',
-#         'USER': 'test60_user',
-#         'PASSWORD': 'jf43RbImyciydw4YQC5GfPb8AlGWIZ0b',
-#         'HOST': 'dpg-cppmr25ds78s73ebifog-a',
-#         'PORT': '5432',
-#         'OPTIONS': {
-#             'sslmode': 'require',
-#             'sslrootcert': '/path/to/certificate.crt',
-
-#         },
-#     }
-# }
-
-
-
-import dj_database_url
-
 DATABASES = {
-    "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'test60',
+        'USER': 'test60_user',
+        'PASSWORD': 'jf43RbImyciydw4YQC5GfPb8AlGWIZ0b',
+        'HOST': 'dpg-cppmr25ds78s73ebifog-a',
+        'PORT': '5432',
+        'OPTIONS': {
+            'sslmode': 'require',
+            'sslrootcert': '/path/to/certificate.crt',
+
+        },
+    }
 }
+
+
+
+# import dj_database_url
+
+# DATABASES = {
+#     "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+# }
 
 # DATABASES = {
 #     'default': {
