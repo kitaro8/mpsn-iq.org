@@ -99,28 +99,28 @@ DATABASES = {
 
 
 
-import os
-import dj_database_url
+# import os
+# import dj_database_url
 
-DATABASE_URL = os.environ.get('DATABASE_URL')
-if DATABASE_URL:
-    DATABASES = {
-        'default': dj_database_url.parse(DATABASE_URL, conn_max_age=600, ssl_require=True)
-    }
-else:
-    raise ValueError("DATABASE_URL environment variable not set or incorrectly formatted")
-
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'postgres', 
-#         'USER': 'postgres', 
-#         'PASSWORD': 'k8k8k8k8',
-#         'HOST': 'localhost', 
-#         'PORT': '5432',
+# DATABASE_URL = os.environ.get('DATABASE_URL')
+# if DATABASE_URL:
+#     DATABASES = {
+#         'default': dj_database_url.parse(DATABASE_URL, conn_max_age=600, ssl_require=True)
 #     }
-# }
+# else:
+#     raise ValueError("DATABASE_URL environment variable not set or incorrectly formatted")
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres', 
+        'USER': 'postgres', 
+        'PASSWORD': 'k8k8k8k8',
+        'HOST': 'localhost', 
+        'PORT': '5432',
+    }
+}
 
 SECURE_SSL_CIPHERS = 'HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!3DES:!MD5:!PSK'
 SECURE_SSL_PROTOCOLS = ['TLSv1.2', 'TLSv1.3']
