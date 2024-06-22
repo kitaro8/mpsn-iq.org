@@ -81,34 +81,34 @@ WSGI_APPLICATION = 'postgresTest.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'test60',
-#         'USER': 'test60_user',
-#         'PASSWORD': 'jf43RbImyciydw4YQC5GfPb8AlGWIZ0b',
-#         'HOST': 'dpg-cppmr25ds78s73ebifog-a',
-#         'PORT': '5432',
-#         'OPTIONS': {
-#             'sslmode': 'require',
-#             'sslrootcert': '/path/to/certificate.crt',
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'test60',
+        'USER': 'test60_user',
+        'PASSWORD': 'jf43RbImyciydw4YQC5GfPb8AlGWIZ0b',
+        'HOST': 'dpg-cppmr25ds78s73ebifog-a',
+        'PORT': '5432',
+        'OPTIONS': {
+            'sslmode': 'require',
+            'sslrootcert': '/path/to/certificate.crt',
 
-#         },
-#     }
-# }
-
-
-
-import os
-import dj_database_url
-
-DATABASE_URL = os.environ.get('DATABASE_URL')
-if DATABASE_URL:
-    DATABASES = {
-        'default': dj_database_url.parse(DATABASE_URL, conn_max_age=600, ssl_require=True)
+        },
     }
-else:
-    raise ValueError("DATABASE_URL environment variable not set or incorrectly formatted")
+}
+
+
+
+# import os
+# import dj_database_url
+
+# DATABASE_URL = os.environ.get('DATABASE_URL')
+# if DATABASE_URL:
+#     DATABASES = {
+#         'default': dj_database_url.parse(DATABASE_URL, conn_max_age=600, ssl_require=True)
+#     }
+# else:
+#     raise ValueError("DATABASE_URL environment variable not set or incorrectly formatted")
 
 
 # DATABASES = {
