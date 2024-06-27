@@ -53,7 +53,6 @@ def upload(request):
 			ARR_TIME = []
 			RES = []
 			PHASE = []
-			MagnitudeMw = ""
 			
 			for item in lines.split(b"\n"):
 
@@ -95,9 +94,9 @@ def upload(request):
 					Magnitude = Magnitude.decode()
 
 
-				elif b'MagnitudeMw' in item:
-					MagnitudeMw = item[15:19]
-					MagnitudeMw = MagnitudeMw.decode()
+				elif b'Magnitude1' in item:
+					MagnitudeMw1 = item[15:19]
+					MagnitudeMw = MagnitudeMw1.decode()
 					
 
 
@@ -553,6 +552,7 @@ def upload(request):
 				event=event, 
 				Gap=Gap, 
 				Magnitude=Magnitude, 
+				MagnitudeMw=MagnitudeMw,
 				Region=Region, 
 				image=upload_image,
 				file2=upload_file2, 
@@ -563,7 +563,6 @@ def upload(request):
 				ARR_TIME=ARR_TIME, 
 				RES=RES, 
 				PHASE=PHASE,
-				MagnitudeMw=MagnitudeMw,
 				author=current_user, date_posted=event)
 			upload.save()
 			
