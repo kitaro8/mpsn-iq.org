@@ -94,9 +94,9 @@ def upload(request):
 					Magnitude = Magnitude.decode()
 
 
-				elif b'asda' in item:
-					asda = item[15:19]
-					asda = asda.decode()
+				elif b'MagnitudeMw' in item:
+					MagnitudeMw = item[15:19]
+					MagnitudeMw = MagnitudeMw.decode()
 					
 
 
