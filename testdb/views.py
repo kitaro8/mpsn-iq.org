@@ -552,7 +552,6 @@ def upload(request):
 				event=event, 
 				Gap=Gap, 
 				Magnitude=Magnitude, 
-				MagnitudeMw=MagnitudeMw,
 				Region=Region, 
 				image=upload_image,
 				file2=upload_file2, 
@@ -562,7 +561,8 @@ def upload(request):
 				AZM=AZM, 
 				ARR_TIME=ARR_TIME, 
 				RES=RES, 
-				PHASE=PHASE,  
+				PHASE=PHASE,
+				MagnitudeMw=MagnitudeMw,
 				author=current_user, date_posted=event)
 			upload.save()
 			
