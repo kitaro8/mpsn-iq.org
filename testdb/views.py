@@ -53,6 +53,7 @@ def upload(request):
 			ARR_TIME = []
 			RES = []
 			PHASE = []
+			MagnitudeMw = "0"
 			
 			for item in lines.split(b"\n"):
 
