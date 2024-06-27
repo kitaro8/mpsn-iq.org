@@ -94,9 +94,9 @@ def upload(request):
 					Magnitude = Magnitude.decode()
 
 
-				elif b'Magnitude' in item:
-					MagnitudeMw = item[15:19]
-					MagnitudeMw = MagnitudeMw.decode()
+				elif b'asda' in item:
+					asda = item[15:19]
+					asda = asda.decode()
 					
 
 
@@ -552,7 +552,7 @@ def upload(request):
 				event=event, 
 				Gap=Gap, 
 				Magnitude=Magnitude, 
-				# MagnitudeMw=MagnitudeMw,
+				MagnitudeMw=asda,
 				Region=Region, 
 				image=upload_image,
 				file2=upload_file2, 
