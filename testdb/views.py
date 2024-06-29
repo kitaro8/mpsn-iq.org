@@ -806,7 +806,6 @@ class UserPostListView(ListView):
 class PostDetailView(DetailView):
 	model = Post
 	template_name = 'testdb/post_detail.html'
-	template_name = 'testdb/magnitude_value.html'
 
 
 
