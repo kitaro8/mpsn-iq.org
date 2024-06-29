@@ -868,7 +868,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 	'event',
 	'Gap',
 	'Magnitude',
-	'MagnitudeMw'
+	'MagnitudeMw',
 	'Region',
 	'image',
 	'station',
