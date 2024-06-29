@@ -41,7 +41,7 @@ def upload(request):
 	if request.method =='POST':
 		if form.is_valid():
 			Region = request.POST['Region']
-			MagnitudeMw = request.POST['MagnitudeMw']
+			# MagnitudeMw = request.POST['MagnitudeMw']
 			upload_image = request.FILES['image']
 			upload_image2 = request.FILES['image2']
 			upload_file = request.FILES['file']
@@ -97,9 +97,9 @@ def upload(request):
 					Magnitude = Magnitude.decode()
 
 
-				# elif b'MagnitudeMw' in item:
-				# 	MagnitudeMw = item[15:19]
-				# 	MagnitudeMw = MagnitudeMw.decode()
+				elif b'MagnitudeMw' in item:
+					MagnitudeMw = item[15:19]
+					MagnitudeMw = MagnitudeMw.decode()
 					
 
 

@@ -33,7 +33,7 @@ class ImageForm(forms.ModelForm):
 
 class NameForm(forms.Form):
 	Region = forms.CharField(label='Region', max_length=100)
-	MagnitudeMw = forms.CharField(label='MagnitudeMw', max_length=100)
+	# MagnitudeMw = forms.CharField(label='MagnitudeMw', max_length=100)
 
 
 class FocalForm(forms.ModelForm):
