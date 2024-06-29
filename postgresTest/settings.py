@@ -84,10 +84,10 @@ WSGI_APPLICATION = 'postgresTest.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'test60',
-        'USER': 'test60_user',
-        'PASSWORD': 'jf43RbImyciydw4YQC5GfPb8AlGWIZ0b',
-        'HOST': 'dpg-cppmr25ds78s73ebifog-a',
+        'NAME': 'mpsn_data_poc7',
+        'USER': 'mpsn_data_poc7_user',
+        'PASSWORD': 'lv94lwsO8qQ7AZy80YXAwWAgx8vq8TOx',
+        'HOST': 'dpg-cigcoud9aq012ev1fn0g-a',
         'PORT': '5432',
         'OPTIONS': {
             'sslmode': 'require',
@@ -102,13 +102,18 @@ DATABASES = {
 # import os
 # import dj_database_url
 
-# DATABASE_URL = os.environ.get('DATABASE_URL')
-# if DATABASE_URL:
-#     DATABASES = {
-#         'default': dj_database_url.parse(DATABASE_URL, conn_max_age=600, ssl_require=True)
-#     }
-# else:
+# DATABASES = {
+#     'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+# }
+
+# if 'DATABASE_URL' not in os.environ:
 #     raise ValueError("DATABASE_URL environment variable not set or incorrectly formatted")
+
+# DATABASES['default']['OPTIONS'] = {
+#     'sslmode': 'require',
+#     'sslrootcert': '/path/to/certificate.crt',  # Update this path if you have the SSL certificate
+# }
+
 
 
 # DATABASES = {

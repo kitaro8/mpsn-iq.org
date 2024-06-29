@@ -46,6 +46,17 @@ def upload(request):
 			upload_file2 = request.FILES['file2']
 			lines = upload_file.read()
 
+
+			RMS = ""
+			Latitude = ""
+			Longitude = ""
+			Depth = ""
+			Gap = ""
+			event = ""
+			Magnitude = ""
+			MagnitudeMw = ""
+
+			
 			station = []
 			comp = []
 			DIS = []
