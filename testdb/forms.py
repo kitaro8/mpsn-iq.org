@@ -23,6 +23,7 @@ class ImageForm(forms.ModelForm):
 	class Meta:
 		model = Post
 		fields = ['image']
+		fields = ['image2']
 
 
 # class ImageForm2(forms.ModelForm):
@@ -32,7 +33,6 @@ class ImageForm(forms.ModelForm):
 
 class NameForm(forms.Form):
     Region = forms.CharField(label='Region', max_length=100)
-    MagnitudeMw = forms.CharField(label='MagnitudeMw', max_length=100)
 
 
 class FocalForm(forms.ModelForm):

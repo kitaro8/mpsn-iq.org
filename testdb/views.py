@@ -42,6 +42,7 @@ def upload(request):
 		if form.is_valid():
 			Region = request.POST['Region']
 			upload_image = request.FILES['image']
+			upload_image2 = request.FILES['image2']
 			upload_file = request.FILES['file']
 			upload_file2 = request.FILES['file2']
 			lines = upload_file.read()
@@ -556,6 +557,7 @@ def upload(request):
 				MagnitudeMw=MagnitudeMw,
 				Region=Region, 
 				image=upload_image,
+				image2=upload_image2,
 				file2=upload_file2, 
 				station=station, 
 				comp=comp, 
