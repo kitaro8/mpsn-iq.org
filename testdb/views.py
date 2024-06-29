@@ -810,9 +810,9 @@ class PostDetailView(DetailView):
 
 
 
-class MagDetailView(DetailView):
-	model = Post
-	template_name = 'testdb/magnitude_value.html'
+# class MagDetailView(DetailView):
+# 	model = Post
+# 	template_name = 'testdb/magnitude_value.html'
 
 class PostDetailView2(DetailView):
 	model = Post
