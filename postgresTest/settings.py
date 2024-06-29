@@ -99,20 +99,20 @@ DATABASES = {
 
 
 
-import os
-import dj_database_url
+# import os
+# import dj_database_url
 
-DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
-}
+# DATABASES = {
+#     'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+# }
 
-if 'DATABASE_URL' not in os.environ:
-    raise ValueError("DATABASE_URL environment variable not set or incorrectly formatted")
+# if 'DATABASE_URL' not in os.environ:
+#     raise ValueError("DATABASE_URL environment variable not set or incorrectly formatted")
 
-DATABASES['default']['OPTIONS'] = {
-    'sslmode': 'require',
-    'sslrootcert': '/path/to/root.crt',  # Optional: specify if you have the root certificate
-}
+# DATABASES['default']['OPTIONS'] = {
+#     'sslmode': 'require',
+#     'sslrootcert': '/path/to/root.crt',  # Optional: specify if you have the root certificate
+# }
 
 
 
