@@ -1,10 +1,7 @@
-{% extends "testdb/post_detail.html" %}
+{% extends "testdb/base.html" %}
 {% block content %}
 <br>
     <div style="margin-left: 120px; font-size: 17px; font-family: Times New Roman;">
-      {% if object.author == user %}
-
-      {% endif %}
 
       <img  width="70%" height="70%" src="{{ object.image2.url }}">
       <br>
