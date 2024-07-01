@@ -815,6 +815,11 @@ class PostDetailView2(DetailView):
 	template_name = 'testdb/post_phase.html'
 
 
+class MagValueView(DetailView):
+	model = Post
+	template_name = 'testdb/mag_value.html'
+
+
 
 def focal(request):
 	context = {
