@@ -879,6 +879,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 	'MagnitudeMw',
 	'Region',
 	'image',
+	'image2',
 	'station',
 	'comp',
 	'DIS',
