@@ -44,7 +44,7 @@ def upload(request):
 			Region = request.POST['Region']
 			MagnitudeMw = request.POST['MagnitudeMw']
 			upload_image = request.FILES['image']
-			upload_image2 = request.FILES.getlist('image2')
+			upload_image2 = request.FILES.get('image2')
 			upload_file = request.FILES['file']
 			upload_file2 = request.FILES['file2']
 			lines = upload_file.read()
@@ -559,7 +559,7 @@ def upload(request):
 				MagnitudeMw=MagnitudeMw,
 				Region=Region, 
 				image=upload_image,
-				# image2=upload_image2,
+				image2=upload_image2,
 				file2=upload_file2, 
 				station=station, 
 				comp=comp, 
@@ -570,9 +570,6 @@ def upload(request):
 				PHASE=PHASE,
 				author=current_user, date_posted=event)
 			upload.save()
-			for image in upload_image2:
-				image_instance = Post(upload_image2=image)
-				image_instance.save()
 			
 
 	return render(request, 'testdb/post_form.html')
