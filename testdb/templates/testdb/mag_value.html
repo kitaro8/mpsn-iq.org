@@ -4,7 +4,7 @@
 
     {% if post.image2.all %}
     <div>
-        {% for image in post.image2.all %}
+        {% for image in post.image2.0 %}
             <img src="{{ object.image.url }}" alt="Image">
         {% endfor %}
     </div>
