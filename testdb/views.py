@@ -44,7 +44,7 @@ def upload(request):
 			Region = request.POST['Region']
 			MagnitudeMw = request.POST['MagnitudeMw']
 			upload_image = request.FILES['image']
-			upload_image2 = request.FILES.get('image2')
+			upload_image2 = request.FILES['image2']
 			upload_file = request.FILES['file']
 			upload_file2 = request.FILES['file2']
 			lines = upload_file.read()
