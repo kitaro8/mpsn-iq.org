@@ -559,7 +559,7 @@ def upload(request):
 				MagnitudeMw=MagnitudeMw,
 				Region=Region, 
 				image=upload_image,
-				image2=upload_image2,
+				# image2=upload_image2,
 				file2=upload_file2, 
 				station=station, 
 				comp=comp, 
@@ -570,6 +570,9 @@ def upload(request):
 				PHASE=PHASE,
 				author=current_user, date_posted=event)
 			upload.save()
+			for image in upload_image2:
+				image_instance = Post(upload_image2=image)
+				image_instance.save()
 			
 
 	return render(request, 'testdb/post_form.html')
