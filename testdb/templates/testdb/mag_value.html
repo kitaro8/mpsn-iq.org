@@ -2,10 +2,13 @@
 {% block content %}
 
 
-<div>
-    <img  width="70%" height="70%" src="{{ object.image2.url }}">
-    <br>
-</div>
+    {% if post.image2.all %}
+    <div>
+        {% for image in post.image2.all %}
+            <img src="{{ object.image.url }}" alt="Image">
+        {% endfor %}
+    </div>
+    {% else %}
           
 
 {% endblock content %}
