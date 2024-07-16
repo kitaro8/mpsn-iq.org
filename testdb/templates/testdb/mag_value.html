@@ -2,14 +2,10 @@
 {% block content %}
 
 
-{% if post.image2.all %}
-    {% for image in post.image2.all %}
-        <img src="{{ image.image.url }}" alt="Image">
-    {% endfor %}
+<div>
+    <img  width="70%" height="70%" src="{{ object.image2.0 }}">
+    <br>
 </div>
-{% else %}
-<p>No images found.</p>
-{% endif %}
           
 
 {% endblock content %}
