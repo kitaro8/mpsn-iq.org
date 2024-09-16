@@ -6,6 +6,25 @@
 <div>
     <img  width="160%" height="160%" src="{{ object.image2.url }}">
     <br>
+
+
+    <table style="width:1000px; margin-left: 70px; font-family: Times New Roman;">
+        <tr>
+          <th>Station</th>
+          <th>Distance</th>
+          <th>Azimuth</th>
+          <th>Back Azimuth</th>
+          <th>Amplitude (nm)</th>
+          <th>Gain</th>
+          <th>Local Magnitude (ML)</th>
+        </tr>
+        <tr>
+          <td>{{ ML.PHASE.0 }}</td>
+          <td>{{ post.ARR_TIME.0 }}</td>
+          <td>{{ post.RES.0 }}</td>
+          <td>{{ post.AZM.0 }}</td>
+          <td>{{ post.DIS.0 }}</td>
+        </tr>
 </div>
           
 

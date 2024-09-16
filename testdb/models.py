@@ -29,6 +29,12 @@ class Post(models.Model):
     file = models.FileField(upload_to='data')
     file2 = models.FileField(upload_to='sac', blank=True)
     file3 = models.FileField(upload_to='data2', blank=True)
+
+    file1 = models.FileField(upload_to='data', default='')
+    file1_data = ArrayField(models.CharField(max_length=200000),blank=True, default=list)
+    file11 = models.FileField(upload_to='data', default='' )
+    file11_data = ArrayField(models.CharField(max_length=200000), blank=True, default=list)
+
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
@@ -61,24 +67,7 @@ class Focal(models.Model):
         return reverse('focal_detail', kwargs={'pk': self.pk})
 
 
-class ML(models.Model):
 
-    file1 = models.FileField(upload_to='data', default='')
-    file1_data = ArrayField(models.CharField(max_length=200000),blank=True, default=list)
-    file11 = models.FileField(upload_to='data', default='' )
-    file11_data = ArrayField(models.CharField(max_length=200000), blank=True, default=list)
-
-    date_posted = models.DateTimeField(default=timezone.now)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
-
-    class Meta:
-        ordering = ['-date_posted']
-
-    def __str__(self):
-        return str(self.file1)
-
-    def get_absolute_url(self):
-        return reverse('mag_value', kwargs={'pk': self.pk})
 
 
 class Report(models.Model):

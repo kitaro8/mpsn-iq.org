@@ -903,6 +903,8 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 	'Region',
 	'image',
 	'image2',
+	'file1_data',
+	'file11_data',
 	'station',
 	'comp',
 	'DIS',
