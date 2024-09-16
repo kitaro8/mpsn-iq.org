@@ -71,13 +71,14 @@ def upload(request):
 
 			lines1 = lines1.strip().split("\n")
 			data1 = [line.split() for line in lines1]
-			file1_data = data1
+			file1_data = data1.decode()
 
 
 
 			lines11 = lines11.strip().split("\n")
 			data11 = [line.split() for line in lines11]
-			file11_data = data11
+			file11_data = data11.decode()
+
 
 			for item in lines.split(b"\n"):
 
