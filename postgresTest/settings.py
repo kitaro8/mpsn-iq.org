@@ -81,38 +81,48 @@ WSGI_APPLICATION = 'postgresTest.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'test60',
-        'USER': 'test60_user',
-        'PASSWORD': 'jf43RbImyciydw4YQC5GfPb8AlGWIZ0b',
-        'HOST': 'dpg-cppmr25ds78s73ebifog-a',
-        'PORT': '5432',
-        'OPTIONS': {
-            'sslmode': 'require',
-            'sslrootcert': '/path/to/certificate.crt',
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'test60',
+#         'USER': 'test60_user',
+#         'PASSWORD': 'jf43RbImyciydw4YQC5GfPb8AlGWIZ0b',
+#         'HOST': 'dpg-cppmr25ds78s73ebifog-a',
+#         'PORT': '5432',
+#         'OPTIONS': {
+#             'sslmode': 'require',
 
-        },
-    }
+#         },
+#     }
+# }
+
+
+import os
+from pathlib import Path
+from dotenv import load_dotenv
+import dj_database_url
+
+# Build paths inside the project
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Load environment variables from the .env file
+load_dotenv(os.path.join(BASE_DIR, '.env'))
+
+# Retrieve the DATABASE_URL environment variable
+DATABASE_URL = os.getenv('DATABASE_URL')
+
+if not DATABASE_URL:
+    raise ValueError("DATABASE_URL environment variable not set or incorrectly formatted")
+
+# Configure the default database
+DATABASES = {
+    'default': dj_database_url.config(default=DATABASE_URL, ssl_require=True)
 }
 
+# Rest of your settings...
 
 
-# import os
-# import dj_database_url
-
-# DATABASES = {
-#     'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
-# }
-
-# if 'DATABASE_URL' not in os.environ:
-#     raise ValueError("DATABASE_URL environment variable not set or incorrectly formatted")
-
-# DATABASES['default']['OPTIONS'] = {
-#     'sslmode': 'require',
-#     'sslrootcert': '/path/to/root.crt',  # Optional: specify if you have the root certificate
-# }
+# Rest of your settings...
 
 
 

@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post, Focal, Report, Paper
+from .models import Post, Focal, Report, Paper, ML
 
 
 class FileForm(forms.ModelForm):
@@ -8,10 +8,24 @@ class FileForm(forms.ModelForm):
 		fields = ['file']
 
 
+class FileForm1(forms.ModelForm):
+	class Meta:
+		model = ML
+		fields = ['file1']
+
+class FileForm11(forms.ModelForm):
+	class Meta:
+		model = ML
+		fields = ['file11']
+
+
 class FileForm2(forms.ModelForm):
 	class Meta:
 		model = Post
 		fields = ['file2']
+
+
+
 
 
 # class FileForm3(forms.ModelForm):
