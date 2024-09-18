@@ -78,7 +78,7 @@ def upload(request):
 			file11_data = []
 			for line in file222:
 				parts = line.split()
-				file1_data.append(parts)
+				file11_data.append(parts)
 			
 			
 
