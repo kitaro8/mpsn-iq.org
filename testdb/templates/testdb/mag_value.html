@@ -18,13 +18,15 @@
           <th>Gain</th>
           <th>Local Magnitude (ML)</th>
         </tr>
-        <tr>
-          <td>{{ post.file1_data.0 }}</td>
-          <td>{{ post.file1_data.1 }}</td>
-          <td>{{ post.file1_data.2 }}</td>
-          <td>{{ post.file1_data.3 }}</td>
-          <td>{{ post.file1_data.4 }}</td>
-        </tr>
+          {% for row in file1_data %}
+          <tr>
+              <td>{{ row.0 }}</td> <!-- Access first value in the row -->
+              <td>{{ row.1 }}</td> <!-- Access second value in the row -->
+              <td>{{ row.2 }}</td> <!-- Access third value in the row -->
+              <td>{{ row.3 }}</td> <!-- Access fourth value in the row -->
+              <td>{{ row.4 }}</td> <!-- Access fifth value in the row -->
+          </tr>
+          {% endfor %}
 </div>
           
 
