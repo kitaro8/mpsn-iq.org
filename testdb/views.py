@@ -54,8 +54,8 @@ def upload(request):
 
 			upload_file2 = request.FILES['file2']
 			lines = upload_file.read()
-			lines1 = upload_file1.read()
-			lines11 = upload_file11.read()
+			lines1 = upload_file1.read().decode('utf-8')
+			lines11 = upload_file11.read().decode('utf-8')
 
 
 			station = []
