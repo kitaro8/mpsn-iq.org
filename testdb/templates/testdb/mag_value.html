@@ -4,7 +4,7 @@
 <br>
 <br>
 <div>
-    <img  width="160%" height="160%" src="{{ object.image2.url }}">
+    
     <br>
 
 
@@ -19,42 +19,14 @@
           <th>Local Magnitude (ML)</th>
         </tr>
         <tr>
-          <!-- Check if post.file1_data.0 is valid -->
-          {% if post.file1_data.0 and post.file1_data.0 != "[]" and post.file1_data.0 != "''" %}
-              <td>{{ post.file1_data.0 }}</td>
-          {% else %}
-              <td>-</td> <!-- Display a dash if empty or invalid -->
-          {% endif %}
-      
-          <!-- Check if post.file1_data.1 is valid -->
-          {% if post.file1_data.1 and post.file1_data.1 != "[]" and post.file1_data.1 != "''" %}
-              <td>{{ post.file1_data.1 }}</td>
-          {% else %}
-              <td>-</td>
-          {% endif %}
-      
-          <!-- Check if post.file1_data.2 is valid -->
-          {% if post.file1_data.2 and post.file1_data.2 != "[]" and post.file1_data.2 != "''" %}
-              <td>{{ post.file1_data.2 }}</td>
-          {% else %}
-              <td>-</td>
-          {% endif %}
-      
-          <!-- Check if post.file1_data.3 is valid -->
-          {% if post.file1_data.3 and post.file1_data.3 != "[]" and post.file1_data.3 != "''" %}
-              <td>{{ post.file1_data.3 }}</td>
-          {% else %}
-              <td>-</td>
-          {% endif %}
-      
-          <!-- Check if post.file1_data.4 is valid -->
-          {% if post.file1_data.4 and post.file1_data.4 != "[]" and post.file1_data.4 != "''" %}
-              <td>{{ post.file1_data.4 }}</td>
-          {% else %}
-              <td>-</td>
-          {% endif %}
-      </tr>
-      
+          <td>{{ post.file1_data.0 }}</td>
+          <td>{{ post.file1_data.1 }}</td>
+          <td>{{ post.file1_data.2 }}</td>
+          <td>{{ post.file1_data.3 }}</td>
+          <td>{{ post.file1_data.4 }}</td>
+        </tr>
+        <img  width="160%" height="160%" src="{{ object.image2.url }}">
+        <br>
 </div>
           
 
