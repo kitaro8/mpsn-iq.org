@@ -54,7 +54,7 @@ def upload(request):
 
 			upload_file2 = request.FILES['file2']
 			lines = upload_file.read()
-			lines1 = upload_file1.readlines().decode('utf-8')
+			lines1 = upload_file1.readlines()
 			lines11 = upload_file11.readlines().decode('utf-8')
 
 
