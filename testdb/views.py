@@ -73,13 +73,15 @@ def upload(request):
 			for line in file111:
 				parts = line.split()
 				file1_data.append(parts)
-				return render(request, 'mag_value.html', {'files11': file1_data})
+			
 
 			file222 = lines11.strip().split()
 			file11_data = []
 			for line in file222:
 				parts = line.split()
 				file1_data.append(parts)
+			
+			
 
 			
 
@@ -602,6 +604,7 @@ def upload(request):
 			
 
 	return render(request, 'testdb/post_form.html')
+
 
 
 
