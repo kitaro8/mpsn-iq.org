@@ -68,13 +68,11 @@ def upload(request):
 
 
 			
-			file1_data=[]
 			lines1 = lines1.strip().split("\n")
 			data1 = [line.split() for line in lines1]
 			file1_data = data1
 
 
-			file11_data=[]
 			lines11 = lines11.strip().split("\n")
 			data11 = [line.split() for line in lines11]
 			file11_data = data11
