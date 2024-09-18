@@ -54,8 +54,8 @@ def upload(request):
 
 			upload_file2 = request.FILES['file2']
 			lines = upload_file.read()
-			lines1 = upload_file1.readlines()
-			lines11 = upload_file11.readlines()
+			lines1 = upload_file1.read().decode('utf-8')
+			lines11 = upload_file11.read().decode('utf-8')
 
 
 			station = []
@@ -66,18 +66,21 @@ def upload(request):
 			RES = []
 			PHASE = []
 
-			file1_data=[]
-			file11_data=[]
+
+			
+			file111 = lines1.strip().split()
+			file1_data = []
+			for line in file111:
+				parts = line.split()
+				file1_data.append(parts)
 			
 
-			for line in lines1:
-				row = line.split()
-				file1_data.append(row)
+			file222 = lines11.strip().split()
+			file11_data = []
+			for line in file222:
+				parts = line.split()
+				file1_data.append(parts)
 			
-
-			for line in lines11:
-				row = line.split()
-				file11_data.append(row)
 			
 
 			
