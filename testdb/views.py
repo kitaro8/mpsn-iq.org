@@ -66,20 +66,18 @@ def upload(request):
 			RES = []
 			PHASE = []
 
-			file11=[]
+			file1_data=[]
+			file11_data=[]
 			
 
 			for line in lines1:
 				row = line.split()
-				file11.append(row)
+				file1_data.append(row)
 			
 
-			file222 = lines11.strip().split()
-			file11_data = []
-			for line in file222:
-				parts = line.split()
-				file11_data.append(parts)
-			
+			for line in lines11:
+				row = line.split()
+				file11_data.append(row)
 			
 
 			
