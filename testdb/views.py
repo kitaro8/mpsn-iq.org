@@ -362,7 +362,15 @@ def upload(request):
 			
 
 			
+			max_length = max(len(local_m_m), len(local_m_m2))
 
+			# Pad the lists to the same length
+			local_m_m += [0] * (max_length - len(local_m_m))
+			local_m_m2 += [0] * (max_length - len(local_m_m2))
+
+			# Compute the average
+			Magnitude = [(x + y) / 2 for x, y in zip(local_m_m, local_m_m2)]
+		
 
 
 			for item in lines.split(b"\n"):
