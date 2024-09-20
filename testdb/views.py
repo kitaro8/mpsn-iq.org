@@ -126,7 +126,7 @@ def upload(request):
 					station_m.append(parts[14][0])
 
 
-				if parts:
+				elif parts:
 					comp_m.append(parts[0][1])
 				elif parts:
 					comp_m.append(parts[1][1])
@@ -158,7 +158,7 @@ def upload(request):
 					comp_m.append(parts[14][1])
 
 
-				if parts:
+				elif parts:
 					DIS_m.append(parts[0][2])
 				elif parts:
 					DIS_m.append(parts[1][2])
@@ -190,7 +190,7 @@ def upload(request):
 					DIS_m.append(parts[14][2])
 
 
-				if parts:
+				elif parts:
 					azm_m.append(parts[0][3])
 				elif parts:
 					azm_m.append(parts[1][3])
@@ -223,7 +223,7 @@ def upload(request):
 
 
 
-				if parts:
+				elif parts:
 					b_azm_m.append(parts[0][4])
 				elif parts:
 					b_azm_m.append(parts[1][4])
@@ -256,7 +256,7 @@ def upload(request):
 
 
 
-				if parts:
+				elif parts:
 					amp_m.append(parts[0][5])
 				elif parts:
 					amp_m.append(parts[1][5])
@@ -288,7 +288,7 @@ def upload(request):
 					amp_m.append(parts[14][5])
 
 
-				if parts:
+				elif parts:
 					gain_m.append(parts[0][6])
 				elif parts:
 					gain_m.append(parts[1][6])
@@ -320,7 +320,7 @@ def upload(request):
 					gain_m.append(parts[14][6])
 
 
-				if parts:
+				elif parts:
 					local_m_m.append(parts[0][7])
 				elif parts:
 					local_m_m.append(parts[1][7])
