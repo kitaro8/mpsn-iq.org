@@ -96,10 +96,10 @@ def upload(request):
 				comp_m.append(parts[0][1])
 				DIS_m.append(parts[0][2])
 				azm_m.append(parts[0][3])
-				b_azm_m.append(parts[0][4])
-				amp_m.append(parts[0][5])
-				gain_m.append(parts[0][6])
-				local_m_m.append(parts[0][7])
+				b_azm_m.append(parts[0][0])
+				amp_m.append(parts[0][1])
+				gain_m.append(parts[0][2])
+				local_m_m.append(parts[0][3])
 
 
 			for line in lines11:
@@ -108,10 +108,10 @@ def upload(request):
 				comp_m2.append(parts[0][1])
 				DIS_m2.append(parts[0][2])
 				azm_m2.append(parts[0][3])
-				b_azm_m2.append(parts[0][4])
-				amp_m2.append(parts[0][5])
-				gain_m2.append(parts[0][6])
-				local_m_m2.append(parts[0][7])			
+				b_azm_m2.append(parts[0][0])
+				amp_m2.append(parts[0][1])
+				gain_m2.append(parts[0][2])
+				local_m_m2.append(parts[0][3])			
 
 			
 			
