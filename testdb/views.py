@@ -95,35 +95,35 @@ def upload(request):
 				parts = line.decode('utf-8').split()
 
 				if parts:
-					station_m.append(parts[0][0])
+					station_m.append(parts[0])
 				if parts:
-					station_m.append(parts[1][0])
+					station_m.append(parts[1])
 				if parts:
-					station_m.append(parts[2][0])
+					station_m.append(parts[2])
 				if parts:
-					station_m.append(parts[3][0])
+					station_m.append(parts[3])
 				if parts:
-					station_m.append(parts[4][0])
+					station_m.append(parts[4])
 				if parts:
-					station_m.append(parts[5][0])
+					station_m.append(parts[5])
 				if parts:
-					station_m.append(parts[6][0])
+					station_m.append(parts[6])
 				if parts:
-					station_m.append(parts[7][0])
+					station_m.append(parts[7])
 				if parts:
-					station_m.append(parts[8][0])
+					station_m.append(parts[8])
 				if parts:
-					station_m.append(parts[9][0])
+					station_m.append(parts[9])
 				# if parts:
-				# 	station_m.append(parts[10][0])
+				# 	station_m.append(parts[10])
 				# if parts:
-				# 	station_m.append(parts[11][0])
+				# 	station_m.append(parts[11])
 				# if parts:
-				# 	station_m.append(parts[12][0])
+				# 	station_m.append(parts[12])
 				# if parts:
-				# 	station_m.append(parts[13][0])
+				# 	station_m.append(parts[13])
 				# if parts:
-				# 	station_m.append(parts[14][0])
+				# 	station_m.append(parts[14])
 
 
 				elif parts:
