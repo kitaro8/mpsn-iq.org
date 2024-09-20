@@ -92,21 +92,21 @@ def upload(request):
 				parts = line.decode('utf-8').split()
 
 				if len(parts) > 0:
-					station_m2.append(parts[0])  # BSR1, NSR1, etc.
+					station_m.append(parts[0])  # BSR1, NSR1, etc.
 				if len(parts) > 1:
-					comp_m2.append(parts[1])      # BHR, BHT, etc.
+					comp_m.append(parts[1])      # BHR, BHT, etc.
 				if len(parts) > 2:
-					DIS_m2.append(parts[2])       # 316.353088, etc.
+					DIS_m.append(parts[2])       # 316.353088, etc.
 				if len(parts) > 3:
-					azm_m2.append(parts[3])       # 168.917557, etc.
+					azm_m.append(parts[3])       # 168.917557, etc.
 				if len(parts) > 4:
-					b_azm_m2.append(parts[4])     # 349.248199, etc.
+					b_azm_m.append(parts[4])     # 349.248199, etc.
 				if len(parts) > 5:
-					amp_m2.append(parts[5])       # 18182.407601, etc.
+					amp_m.append(parts[5])       # 18182.407601, etc.
 				if len(parts) > 6:
-					gain_m2.append(parts[6])      # 0.830000, etc.
+					gain_m.append(parts[6])      # 0.830000, etc.
 				if len(parts) > 7:
-					local_m_m2.append(parts[7])   # 5.380024, etc.
+					local_m_m.append(parts[7])   # 5.380024, etc.
 
 			# Now each list will store the respective values from all rows together.
 
