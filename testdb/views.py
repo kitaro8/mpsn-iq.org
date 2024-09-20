@@ -676,7 +676,7 @@ def upload(request):
 				elif b'ANB2' in item:
 					zne = item[8:9]
 					zne = zne.decode()
-					station.append('ANBB2')
+					station.append('ANB2')
 					comp.append(zne)
 					dis = item[11:17]
 					dis = dis.decode()
