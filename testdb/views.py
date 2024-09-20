@@ -95,35 +95,35 @@ def upload(request):
 				parts = line.split()
 
 				if parts:
-					station_m.append(parts[0])
-				elif parts:
-					station_m.append(parts[1])
-				elif parts:
-					station_m.append(parts[2])
-				elif parts:
-					station_m.append(parts[3])
-				elif parts:
-					station_m.append(parts[4])
-				elif parts:
-					station_m.append(parts[5])
-				elif parts:
-					station_m.append(parts[6])
-				elif parts:
-					station_m.append(parts[7])
-				elif parts:
-					station_m.append(parts[8])
-				elif parts:
-					station_m.append(parts[9])
-				elif parts:
-					station_m.append(parts[10])
-				elif parts:
-					station_m.append(parts[11])
-				elif parts:
-					station_m.append(parts[12])
-				elif parts:
-					station_m.append(parts[13])
-				elif parts:
-					station_m.append(parts[14])
+					station_m.append(parts)
+				# elif parts:
+				# 	station_m.append(parts[1])
+				# elif parts:
+				# 	station_m.append(parts[2])
+				# elif parts:
+				# 	station_m.append(parts[3])
+				# elif parts:
+				# 	station_m.append(parts[4])
+				# elif parts:
+				# 	station_m.append(parts[5])
+				# elif parts:
+				# 	station_m.append(parts[6])
+				# elif parts:
+				# 	station_m.append(parts[7])
+				# elif parts:
+				# 	station_m.append(parts[8])
+				# elif parts:
+				# 	station_m.append(parts[9])
+				# elif parts:
+				# 	station_m.append(parts[10])
+				# elif parts:
+				# 	station_m.append(parts[11])
+				# elif parts:
+				# 	station_m.append(parts[12])
+				# elif parts:
+				# 	station_m.append(parts[13])
+				# elif parts:
+				# 	station_m.append(parts[14])
 
 
 				elif parts:
