@@ -127,35 +127,35 @@ def upload(request):
 
 
 				elif parts:
-					comp_m.append(parts[0][1])
+					comp_m.append(parts[1][0])
 				elif parts:
 					comp_m.append(parts[1][1])
 				elif parts:
-					comp_m.append(parts[2][1])
+					comp_m.append(parts[1][2])
 				elif parts:
-					comp_m.append(parts[3][1])
+					comp_m.append(parts[1][3])
 				elif parts:
-					comp_m.append(parts[4][1])
+					comp_m.append(parts[1][4])
 				elif parts:
-					comp_m.append(parts[5][1])
+					comp_m.append(parts[1][5])
 				elif parts:
-					comp_m.append(parts[6][1])
+					comp_m.append(parts[1][6])
 				elif parts:
-					comp_m.append(parts[7][1])
+					comp_m.append(parts[1][7])
 				elif parts:
-					comp_m.append(parts[8][1])
+					comp_m.append(parts[1][8])
 				elif parts:
-					comp_m.append(parts[9][1])
+					comp_m.append(parts[1][9])
 				elif parts:
-					comp_m.append(parts[10][1])
+					comp_m.append(parts[1][10])
 				elif parts:
-					comp_m.append(parts[11][1])
+					comp_m.append(parts[1][11])
 				elif parts:
-					comp_m.append(parts[12][1])
+					comp_m.append(parts[1][12])
 				elif parts:
-					comp_m.append(parts[13][1])
+					comp_m.append(parts[1][13])
 				elif parts:
-					comp_m.append(parts[14][1])
+					comp_m.append(parts[1][14])
 
 
 				elif parts:
