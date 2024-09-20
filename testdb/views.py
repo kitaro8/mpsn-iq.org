@@ -127,230 +127,31 @@ def upload(request):
 
 
 				elif parts:
-					comp_m.append(parts[1][0])
-				elif parts:
-					comp_m.append(parts[1][1])
-				elif parts:
-					comp_m.append(parts[1][2])
-				elif parts:
-					comp_m.append(parts[1][3])
-				elif parts:
-					comp_m.append(parts[1][4])
-				elif parts:
-					comp_m.append(parts[1][5])
-				elif parts:
-					comp_m.append(parts[1][6])
-				elif parts:
-					comp_m.append(parts[1][7])
-				elif parts:
-					comp_m.append(parts[1][8])
-				elif parts:
-					comp_m.append(parts[1][9])
-				elif parts:
-					comp_m.append(parts[1][10])
-				elif parts:
-					comp_m.append(parts[1][11])
-				elif parts:
-					comp_m.append(parts[1][12])
-				elif parts:
-					comp_m.append(parts[1][13])
-				elif parts:
-					comp_m.append(parts[1][14])
-
+					comp_m.append(parts)
+				
 
 				elif parts:
-					DIS_m.append(parts[0][2])
-				elif parts:
-					DIS_m.append(parts[1][2])
-				elif parts:
-					DIS_m.append(parts[2][2])
-				elif parts:
-					DIS_m.append(parts[3][2])
-				elif parts:
-					DIS_m.append(parts[4][2])
-				elif parts:
-					DIS_m.append(parts[5][2])
-				elif parts:
-					DIS_m.append(parts[6][2])
-				elif parts:
-					DIS_m.append(parts[7][2])
-				elif parts:
-					DIS_m.append(parts[8][2])
-				elif parts:
-					DIS_m.append(parts[9][2])
-				elif parts:
-					DIS_m.append(parts[10][2])
-				elif parts:
-					DIS_m.append(parts[11][2])
-				elif parts:
-					DIS_m.append(parts[12][2])
-				elif parts:
-					DIS_m.append(parts[13][2])
-				elif parts:
-					DIS_m.append(parts[14][2])
+					DIS_m.append(parts)
 
-
+				
 				elif parts:
-					azm_m.append(parts[0][3])
-				elif parts:
-					azm_m.append(parts[1][3])
-				elif parts:
-					azm_m.append(parts[2][3])
-				elif parts:
-					azm_m.append(parts[3][3])
-				elif parts:
-					azm_m.append(parts[4][3])
-				elif parts:
-					azm_m.append(parts[5][3])
-				elif parts:
-					azm_m.append(parts[6][3])
-				elif parts:
-					azm_m.append(parts[7][3])
-				elif parts:
-					azm_m.append(parts[8][3])
-				elif parts:
-					azm_m.append(parts[9][3])
-				elif parts:
-					azm_m.append(parts[10][3])
-				elif parts:
-					azm_m.append(parts[11][3])
-				elif parts:
-					azm_m.append(parts[12][3])
-				elif parts:
-					azm_m.append(parts[13][3])
-				elif parts:
-					azm_m.append(parts[14][3])
+					azm_m.append(parts)
 
 
 
 				elif parts:
-					b_azm_m.append(parts[0][4])
-				elif parts:
-					b_azm_m.append(parts[1][4])
-				elif parts:
-					b_azm_m.append(parts[2][4])
-				elif parts:
-					b_azm_m.append(parts[3][4])
-				elif parts:
-					b_azm_m.append(parts[4][4])
-				elif parts:
-					b_azm_m.append(parts[5][4])
-				elif parts:
-					b_azm_m.append(parts[6][4])
-				elif parts:
-					b_azm_m.append(parts[7][4])
-				elif parts:
-					b_azm_m.append(parts[8][4])
-				elif parts:
-					b_azm_m.append(parts[9][4])
-				elif parts:
-					b_azm_m.append(parts[10][4])
-				elif parts:
-					b_azm_m.append(parts[11][4])
-				elif parts:
-					b_azm_m.append(parts[12][4])
-				elif parts:
-					b_azm_m.append(parts[13][4])
-				elif parts:
-					b_azm_m.append(parts[14][4])
-
+					b_azm_m.append(parts)
 
 
 				elif parts:
-					amp_m.append(parts[0][5])
+					amp_m.append(parts)
+
 				elif parts:
-					amp_m.append(parts[1][5])
-				elif parts:
-					amp_m.append(parts[2][5])
-				elif parts:
-					amp_m.append(parts[3][5])
-				elif parts:
-					amp_m.append(parts[4][5])
-				elif parts:
-					amp_m.append(parts[5][5])
-				elif parts:
-					amp_m.append(parts[6][5])
-				elif parts:
-					amp_m.append(parts[7][5])
-				elif parts:
-					amp_m.append(parts[8][5])
-				elif parts:
-					amp_m.append(parts[9][5])
-				elif parts:
-					amp_m.append(parts[10][5])
-				elif parts:
-					amp_m.append(parts[11][5])
-				elif parts:
-					amp_m.append(parts[12][5])
-				elif parts:
-					amp_m.append(parts[13][5])
-				elif parts:
-					amp_m.append(parts[14][5])
+					gain_m.append(parts)
 
 
 				elif parts:
-					gain_m.append(parts[0][6])
-				elif parts:
-					gain_m.append(parts[1][6])
-				elif parts:
-					gain_m.append(parts[2][6])
-				elif parts:
-					gain_m.append(parts[3][6])
-				elif parts:
-					gain_m.append(parts[4][6])
-				elif parts:
-					gain_m.append(parts[5][6])
-				elif parts:
-					gain_m.append(parts[6][6])
-				elif parts:
-					gain_m.append(parts[7][6])
-				elif parts:
-					gain_m.append(parts[8][6])
-				elif parts:
-					gain_m.append(parts[9][6])
-				elif parts:
-					gain_m.append(parts[10][6])
-				elif parts:
-					gain_m.append(parts[11][6])
-				elif parts:
-					gain_m.append(parts[12][6])
-				elif parts:
-					gain_m.append(parts[13][6])
-				elif parts:
-					gain_m.append(parts[14][6])
-
-
-				elif parts:
-					local_m_m.append(parts[0][7])
-				elif parts:
-					local_m_m.append(parts[1][7])
-				elif parts:
-					local_m_m.append(parts[2][7])
-				elif parts:
-					local_m_m.append(parts[3][7])
-				elif parts:
-					local_m_m.append(parts[4][7])
-				elif parts:
-					local_m_m.append(parts[5][7])
-				elif parts:
-					local_m_m.append(parts[6][7])
-				elif parts:
-					local_m_m.append(parts[7][7])
-				elif parts:
-					local_m_m.append(parts[8][7])
-				elif parts:
-					local_m_m.append(parts[9][7])
-				elif parts:
-					local_m_m.append(parts[10][7])
-				elif parts:
-					local_m_m.append(parts[11][7])
-				elif parts:
-					local_m_m.append(parts[12][7])
-				elif parts:
-					local_m_m.append(parts[13][7])
-				elif parts:
-					local_m_m.append(parts[14][7])
-
+					local_m_m.append(parts)
 
 
 
