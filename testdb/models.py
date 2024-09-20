@@ -30,10 +30,29 @@ class Post(models.Model):
     file2 = models.FileField(upload_to='sac', blank=True)
     file3 = models.FileField(upload_to='data2', blank=True)
 
+    station_m = ArrayField(models.CharField(max_length=200), blank=True, default=list)
+    comp_m = ArrayField(models.CharField(max_length=200), blank=True, default=list)
+    DIS_m = ArrayField(models.CharField(max_length=200), blank=True, default=list)
+    azm_m = ArrayField(models.CharField(max_length=200), blank=True, default=list)
+    b_azm_m = ArrayField(models.CharField(max_length=200), blank=True, default=list)
+    amp_m  = ArrayField(models.CharField(max_length=200), blank=True, default=list)
+    gain_m  = ArrayField(models.CharField(max_length=200), blank=True, default=list)
+    local_m_m  = ArrayField(models.CharField(max_length=200), blank=True, default=list)
+
+
+    station_m2 = ArrayField(models.CharField(max_length=200), blank=True, default=list)
+    comp_m2 = ArrayField(models.CharField(max_length=200), blank=True, default=list)
+    DIS_m2 = ArrayField(models.CharField(max_length=200), blank=True, default=list)
+    azm_m2 = ArrayField(models.CharField(max_length=200), blank=True, default=list)
+    b_azm_m2 = ArrayField(models.CharField(max_length=200), blank=True, default=list)
+    amp_m2  = ArrayField(models.CharField(max_length=200), blank=True, default=list)
+    gain_m2  = ArrayField(models.CharField(max_length=200), blank=True, default=list)
+    local_m_m2  = ArrayField(models.CharField(max_length=200), blank=True, default=list)
+
+
+
     file1 = models.FileField(upload_to='data', default='')
-    file1_data = ArrayField(models.CharField(max_length=200000),blank=True, default=list)
     file11 = models.FileField(upload_to='data', default='' )
-    file11_data = ArrayField(models.CharField(max_length=200000), blank=True, default=list)
 
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)

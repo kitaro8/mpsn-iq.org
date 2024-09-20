@@ -65,21 +65,53 @@ def upload(request):
 			ARR_TIME = []
 			RES = []
 			PHASE = []
+			
+			
+			station_m = []
+			comp_m = []
+			DIS_m = []
+			azm_m = []
+			b_azm_m = []
+			amp_m  = []
+			gain_m  = []
+			local_m_m  = []
 
-			file1_data = []
-			file11_data = []
+
+			station_m2 = []
+			comp_m2 = []
+			DIS_m2 = []
+			azm_m2 = []
+			b_azm_m2 = []
+			amp_m2  = []
+			gain_m2  = []
+			local_m_m2  = []
+
+
 
 
 			
 			for line in lines1:
 				parts = line.split()
-				file1_data.append(parts)
+				station_m.append(parts[0][0])
+				comp_m.append(parts[0][1])
+				DIS_m.append(parts[0][2])
+				azm_m.append(parts[0][3])
+				b_azm_m.append(parts[0][4])
+				amp_m.append(parts[0][5])
+				gain_m.append(parts[0][6])
+				local_m_m.append(parts[0][7])
 
 
 			for line in lines11:
 				parts = line.split()
-				file11_data.append(parts)
-			
+				station_m2.append(parts[0][0])
+				comp_m2.append(parts[0][1])
+				DIS_m2.append(parts[0][2])
+				azm_m2.append(parts[0][3])
+				b_azm_m2.append(parts[0][4])
+				amp_m2.append(parts[0][5])
+				gain_m2.append(parts[0][6])
+				local_m_m2.append(parts[0][7])			
 
 			
 			
@@ -591,8 +623,22 @@ def upload(request):
 				image=upload_image,
 				image2=upload_image2,
 				file2=upload_file2,
-				file1_data=file1_data,
-				file11_data=file11_data, 
+				station_m=station_m,
+				station_m2=station_m2,
+				comp_m=comp_m,
+				comp_m2=comp_m2,
+				DIS_m=DIS_m,
+				DIS_m2=DIS_m2,
+				azm_m=azm_m,
+				azm_m2=azm_m2,
+				amp_m=amp_m,
+				amp_m2=amp_m2,
+				b_azm_m=b_azm_m,
+				b_azm_m2=b_azm_m2,
+				gain_m=gain_m,
+				gain_m2=gain_m2,
+				local_m_m=local_m_m,
+				local_m_m2=local_m_m2,
 				station=station, 
 				comp=comp, 
 				DIS=DIS, 
