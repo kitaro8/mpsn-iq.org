@@ -136,6 +136,8 @@ def upload(request):
 					local_m_m2.append(parts[7])  # 9th column
 			# Example: '4.522512'
 
+
+			Magnitude = local_m_m + local_m_m2/2
 # Now you have separate lists for each value from the rows.
 
 			
