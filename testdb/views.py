@@ -400,9 +400,9 @@ def upload(request):
 					event = item1 + b" " + item2 + item3
 					event = event.decode()
 			        
-				elif b'Magnitude' in item:
-					Magnitude = item[10:16]
-					Magnitude = Magnitude.decode()
+				# elif b'Magnitude' in item:
+				# 	Magnitude = item[10:16]
+				# 	Magnitude = Magnitude.decode()
 
 
 				# elif b'MagnitudeMw' in item:
