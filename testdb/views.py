@@ -91,15 +91,273 @@ def upload(request):
 
 			
 			for line in lines1:
+				
 				parts = line.split()
-				station_m.append(parts[0][0])
-				comp_m.append(parts[0][1])
-				DIS_m.append(parts[0][2])
-				azm_m.append(parts[0][3])
-				b_azm_m.append(parts[0][0])
-				amp_m.append(parts[0][1])
-				gain_m.append(parts[0][2])
-				local_m_m.append(parts[0][3])
+
+				if parts:
+					station_m.append(parts[0][0])
+				elif parts:
+					station_m.append(parts[1][0])
+				elif parts:
+					station_m.append(parts[2][0])
+				elif parts:
+					station_m.append(parts[3][0])
+				elif parts:
+					station_m.append(parts[4][0])
+				elif parts:
+					station_m.append(parts[5][0])
+				elif parts:
+					station_m.append(parts[6][0])
+				elif parts:
+					station_m.append(parts[7][0])
+				elif parts:
+					station_m.append(parts[8][0])
+				elif parts:
+					station_m.append(parts[9][0])
+				elif parts:
+					station_m.append(parts[10][0])
+				elif parts:
+					station_m.append(parts[11][0])
+				elif parts:
+					station_m.append(parts[12][0])
+				elif parts:
+					station_m.append(parts[13][0])
+				elif parts:
+					station_m.append(parts[14][0])
+
+
+				if parts:
+					comp_m.append(parts[0][1])
+				elif parts:
+					comp_m.append(parts[1][1])
+				elif parts:
+					comp_m.append(parts[2][1])
+				elif parts:
+					comp_m.append(parts[3][1])
+				elif parts:
+					comp_m.append(parts[4][1])
+				elif parts:
+					comp_m.append(parts[5][1])
+				elif parts:
+					comp_m.append(parts[6][1])
+				elif parts:
+					comp_m.append(parts[7][1])
+				elif parts:
+					comp_m.append(parts[8][1])
+				elif parts:
+					comp_m.append(parts[9][1])
+				elif parts:
+					comp_m.append(parts[10][1])
+				elif parts:
+					comp_m.append(parts[11][1])
+				elif parts:
+					comp_m.append(parts[12][1])
+				elif parts:
+					comp_m.append(parts[13][1])
+				elif parts:
+					comp_m.append(parts[14][1])
+
+
+				if parts:
+					DIS_m.append(parts[0][2])
+				elif parts:
+					DIS_m.append(parts[1][2])
+				elif parts:
+					DIS_m.append(parts[2][2])
+				elif parts:
+					DIS_m.append(parts[3][2])
+				elif parts:
+					DIS_m.append(parts[4][2])
+				elif parts:
+					DIS_m.append(parts[5][2])
+				elif parts:
+					DIS_m.append(parts[6][2])
+				elif parts:
+					DIS_m.append(parts[7][2])
+				elif parts:
+					DIS_m.append(parts[8][2])
+				elif parts:
+					DIS_m.append(parts[9][2])
+				elif parts:
+					DIS_m.append(parts[10][2])
+				elif parts:
+					DIS_m.append(parts[11][2])
+				elif parts:
+					DIS_m.append(parts[12][2])
+				elif parts:
+					DIS_m.append(parts[13][2])
+				elif parts:
+					DIS_m.append(parts[14][2])
+
+
+				if parts:
+					azm_m.append(parts[0][3])
+				elif parts:
+					azm_m.append(parts[1][3])
+				elif parts:
+					azm_m.append(parts[2][3])
+				elif parts:
+					azm_m.append(parts[3][3])
+				elif parts:
+					azm_m.append(parts[4][3])
+				elif parts:
+					azm_m.append(parts[5][3])
+				elif parts:
+					azm_m.append(parts[6][3])
+				elif parts:
+					azm_m.append(parts[7][3])
+				elif parts:
+					azm_m.append(parts[8][3])
+				elif parts:
+					azm_m.append(parts[9][3])
+				elif parts:
+					azm_m.append(parts[10][3])
+				elif parts:
+					azm_m.append(parts[11][3])
+				elif parts:
+					azm_m.append(parts[12][3])
+				elif parts:
+					azm_m.append(parts[13][3])
+				elif parts:
+					azm_m.append(parts[14][3])
+
+
+
+				if parts:
+					b_azm_m.append(parts[0][4])
+				elif parts:
+					b_azm_m.append(parts[1][4])
+				elif parts:
+					b_azm_m.append(parts[2][4])
+				elif parts:
+					b_azm_m.append(parts[3][4])
+				elif parts:
+					b_azm_m.append(parts[4][4])
+				elif parts:
+					b_azm_m.append(parts[5][4])
+				elif parts:
+					b_azm_m.append(parts[6][4])
+				elif parts:
+					b_azm_m.append(parts[7][4])
+				elif parts:
+					b_azm_m.append(parts[8][4])
+				elif parts:
+					b_azm_m.append(parts[9][4])
+				elif parts:
+					b_azm_m.append(parts[10][4])
+				elif parts:
+					b_azm_m.append(parts[11][4])
+				elif parts:
+					b_azm_m.append(parts[12][4])
+				elif parts:
+					b_azm_m.append(parts[13][4])
+				elif parts:
+					b_azm_m.append(parts[14][4])
+
+
+
+				if parts:
+					amp_m.append(parts[0][5])
+				elif parts:
+					amp_m.append(parts[1][5])
+				elif parts:
+					amp_m.append(parts[2][5])
+				elif parts:
+					amp_m.append(parts[3][5])
+				elif parts:
+					amp_m.append(parts[4][5])
+				elif parts:
+					amp_m.append(parts[5][5])
+				elif parts:
+					amp_m.append(parts[6][5])
+				elif parts:
+					amp_m.append(parts[7][5])
+				elif parts:
+					amp_m.append(parts[8][5])
+				elif parts:
+					amp_m.append(parts[9][5])
+				elif parts:
+					amp_m.append(parts[10][5])
+				elif parts:
+					amp_m.append(parts[11][5])
+				elif parts:
+					amp_m.append(parts[12][5])
+				elif parts:
+					amp_m.append(parts[13][5])
+				elif parts:
+					amp_m.append(parts[14][5])
+
+
+				if parts:
+					gain_m.append(parts[0][6])
+				elif parts:
+					gain_m.append(parts[1][6])
+				elif parts:
+					gain_m.append(parts[2][6])
+				elif parts:
+					gain_m.append(parts[3][6])
+				elif parts:
+					gain_m.append(parts[4][6])
+				elif parts:
+					gain_m.append(parts[5][6])
+				elif parts:
+					gain_m.append(parts[6][6])
+				elif parts:
+					gain_m.append(parts[7][6])
+				elif parts:
+					gain_m.append(parts[8][6])
+				elif parts:
+					gain_m.append(parts[9][6])
+				elif parts:
+					gain_m.append(parts[10][6])
+				elif parts:
+					gain_m.append(parts[11][6])
+				elif parts:
+					gain_m.append(parts[12][6])
+				elif parts:
+					gain_m.append(parts[13][6])
+				elif parts:
+					gain_m.append(parts[14][6])
+
+
+				if parts:
+					local_m_m.append(parts[0][7])
+				elif parts:
+					local_m_m.append(parts[1][7])
+				elif parts:
+					local_m_m.append(parts[2][7])
+				elif parts:
+					local_m_m.append(parts[3][7])
+				elif parts:
+					local_m_m.append(parts[4][7])
+				elif parts:
+					local_m_m.append(parts[5][7])
+				elif parts:
+					local_m_m.append(parts[6][7])
+				elif parts:
+					local_m_m.append(parts[7][7])
+				elif parts:
+					local_m_m.append(parts[8][7])
+				elif parts:
+					local_m_m.append(parts[9][7])
+				elif parts:
+					local_m_m.append(parts[10][7])
+				elif parts:
+					local_m_m.append(parts[11][7])
+				elif parts:
+					local_m_m.append(parts[12][7])
+				elif parts:
+					local_m_m.append(parts[13][7])
+				elif parts:
+					local_m_m.append(parts[14][7])
+
+
+
+
+
+
+
+
 
 
 			for line in lines11:
