@@ -54,7 +54,7 @@ def upload(request):
 
 			upload_file2 = request.FILES['file2']
 			lines = upload_file.read()
-			lines1 = upload_file1.readlines()
+			lines1 = upload_file1.readlines(b'\n')
 			lines11 = upload_file11.readlines()
 
 
@@ -92,7 +92,7 @@ def upload(request):
 			
 			for line in lines1:
 				
-				parts = line.split()
+				parts = line.decode('utf-8').split()
 
 				if parts:
 					station_m.append(parts)
