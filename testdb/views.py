@@ -361,16 +361,11 @@ def upload(request):
 			
 
 			
-			Magnitude = [(float(x) + float(y)) / 2 for x, y in zip(local_m_m, local_m_m2)]
+			combined_values = local_m_m + local_m_m2
 
 
-			Magnitude = []
-			for x, y in zip(local_m_m, local_m_m2):
-				try:
-					Magnitude.append((float(x) + float(y)) / 2)
-				except ValueError:
-					# Handle the case where x or y cannot be converted to a float
-					Magnitude.append(None)  # or some other default value
+			Magnitude = sum(float(x) for x in combined_values) / len(combined_values)
+
 
 
 		
