@@ -19,212 +19,38 @@
           <th>Gain</th>
           <th>Local Magnitude (ML)</th>
         </tr>
+
+
+        {% for i in range(0, 19) %}  <!-- Adjust the range if you have more or fewer rows -->
         <tr>
-          <td>{{ post.station_m.0 }}</td>
-          <td>{{ post.comp_m.0 }}</td>
-          <td>{{ post.DIS_m.0 }}</td>
-          <td>{{ post.azm_m.0 }}</td>
-          <td>{{ post.b_azm_m.0 }}</td>
-          <td>{{ post.amp_m.0 }}</td>
-          <td>{{ post.gain_m.0 }}</td>
-          <td>{{ post.local_m_m.0 }}</td>
-      </tr>
-      
-      <tr>
-          <td>{{ post.station_m.1 }}</td>
-          <td>{{ post.comp_m.1 }}</td>
-          <td>{{ post.DIS_m.1 }}</td>
-          <td>{{ post.azm_m.1 }}</td>
-          <td>{{ post.amp_m.1 }}</td>
-          <td>{{ post.b_azm_m.1 }}</td>
-          <td>{{ post.gain_m.1 }}</td>
-          <td>{{ post.local_m_m.1 }}</td>
-      </tr>
-      
-      <tr>
-          <td>{{ post.station_m.2 }}</td>
-          <td>{{ post.comp_m.2 }}</td>
-          <td>{{ post.DIS_m.2 }}</td>
-          <td>{{ post.azm_m.2 }}</td>
-          <td>{{ post.amp_m.2 }}</td>
-          <td>{{ post.b_azm_m.2 }}</td>
-          <td>{{ post.gain_m.2 }}</td>
-          <td>{{ post.local_m_m.2 }}</td>
-      </tr>
-      
-      <tr>
-          <td>{{ post.station_m.3 }}</td>
-          <td>{{ post.comp_m.3 }}</td>
-          <td>{{ post.DIS_m.3 }}</td>
-          <td>{{ post.azm_m.3 }}</td>
-          <td>{{ post.amp_m.3 }}</td>
-          <td>{{ post.b_azm_m.3 }}</td>
-          <td>{{ post.gain_m.3 }}</td>
-          <td>{{ post.local_m_m.3 }}</td>
-      </tr>
-      
-      <tr>
-          <td>{{ post.station_m.4 }}</td>
-          <td>{{ post.comp_m.4 }}</td>
-          <td>{{ post.DIS_m.4 }}</td>
-          <td>{{ post.azm_m.4 }}</td>
-          <td>{{ post.amp_m.4 }}</td>
-          <td>{{ post.b_azm_m.4 }}</td>
-          <td>{{ post.gain_m.4 }}</td>
-          <td>{{ post.local_m_m.4 }}</td>
-      </tr>
-      
-      <tr>
-          <td>{{ post.station_m.5 }}</td>
-          <td>{{ post.comp_m.5 }}</td>
-          <td>{{ post.DIS_m.5 }}</td>
-          <td>{{ post.azm_m.5 }}</td>
-          <td>{{ post.amp_m.5 }}</td>
-          <td>{{ post.b_azm_m.5 }}</td>
-          <td>{{ post.gain_m.5 }}</td>
-          <td>{{ post.local_m_m.5 }}</td>
-      </tr>
-      
-      <tr>
-          <td>{{ post.station_m.6 }}</td>
-          <td>{{ post.comp_m.6 }}</td>
-          <td>{{ post.DIS_m.6 }}</td>
-          <td>{{ post.azm_m.6 }}</td>
-          <td>{{ post.amp_m.6 }}</td>
-          <td>{{ post.b_azm_m.6 }}</td>
-          <td>{{ post.gain_m.6 }}</td>
-          <td>{{ post.local_m_m.6 }}</td>
-      </tr>
-      
-      <tr>
-          <td>{{ post.station_m.7 }}</td>
-          <td>{{ post.comp_m.7 }}</td>
-          <td>{{ post.DIS_m.7 }}</td>
-          <td>{{ post.azm_m.7 }}</td>
-          <td>{{ post.amp_m.7 }}</td>
-          <td>{{ post.b_azm_m.7 }}</td>
-          <td>{{ post.gain_m.7 }}</td>
-          <td>{{ post.local_m_m.7 }}</td>
-      </tr>
-      
-      <tr>
-          <td>{{ post.station_m.8 }}</td>
-          <td>{{ post.comp_m.8 }}</td>
-          <td>{{ post.DIS_m.8 }}</td>
-          <td>{{ post.azm_m.8 }}</td>
-          <td>{{ post.amp_m.8 }}</td>
-          <td>{{ post.b_azm_m.8 }}</td>
-          <td>{{ post.gain_m.8 }}</td>
-          <td>{{ post.local_m_m.8 }}</td>
-      </tr>
-      
-      <tr>
-          <td>{{ post.station_m.9 }}</td>
-          <td>{{ post.comp_m.9 }}</td>
-          <td>{{ post.DIS_m.9 }}</td>
-          <td>{{ post.azm_m.9 }}</td>
-          <td>{{ post.amp_m.9 }}</td>
-          <td>{{ post.b_azm_m.9 }}</td>
-          <td>{{ post.gain_m.9 }}</td>
-          <td>{{ post.local_m_m.9 }}</td>
-      </tr>
-      
-      <tr>
-          <td>{{ post.station_m.10 }}</td>
-          <td>{{ post.comp_m.10 }}</td>
-          <td>{{ post.DIS_m.10 }}</td>
-          <td>{{ post.azm_m.10 }}</td>
-          <td>{{ post.amp_m.10 }}</td>
-          <td>{{ post.b_azm_m.10 }}</td>
-          <td>{{ post.gain_m.10 }}</td>
-          <td>{{ post.local_m_m.10 }}</td>
-      </tr>
-      
-      <tr>
-          <td>{{ post.station_m.11 }}</td>
-          <td>{{ post.comp_m.11 }}</td>
-          <td>{{ post.DIS_m.11 }}</td>
-          <td>{{ post.azm_m.11 }}</td>
-          <td>{{ post.amp_m.11 }}</td>
-          <td>{{ post.b_azm_m.11 }}</td>
-          <td>{{ post.gain_m.11 }}</td>
-          <td>{{ post.local_m_m.11 }}</td>
-      </tr>
-      
-      <tr>
-          <td>{{ post.station_m.12 }}</td>
-          <td>{{ post.comp_m.12 }}</td>
-          <td>{{ post.DIS_m.12 }}</td>
-          <td>{{ post.azm_m.12 }}</td>
-          <td>{{ post.amp_m.12 }}</td>
-          <td>{{ post.b_azm_m.12 }}</td>
-          <td>{{ post.gain_m.12 }}</td>
-          <td>{{ post.local_m_m.12 }}</td>
-      </tr>
-      
-      <tr>
-          <td>{{ post.station_m.13 }}</td>
-          <td>{{ post.comp_m.13 }}</td>
-          <td>{{ post.DIS_m.13 }}</td>
-          <td>{{ post.azm_m.13 }}</td>
-          <td>{{ post.amp_m.13 }}</td>
-          <td>{{ post.b_azm_m.13 }}</td>
-          <td>{{ post.gain_m.13 }}</td>
-          <td>{{ post.local_m_m.13 }}</td>
-      </tr>
-      
-      <tr>
-          <td>{{ post.station_m.14 }}</td>
-          <td>{{ post.comp_m.14 }}</td>
-          <td>{{ post.DIS_m.14 }}</td>
-          <td>{{ post.azm_m.14 }}</td>
-          <td>{{ post.amp_m.14 }}</td>
-          <td>{{ post.b_azm_m.14 }}</td>
-          <td>{{ post.gain_m.14 }}</td>
-          <td>{{ post.local_m_m.14 }}</td>
-      </tr>
-      
-      <tr>
-          <td>{{ post.station_m.15 }}</td>
-          <td>{{ post.comp_m.15 }}</td>
-          <td>{{ post.DIS_m.15 }}</td>
-          <td>{{ post.azm_m.15 }}</td>
-          <td>{{ post.amp_m.15 }}</td>
-          <td>{{ post.b_azm_m.15 }}</td>
-          <td>{{ post.gain_m.15 }}</td>
-          <td>{{ post.local_m_m.15 }}</td>
-      </tr>
-      
-      <tr>
-          <td>{{ post.station_m.16 }}</td>
-          <td>{{ post.comp_m.16 }}</td>
-          <td>{{ post.DIS_m.16 }}</td>
-          <td>{{ post.azm_m.16 }}</td>
-          <td>{{ post.amp_m.16 }}</td>
-          <td>{{ post.b_azm_m.16 }}</td>
-          <td>{{ post.gain_m.16 }}</td>
-          <td>{{ post.local_m_m.16 }}</td>
-      </tr>
-      
-      <tr>
-          <td>{{ post.station_m.17 }}</td>
-          <td>{{ post.comp_m.17 }}</td>
-          <td>{{ post.DIS_m.17 }}</td>
-          <td>{{ post.azm_m.17 }}</td>
-          <td>{{ post.amp_m.17 }}</td>
-          <td>{{ post.b_azm_m.17 }}</td>
-          <td>{{ post.gain_m.17 }}</td>
-          <td>{{ post.local_m_m.17 }}</td>
-      </tr>
-      
-      <tr>
-          <td>{{ post.station_m.18 }}</td>
-          <td>{{ post.comp_m.18 }}</td>
-          <td>{{ post.DIS_m.18 }}</td>
-          <td>{{ post.azm_m.18 }}</td>
-          <td>{{ post.amp_m.18 }}</td>
-          <td>{{ post.b_azm_m.18 }}</td>
-      </tr>
+            {% if post.station_m.i %}
+            <td>{{ post.station_m.i }}</td>
+            {% endif %}
+            {% if post.comp_m.i %}
+            <td>{{ post.comp_m.i }}</td>
+            {% endif %}
+            {% if post.DIS_m.i %}
+            <td>{{ post.DIS_m.i }}</td>
+            {% endif %}
+            {% if post.azm_m.i %}
+            <td>{{ post.azm_m.i }}</td>
+            {% endif %}
+            {% if post.b_azm_m.i %}
+            <td>{{ post.b_azm_m.i }}</td>
+            {% endif %}
+            {% if post.amp_m.i %}
+            <td>{{ post.amp_m.i }}</td>
+            {% endif %}
+            {% if post.gain_m.i %}
+            <td>{{ post.gain_m.i }}</td>
+            {% endif %}
+            {% if post.local_m_m.i %}
+            <td>{{ post.local_m_m.i }}</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+
+
 
         <img  width="160%" height="160%" src="{{ object.image2.url }}">
         <br>
