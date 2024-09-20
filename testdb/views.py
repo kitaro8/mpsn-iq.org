@@ -115,15 +115,15 @@ def upload(request):
 				if parts:
 					station_m.append(parts[9][0])
 				if parts:
-					station_m.append(parts[10][0])
-				if parts:
-					station_m.append(parts[11][0])
-				if parts:
-					station_m.append(parts[12][0])
-				if parts:
-					station_m.append(parts[13][0])
-				if parts:
-					station_m.append(parts[14][0])
+				# 	station_m.append(parts[10][0])
+				# if parts:
+				# 	station_m.append(parts[11][0])
+				# if parts:
+				# 	station_m.append(parts[12][0])
+				# if parts:
+				# 	station_m.append(parts[13][0])
+				# if parts:
+				# 	station_m.append(parts[14][0])
 
 
 				elif parts:
