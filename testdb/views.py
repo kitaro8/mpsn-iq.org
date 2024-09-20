@@ -129,11 +129,11 @@ def upload(request):
 				if len(parts) > 4:
 					b_azm_m2.append(parts[4])    # 4th column
 				if len(parts) > 7:
-					amp_m2.append(parts[7])      # 7th column
+					amp_m2.append(parts[8])      # 7th column
 				if len(parts) > 8:
-					gain_m2.append(parts[8])     # 8th column
+					gain_m2.append(parts[9])     # 8th column
 				if len(parts) > 9:
-					local_m_m2.append(parts[9])  # 9th column
+					local_m_m2.append(parts[7])  # 9th column
 			# Example: '4.522512'
 
 # Now you have separate lists for each value from the rows.
