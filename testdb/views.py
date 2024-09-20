@@ -366,6 +366,9 @@ def upload(request):
 
 			Magnitude = sum(float(x) for x in combined_values) / len(combined_values)
 
+			Magnitude = round(Magnitude, 2)
+
+
 
 
 		
