@@ -21,34 +21,35 @@
         </tr>
 
 
-        {% for i in range(0, 19) %}  <!-- Adjust the range if you have more or fewer rows -->
+        {% for i in range(19) %}  <!-- Adjust the range if you have more or fewer rows -->
         <tr>
-            {% if post.station_m.i %}
-            <td>{{ post.station_m.i }}</td>
+            {% if post.station_m[i] %}
+            <td>{{ post.station_m[i] }}</td>
             {% endif %}
-            {% if post.comp_m.i %}
-            <td>{{ post.comp_m.i }}</td>
+            {% if post.comp_m[i] %}
+            <td>{{ post.comp_m[i] }}</td>
             {% endif %}
-            {% if post.DIS_m.i %}
-            <td>{{ post.DIS_m.i }}</td>
+            {% if post.DIS_m[i] %}
+            <td>{{ post.DIS_m[i] }}</td>
             {% endif %}
-            {% if post.azm_m.i %}
-            <td>{{ post.azm_m.i }}</td>
+            {% if post.azm_m[i] %}
+            <td>{{ post.azm_m[i] }}</td>
             {% endif %}
-            {% if post.b_azm_m.i %}
-            <td>{{ post.b_azm_m.i }}</td>
+            {% if post.b_azm_m[i] %}
+            <td>{{ post.b_azm_m[i] }}</td>
             {% endif %}
-            {% if post.amp_m.i %}
-            <td>{{ post.amp_m.i }}</td>
+            {% if post.amp_m[i] %}
+            <td>{{ post.amp_m[i] }}</td>
             {% endif %}
-            {% if post.gain_m.i %}
-            <td>{{ post.gain_m.i }}</td>
+            {% if post.gain_m[i] %}
+            <td>{{ post.gain_m[i] }}</td>
             {% endif %}
-            {% if post.local_m_m.i %}
-            <td>{{ post.local_m_m.i }}</td>
+            {% if post.local_m_m[i] %}
+            <td>{{ post.local_m_m[i] }}</td>
             {% endif %}
         </tr>
         {% endfor %}
+        
 
 
 
