@@ -88,224 +88,270 @@ def upload(request):
 
 
 
-
-			
 			for line in lines1:
-				
 				parts = line.decode('utf-8').split()
 
-				if parts:
-					station_m.append(parts[0])
-				if parts:
-					station_m.append(parts[1])
-				if parts:
-					station_m.append(parts[2])
-				if parts:
-					station_m.append(parts[3])
-				if parts:
-					station_m.append(parts[4])
-				if parts:
-					station_m.append(parts[5])
-				if parts:
-					station_m.append(parts[6])
-				if parts:
-					station_m.append(parts[7])
-				if parts:
-					station_m.append(parts[8])
-				if parts:
-					station_m.append(parts[9])
-				# if parts:
-				# 	station_m.append(parts[10])
-				# if parts:
-				# 	station_m.append(parts[11])
-				# if parts:
-				# 	station_m.append(parts[12])
-				# if parts:
-				# 	station_m.append(parts[13])
-				# if parts:
-				# 	station_m.append(parts[14])
+				if len(parts) > 0:
+					station_m2.append(parts[0])  # BSR1, NSR1, etc.
+				if len(parts) > 1:
+					comp_m2.append(parts[1])      # BHR, BHT, etc.
+				if len(parts) > 2:
+					DIS_m2.append(parts[2])       # 316.353088, etc.
+				if len(parts) > 3:
+					azm_m2.append(parts[3])       # 168.917557, etc.
+				if len(parts) > 4:
+					b_azm_m2.append(parts[4])     # 349.248199, etc.
+				if len(parts) > 5:
+					amp_m2.append(parts[5])       # 18182.407601, etc.
+				if len(parts) > 6:
+					gain_m2.append(parts[6])      # 0.830000, etc.
+				if len(parts) > 7:
+					local_m_m2.append(parts[7])   # 5.380024, etc.
 
-
-				if parts:
-					comp_m.append(parts)
-				if parts:
-					comp_m.append(parts[1])
-				if parts:
-					comp_m.append(parts[2])
-				if parts:
-					comp_m.append(parts[3])
-				if parts:
-					comp_m.append(parts[4])
-				if parts:
-					comp_m.append(parts[5])
-				if parts:
-					comp_m.append(parts[6])
-				if parts:
-					comp_m.append(parts[7])
-				if parts:
-					comp_m.append(parts[8])
-				if parts:
-					comp_m.append(parts[9])
-
-
-				if parts:
-					DIS_m.append(parts[0])
-				if parts:
-					DIS_m.append(parts[1])
-				if parts:
-					DIS_m.append(parts[2])
-				if parts:
-					DIS_m.append(parts[3])
-				if parts:
-					DIS_m.append(parts[4])
-				if parts:
-					DIS_m.append(parts[5])
-				if parts:
-					DIS_m.append(parts[6])
-				if parts:
-					DIS_m.append(parts[7])
-				if parts:
-					DIS_m.append(parts[8])
-				if parts:
-					DIS_m.append(parts[9])
-
-
-
-				if parts:
-					azm_m.append(parts[0])
-				if parts:
-					azm_m.append(parts[1])
-				if parts:
-					azm_m.append(parts[2])
-				if parts:
-					azm_m.append(parts[3])
-				if parts:
-					azm_m.append(parts[4])
-				if parts:
-					azm_m.append(parts[5])
-				if parts:
-					azm_m.append(parts[6])
-				if parts:
-					azm_m.append(parts[7])
-				if parts:
-					azm_m.append(parts[8])
-				if parts:
-					azm_m.append(parts[9])
-
-
-
-
-
-				if parts:
-					b_azm_m.append(parts[0])
-				if parts:
-					b_azm_m.append(parts[1])
-				if parts:
-					b_azm_m.append(parts[2])
-				if parts:
-					b_azm_m.append(parts[3])
-				if parts:
-					b_azm_m.append(parts[4])
-				if parts:
-					b_azm_m.append(parts[5])
-				if parts:
-					b_azm_m.append(parts[6])
-				if parts:
-					b_azm_m.append(parts[7])
-				if parts:
-					b_azm_m.append(parts[8])
-				if parts:
-					b_azm_m.append(parts[9])
-				
-
-
-				if parts:
-					amp_m.append(parts[0])
-				if parts:
-					amp_m.append(parts[1])
-				if parts:
-					amp_m.append(parts[2])
-				if parts:
-					amp_m.append(parts[3])
-				if parts:
-					amp_m.append(parts[4])
-				if parts:
-					amp_m.append(parts[5])
-				if parts:
-					amp_m.append(parts[6])
-				if parts:
-					amp_m.append(parts[7])
-				if parts:
-					amp_m.append(parts[8])
-				if parts:
-					amp_m.append(parts[9])
-
-
-
-				if parts:
-					gain_m.append(parts[0])
-				if parts:
-					gain_m.append(parts[1])
-				if parts:
-					gain_m.append(parts[2])
-				if parts:
-					gain_m.append(parts[3])
-				if parts:
-					gain_m.append(parts[4])
-				if parts:
-					gain_m.append(parts[5])
-				if parts:
-					gain_m.append(parts[6])
-				if parts:
-					gain_m.append(parts[7])
-				if parts:
-					gain_m.append(parts[8])
-				if parts:
-					gain_m.append(parts[9])
-
-
-
-				if parts:
-					local_m_m.append(parts[0])
-				if parts:
-					local_m_m.append(parts[1])
-				if parts:
-					local_m_m.append(parts[2])
-				if parts:
-					local_m_m.append(parts[3])
-				if parts:
-					local_m_m.append(parts[4])
-				if parts:
-					local_m_m.append(parts[5])
-				if parts:
-					local_m_m.append(parts[6])
-				if parts:
-					local_m_m.append(parts[7])
-				if parts:
-					local_m_m.append(parts[8])
-				if parts:
-					local_m_m.append(parts[9])
-
-
-
-
-
-
-
+			# Now each list will store the respective values from all rows together.
 
 
 
 
 			for line in lines11:
-				parts = line.split()
-				station_m2.append(parts[0][0])
-				comp_m2.append(parts[0][1])
-				DIS_m2.append(parts[0][2])
-				azm_m2.append(parts[0][3])
-				b_azm_m2.append(parts[0][0])
-				amp_m2.append(parts[0][1])
-				gain_m2.append(parts[0][2])
-				local_m_m2.append(parts[0][3])			
+				parts = line.decode('utf-8').split()
+
+				if len(parts) > 0:
+					station_m2.append(parts[0])  # Example: 'BSR1'
+				if len(parts) > 1:
+					comp_m2.append(parts[1])     # Example: 'BHZ'
+				if len(parts) > 2:
+					DIS_m2.append(parts[2])      # Example: '194.320450'
+				if len(parts) > 3:
+					azm_m2.append(parts[3])      # Example: '237.942673'
+				if len(parts) > 4:
+					b_azm_m2.append(parts[4])    # Example: '57.073227'
+				if len(parts) > 5:
+					amp_m2.append(parts[5])      # Example: '6606.188532'
+				if len(parts) > 6:
+					gain_m2.append(parts[6])     # Example: '0.740000'
+				if len(parts) > 7:
+					local_m_m2.append(parts[7])  # Example: '4.522512'
+
+# Now you have separate lists for each value from the rows.
+
+			
+			# for line in lines1:
+				
+			# 	parts = line.decode('utf-8').split()
+
+			# 	if parts:
+			# 		station_m.append(parts[0])
+			# 	if parts:
+			# 		station_m.append(parts[1])
+			# 	if parts:
+			# 		station_m.append(parts[2])
+			# 	if parts:
+			# 		station_m.append(parts[3])
+			# 	if parts:
+			# 		station_m.append(parts[4])
+			# 	if parts:
+			# 		station_m.append(parts[5])
+			# 	if parts:
+			# 		station_m.append(parts[6])
+			# 	if parts:
+			# 		station_m.append(parts[7])
+			# 	if parts:
+			# 		station_m.append(parts[8])
+			# 	if parts:
+			# 		station_m.append(parts[9])
+			# 	# if parts:
+			# 	# 	station_m.append(parts[10])
+			# 	# if parts:
+			# 	# 	station_m.append(parts[11])
+			# 	# if parts:
+			# 	# 	station_m.append(parts[12])
+			# 	# if parts:
+			# 	# 	station_m.append(parts[13])
+			# 	# if parts:
+			# 	# 	station_m.append(parts[14])
+
+
+			# 	if parts:
+			# 		comp_m.append(parts)
+			# 	if parts:
+			# 		comp_m.append(parts[1])
+			# 	if parts:
+			# 		comp_m.append(parts[2])
+			# 	if parts:
+			# 		comp_m.append(parts[3])
+			# 	if parts:
+			# 		comp_m.append(parts[4])
+			# 	if parts:
+			# 		comp_m.append(parts[5])
+			# 	if parts:
+			# 		comp_m.append(parts[6])
+			# 	if parts:
+			# 		comp_m.append(parts[7])
+			# 	if parts:
+			# 		comp_m.append(parts[8])
+			# 	if parts:
+			# 		comp_m.append(parts[9])
+
+
+			# 	if parts:
+			# 		DIS_m.append(parts[0])
+			# 	if parts:
+			# 		DIS_m.append(parts[1])
+			# 	if parts:
+			# 		DIS_m.append(parts[2])
+			# 	if parts:
+			# 		DIS_m.append(parts[3])
+			# 	if parts:
+			# 		DIS_m.append(parts[4])
+			# 	if parts:
+			# 		DIS_m.append(parts[5])
+			# 	if parts:
+			# 		DIS_m.append(parts[6])
+			# 	if parts:
+			# 		DIS_m.append(parts[7])
+			# 	if parts:
+			# 		DIS_m.append(parts[8])
+			# 	if parts:
+			# 		DIS_m.append(parts[9])
+
+
+
+			# 	if parts:
+			# 		azm_m.append(parts[0])
+			# 	if parts:
+			# 		azm_m.append(parts[1])
+			# 	if parts:
+			# 		azm_m.append(parts[2])
+			# 	if parts:
+			# 		azm_m.append(parts[3])
+			# 	if parts:
+			# 		azm_m.append(parts[4])
+			# 	if parts:
+			# 		azm_m.append(parts[5])
+			# 	if parts:
+			# 		azm_m.append(parts[6])
+			# 	if parts:
+			# 		azm_m.append(parts[7])
+			# 	if parts:
+			# 		azm_m.append(parts[8])
+			# 	if parts:
+			# 		azm_m.append(parts[9])
+
+
+
+
+
+			# 	if parts:
+			# 		b_azm_m.append(parts[0])
+			# 	if parts:
+			# 		b_azm_m.append(parts[1])
+			# 	if parts:
+			# 		b_azm_m.append(parts[2])
+			# 	if parts:
+			# 		b_azm_m.append(parts[3])
+			# 	if parts:
+			# 		b_azm_m.append(parts[4])
+			# 	if parts:
+			# 		b_azm_m.append(parts[5])
+			# 	if parts:
+			# 		b_azm_m.append(parts[6])
+			# 	if parts:
+			# 		b_azm_m.append(parts[7])
+			# 	if parts:
+			# 		b_azm_m.append(parts[8])
+			# 	if parts:
+			# 		b_azm_m.append(parts[9])
+				
+
+
+			# 	if parts:
+			# 		amp_m.append(parts[0])
+			# 	if parts:
+			# 		amp_m.append(parts[1])
+			# 	if parts:
+			# 		amp_m.append(parts[2])
+			# 	if parts:
+			# 		amp_m.append(parts[3])
+			# 	if parts:
+			# 		amp_m.append(parts[4])
+			# 	if parts:
+			# 		amp_m.append(parts[5])
+			# 	if parts:
+			# 		amp_m.append(parts[6])
+			# 	if parts:
+			# 		amp_m.append(parts[7])
+			# 	if parts:
+			# 		amp_m.append(parts[8])
+			# 	if parts:
+			# 		amp_m.append(parts[9])
+
+
+
+			# 	if parts:
+			# 		gain_m.append(parts[0])
+			# 	if parts:
+			# 		gain_m.append(parts[1])
+			# 	if parts:
+			# 		gain_m.append(parts[2])
+			# 	if parts:
+			# 		gain_m.append(parts[3])
+			# 	if parts:
+			# 		gain_m.append(parts[4])
+			# 	if parts:
+			# 		gain_m.append(parts[5])
+			# 	if parts:
+			# 		gain_m.append(parts[6])
+			# 	if parts:
+			# 		gain_m.append(parts[7])
+			# 	if parts:
+			# 		gain_m.append(parts[8])
+			# 	if parts:
+			# 		gain_m.append(parts[9])
+
+
+
+			# 	if parts:
+			# 		local_m_m.append(parts[0])
+			# 	if parts:
+			# 		local_m_m.append(parts[1])
+			# 	if parts:
+			# 		local_m_m.append(parts[2])
+			# 	if parts:
+			# 		local_m_m.append(parts[3])
+			# 	if parts:
+			# 		local_m_m.append(parts[4])
+			# 	if parts:
+			# 		local_m_m.append(parts[5])
+			# 	if parts:
+			# 		local_m_m.append(parts[6])
+			# 	if parts:
+			# 		local_m_m.append(parts[7])
+			# 	if parts:
+			# 		local_m_m.append(parts[8])
+			# 	if parts:
+			# 		local_m_m.append(parts[9])
+
+
+
+
+
+
+
+
+
+
+
+			# for line in lines11:
+			# 	parts = line.split()
+			# 	station_m2.append(parts[0][0])
+			# 	comp_m2.append(parts[0][1])
+			# 	DIS_m2.append(parts[0][2])
+			# 	azm_m2.append(parts[0][3])
+			# 	b_azm_m2.append(parts[0][0])
+			# 	amp_m2.append(parts[0][1])
+			# 	gain_m2.append(parts[0][2])
+			# 	local_m_m2.append(parts[0][3])			
 
 			
 			
