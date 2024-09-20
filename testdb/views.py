@@ -92,21 +92,23 @@ def upload(request):
 				parts = line.decode('utf-8').split()
 
 				if len(parts) > 0:
-					station_m.append(parts[0])  # BSR1, NSR1, etc.
+					station_m.append(parts[0])  # 0th column
 				if len(parts) > 1:
-					comp_m.append(parts[1])      # BHR, BHT, etc.
+					comp_m.append(parts[1])     # 1st column
 				if len(parts) > 2:
-					DIS_m.append(parts[2])       # 316.353088, etc.
+					DIS_m.append(parts[2])      # 2nd column
 				if len(parts) > 3:
-					azm_m.append(parts[3])       # 168.917557, etc.
+					azm_m.append(parts[3])      # 3rd column
 				if len(parts) > 4:
-					b_azm_m.append(parts[4])     # 349.248199, etc.
-				if len(parts) > 5:
-					amp_m.append(parts[5])       # 18182.407601, etc.
-				if len(parts) > 6:
-					gain_m.append(parts[6])      # 0.830000, etc.
+					b_azm_m.append(parts[4])    # 4th column
 				if len(parts) > 7:
-					local_m_m.append(parts[7])   # 5.380024, etc.
+					amp_m.append(parts[7])      # 7th column
+				if len(parts) > 8:
+					gain_m.append(parts[8])     # 8th column
+				if len(parts) > 9:
+					local_m_m.append(parts[9])  # 9th column
+
+			# 5.380024, etc.
 
 			# Now each list will store the respective values from all rows together.
 
@@ -117,21 +119,22 @@ def upload(request):
 				parts = line.decode('utf-8').split()
 
 				if len(parts) > 0:
-					station_m2.append(parts[0])  # Example: 'BSR1'
+					station_m2.append(parts[0])  # 0th column
 				if len(parts) > 1:
-					comp_m2.append(parts[1])     # Example: 'BHZ'
+					comp_m2.append(parts[1])     # 1st column
 				if len(parts) > 2:
-					DIS_m2.append(parts[2])      # Example: '194.320450'
+					DIS_m2.append(parts[2])      # 2nd column
 				if len(parts) > 3:
-					azm_m2.append(parts[3])      # Example: '237.942673'
+					azm_m2.append(parts[3])      # 3rd column
 				if len(parts) > 4:
-					b_azm_m2.append(parts[4])    # Example: '57.073227'
-				if len(parts) > 5:
-					amp_m2.append(parts[5])      # Example: '6606.188532'
-				if len(parts) > 6:
-					gain_m2.append(parts[6])     # Example: '0.740000'
+					b_azm_m2.append(parts[4])    # 4th column
 				if len(parts) > 7:
-					local_m_m2.append(parts[7])  # Example: '4.522512'
+					amp_m2.append(parts[7])      # 7th column
+				if len(parts) > 8:
+					gain_m2.append(parts[8])     # 8th column
+				if len(parts) > 9:
+					local_m_m2.append(parts[9])  # 9th column
+			# Example: '4.522512'
 
 # Now you have separate lists for each value from the rows.
 
