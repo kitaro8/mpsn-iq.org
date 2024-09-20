@@ -95,35 +95,35 @@ def upload(request):
 				parts = line.split()
 
 				if parts:
-					station_m.append(parts[0][0])
+					station_m.append(parts[0])
 				elif parts:
-					station_m.append(parts[1][0])
+					station_m.append(parts[1])
 				elif parts:
-					station_m.append(parts[2][0])
+					station_m.append(parts[2])
 				elif parts:
-					station_m.append(parts[3][0])
+					station_m.append(parts[3])
 				elif parts:
-					station_m.append(parts[4][0])
+					station_m.append(parts[4])
 				elif parts:
-					station_m.append(parts[5][0])
+					station_m.append(parts[5])
 				elif parts:
-					station_m.append(parts[6][0])
+					station_m.append(parts[6])
 				elif parts:
-					station_m.append(parts[7][0])
+					station_m.append(parts[7])
 				elif parts:
-					station_m.append(parts[8][0])
+					station_m.append(parts[8])
 				elif parts:
-					station_m.append(parts[9][0])
+					station_m.append(parts[9])
 				elif parts:
-					station_m.append(parts[10][0])
+					station_m.append(parts[10])
 				elif parts:
-					station_m.append(parts[11][0])
+					station_m.append(parts[11])
 				elif parts:
-					station_m.append(parts[12][0])
+					station_m.append(parts[12])
 				elif parts:
-					station_m.append(parts[13][0])
+					station_m.append(parts[13])
 				elif parts:
-					station_m.append(parts[14][0])
+					station_m.append(parts[14])
 
 
 				elif parts:
@@ -882,21 +882,21 @@ def upload(request):
 				image2=upload_image2,
 				file2=upload_file2,
 				station_m=parts,
-				station_m2=parts,
-				comp_m=parts,
-				comp_m2=parts,
-				DIS_m=parts,
-				DIS_m2=parts,
-				azm_m=parts,
-				azm_m2=parts,
-				amp_m=parts,
-				amp_m2=parts,
-				b_azm_m=parts,
-				b_azm_m2=parts,
-				gain_m=parts,
-				gain_m2=parts,
-				local_m_m=parts,
-				local_m_m2=parts,
+				station_m2=station_m2,
+				comp_m=comp_m,
+				comp_m2=comp_m2,
+				DIS_m=DIS_m,
+				DIS_m2=DIS_m2,
+				azm_m=azm_m,
+				azm_m2=azm_m2,
+				amp_m=amp_m,
+				amp_m2=amp_m2,
+				b_azm_m=b_azm_m,
+				b_azm_m2=b_azm_m2,
+				gain_m=gain_m,
+				gain_m2=gain_m2,
+				local_m_m=local_m_m,
+				local_m_m2=local_m_m2,
 				station=station, 
 				comp=comp, 
 				DIS=DIS, 
