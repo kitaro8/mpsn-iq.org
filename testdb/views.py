@@ -881,7 +881,7 @@ def upload(request):
 				image=upload_image,
 				image2=upload_image2,
 				file2=upload_file2,
-				station_m=parts,
+				station_m=station_m,
 				station_m2=station_m2,
 				comp_m=comp_m,
 				comp_m2=comp_m2,
