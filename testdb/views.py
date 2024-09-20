@@ -114,7 +114,7 @@ def upload(request):
 					station_m.append(parts[8][0])
 				if parts:
 					station_m.append(parts[9][0])
-				if parts:
+				# if parts:
 				# 	station_m.append(parts[10][0])
 				# if parts:
 				# 	station_m.append(parts[11][0])
