@@ -21,7 +21,7 @@
       <p style="width: 100%;"><strong>Location uncertainty: </strong>+/-{{ post.lu1 }} in N-S Direction | +/-{{ post.lu2 }} in E-W Direction</p>
       <p><strong>RMS error: </strong>{{ post.RMS }}</p>
       <p><strong>Azimuthal Gap: </strong>{{ post.Gap }}°</p>
-      <p><strong>Source: </strong>Seismological Laboratory of the University of Basrah (SLUB)</p>
+      <p><strong>Source: </strong>Mesopotamian Seismological Network (MPSN) in Iraq</p>
       <a href="{% url 'post_phase' post.id %}">Phase (Arrival times)</a><br>
       <a href="{% url 'mag_value' post.id %}">Magnitude Value</a><br>
       <a href="{{ post.file2.url }}"  target="_blank">Wave File Download</a><hr>
