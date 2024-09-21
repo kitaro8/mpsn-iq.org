@@ -1,204 +1,205 @@
-{% extends "testdb/base.html" %}
-{% block content %}
+  {% extends "testdb/base.html" %}
+  {% block content %}
 
-<br>
-<br>
-<div>
-    
-    <br>
+  <br>
+  <br>
+  <div>
+      
+      <br>
 
 
-    <table style="width:1000px; margin-left: 70px; font-family: Times New Roman;">
-        <tr>
-          <th>Station</th>
-          <th>Component</th>
-          <th>Distance(km)</th>
-          <th>Azimuth(degree)</th>
-          <th>Back Azimuth(degree)</th>
-          <th>Amplitude (nm)</th>
-          <th>Gain</th>
-          <th>Local Magnitude (ML)</th>
-        </tr>
-        <tr>
-          {% if post.station_m.0 %}<td>{{ post.station_m.0 }}</td>{% endif %}
-          {% if post.comp_m.0 %}<td>{{ post.comp_m.0 }}</td>{% endif %}
-          {% if post.DIS_m.0 %}<td>{{ post.DIS_m.0 }}</td>{% endif %}
-          {% if post.azm_m.0 %}<td>{{ post.azm_m.0 }}</td>{% endif %}
-          {% if post.b_azm_m.0 %}<td>{{ post.b_azm_m.0 }}</td>{% endif %}
-          {% if post.amp_m.0 %}<td>{{ post.amp_m.0 }}</td>{% endif %}
-          {% if post.gain_m.0 %}<td>{{ post.gain_m.0 }}</td>{% endif %}
-          {% if post.local_m_m.0 %}<td>{{ post.local_m_m.0 }}</td>{% endif %}
-        </tr>
-        
-        <tr>
-          {% if post.station_m.1 %}<td>{{ post.station_m.1 }}</td>{% endif %}
-          {% if post.comp_m.1 %}<td>{{ post.comp_m.1 }}</td>{% endif %}
-          {% if post.DIS_m.1 %}<td>{{ post.DIS_m.1 }}</td>{% endif %}
-          {% if post.azm_m.1 %}<td>{{ post.azm_m.1 }}</td>{% endif %}
-          {% if post.b_azm_m.1 %}<td>{{ post.b_azm_m.1 }}</td>{% endif %}
-          {% if post.amp_m.1 %}<td>{{ post.amp_m.1 }}</td>{% endif %}
-          {% if post.gain_m.1 %}<td>{{ post.gain_m.1 }}</td>{% endif %}
-          {% if post.local_m_m.1 %}<td>{{ post.local_m_m.1 }}</td>{% endif %}
-        </tr>
-        
-        <tr>
-          {% if post.station_m.2 %}<td>{{ post.station_m.2 }}</td>{% endif %}
-          {% if post.comp_m.2 %}<td>{{ post.comp_m.2 }}</td>{% endif %}
-          {% if post.DIS_m.2 %}<td>{{ post.DIS_m.2 }}</td>{% endif %}
-          {% if post.azm_m.2 %}<td>{{ post.azm_m.2 }}</td>{% endif %}
-          {% if post.b_azm_m.2 %}<td>{{ post.b_azm_m.2 }}</td>{% endif %}
-          {% if post.amp_m.2 %}<td>{{ post.amp_m.2 }}</td>{% endif %}
-          {% if post.gain_m.2 %}<td>{{ post.gain_m.2 }}</td>{% endif %}
-          {% if post.local_m_m.2 %}<td>{{ post.local_m_m.2 }}</td>{% endif %}
-        </tr>
-        
-        <tr>
-          {% if post.station_m.3 %}<td>{{ post.station_m.3 }}</td>{% endif %}
-          {% if post.comp_m.3 %}<td>{{ post.comp_m.3 }}</td>{% endif %}
-          {% if post.DIS_m.3 %}<td>{{ post.DIS_m.3 }}</td>{% endif %}
-          {% if post.azm_m.3 %}<td>{{ post.azm_m.3 }}</td>{% endif %}
-          {% if post.b_azm_m.3 %}<td>{{ post.b_azm_m.3 }}</td>{% endif %}
-          {% if post.amp_m.3 %}<td>{{ post.amp_m.3 }}</td>{% endif %}
-          {% if post.gain_m.3 %}<td>{{ post.gain_m.3 }}</td>{% endif %}
-          {% if post.local_m_m.3 %}<td>{{ post.local_m_m.3 }}</td>{% endif %}
-        </tr>
-        
-        <tr>
-          {% if post.station_m.4 %}<td>{{ post.station_m.4 }}</td>{% endif %}
-          {% if post.comp_m.4 %}<td>{{ post.comp_m.4 }}</td>{% endif %}
-          {% if post.DIS_m.4 %}<td>{{ post.DIS_m.4 }}</td>{% endif %}
-          {% if post.azm_m.4 %}<td>{{ post.azm_m.4 }}</td>{% endif %}
-          {% if post.b_azm_m.4 %}<td>{{ post.b_azm_m.4 }}</td>{% endif %}
-          {% if post.amp_m.4 %}<td>{{ post.amp_m.4 }}</td>{% endif %}
-          {% if post.gain_m.4 %}<td>{{ post.gain_m.4 }}</td>{% endif %}
-          {% if post.local_m_m.4 %}<td>{{ post.local_m_m.4 }}</td>{% endif %}
-        </tr>
-        
-        <tr>
-          {% if post.station_m.5 %}<td>{{ post.station_m.5 }}</td>{% endif %}
-          {% if post.comp_m.5 %}<td>{{ post.comp_m.5 }}</td>{% endif %}
-          {% if post.DIS_m.5 %}<td>{{ post.DIS_m.5 }}</td>{% endif %}
-          {% if post.azm_m.5 %}<td>{{ post.azm_m.5 }}</td>{% endif %}
-          {% if post.b_azm_m.5 %}<td>{{ post.b_azm_m.5 }}</td>{% endif %}
-          {% if post.amp_m.5 %}<td>{{ post.amp_m.5 }}</td>{% endif %}
-          {% if post.gain_m.5 %}<td>{{ post.gain_m.5 }}</td>{% endif %}
-          {% if post.local_m_m.5 %}<td>{{ post.local_m_m.5 }}</td>{% endif %}
-        </tr>
-        
-        <tr>
-          {% if post.station_m.6 %}<td>{{ post.station_m.6 }}</td>{% endif %}
-          {% if post.comp_m.6 %}<td>{{ post.comp_m.6 }}</td>{% endif %}
-          {% if post.DIS_m.6 %}<td>{{ post.DIS_m.6 }}</td>{% endif %}
-          {% if post.azm_m.6 %}<td>{{ post.azm_m.6 }}</td>{% endif %}
-          {% if post.b_azm_m.6 %}<td>{{ post.b_azm_m.6 }}</td>{% endif %}
-          {% if post.amp_m.6 %}<td>{{ post.amp_m.6 }}</td>{% endif %}
-          {% if post.gain_m.6 %}<td>{{ post.gain_m.6 }}</td>{% endif %}
-          {% if post.local_m_m.6 %}<td>{{ post.local_m_m.6 }}</td>{% endif %}
-        </tr>
-        
-        <tr>
-          {% if post.station_m.7 %}<td>{{ post.station_m.7 }}</td>{% endif %}
-          {% if post.comp_m.7 %}<td>{{ post.comp_m.7 }}</td>{% endif %}
-          {% if post.DIS_m.7 %}<td>{{ post.DIS_m.7 }}</td>{% endif %}
-          {% if post.azm_m.7 %}<td>{{ post.azm_m.7 }}</td>{% endif %}
-          {% if post.b_azm_m.7 %}<td>{{ post.b_azm_m.7 }}</td>{% endif %}
-          {% if post.amp_m.7 %}<td>{{ post.amp_m.7 }}</td>{% endif %}
-          {% if post.gain_m.7 %}<td>{{ post.gain_m.7 }}</td>{% endif %}
-          {% if post.local_m_m.7 %}<td>{{ post.local_m_m.7 }}</td>{% endif %}
-        </tr>
-        
-        <tr>
-          {% if post.station_m.8 %}<td>{{ post.station_m.8 }}</td>{% endif %}
-          {% if post.comp_m.8 %}<td>{{ post.comp_m.8 }}</td>{% endif %}
-          {% if post.DIS_m.8 %}<td>{{ post.DIS_m.8 }}</td>{% endif %}
-          {% if post.azm_m.8 %}<td>{{ post.azm_m.8 }}</td>{% endif %}
-          {% if post.b_azm_m.8 %}<td>{{ post.b_azm_m.8 }}</td>{% endif %}
-          {% if post.amp_m.8 %}<td>{{ post.amp_m.8 }}</td>{% endif %}
-          {% if post.gain_m.8 %}<td>{{ post.gain_m.8 }}</td>{% endif %}
-          {% if post.local_m_m.8 %}<td>{{ post.local_m_m.8 }}</td>{% endif %}
-        </tr>
-        
-        <tr>
-          {% if post.station_m.9 %}<td>{{ post.station_m.9 }}</td>{% endif %}
-          {% if post.comp_m.9 %}<td>{{ post.comp_m.9 }}</td>{% endif %}
-          {% if post.DIS_m.9 %}<td>{{ post.DIS_m.9 }}</td>{% endif %}
-          {% if post.azm_m.9 %}<td>{{ post.azm_m.9 }}</td>{% endif %}
-          {% if post.b_azm_m.9 %}<td>{{ post.b_azm_m.9 }}</td>{% endif %}
-          {% if post.amp_m.9 %}<td>{{ post.amp_m.9 }}</td>{% endif %}
-          {% if post.gain_m.9 %}<td>{{ post.gain_m.9 }}</td>{% endif %}
-          {% if post.local_m_m.9 %}<td>{{ post.local_m_m.9 }}</td>{% endif %}
-        </tr>
-        
-        <tr>
-          {% if post.station_m.10 %}<td>{{ post.station_m.10 }}</td>{% endif %}
-          {% if post.comp_m.10 %}<td>{{ post.comp_m.10 }}</td>{% endif %}
-          {% if post.DIS_m.10 %}<td>{{ post.DIS_m.10 }}</td>{% endif %}
-          {% if post.azm_m.10 %}<td>{{ post.azm_m.10 }}</td>{% endif %}
-          {% if post.b_azm_m.10 %}<td>{{ post.b_azm_m.10 }}</td>{% endif %}
-          {% if post.amp_m.10 %}<td>{{ post.amp_m.10 }}</td>{% endif %}
-          {% if post.gain_m.10 %}<td>{{ post.gain_m.10 }}</td>{% endif %}
-          {% if post.local_m_m.10 %}<td>{{ post.local_m_m.10 }}</td>{% endif %}
-        </tr>
-        
-        <tr>
-          {% if post.station_m.11 %}<td>{{ post.station_m.11 }}</td>{% endif %}
-          {% if post.comp_m.11 %}<td>{{ post.comp_m.11 }}</td>{% endif %}
-          {% if post.DIS_m.11 %}<td>{{ post.DIS_m.11 }}</td>{% endif %}
-          {% if post.azm_m.11 %}<td>{{ post.azm_m.11 }}</td>{% endif %}
-          {% if post.b_azm_m.11 %}<td>{{ post.b_azm_m.11 }}</td>{% endif %}
-          {% if post.amp_m.11 %}<td>{{ post.amp_m.11 }}</td>{% endif %}
-          {% if post.gain_m.11 %}<td>{{ post.gain_m.11 }}</td>{% endif %}
-          {% if post.local_m_m.11 %}<td>{{ post.local_m_m.11 }}</td>{% endif %}
-        </tr>
-        
-        <tr>
-          {% if post.station_m.12 %}<td>{{ post.station_m.12 }}</td>{% endif %}
-          {% if post.comp_m.12 %}<td>{{ post.comp_m.12 }}</td>{% endif %}
-          {% if post.DIS_m.12 %}<td>{{ post.DIS_m.12 }}</td>{% endif %}
-          {% if post.azm_m.12 %}<td>{{ post.azm_m.12 }}</td>{% endif %}
-          {% if post.b_azm_m.12 %}<td>{{ post.b_azm_m.12 }}</td>{% endif %}
-          {% if post.amp_m.12 %}<td>{{ post.amp_m.12 }}</td>{% endif %}
-          {% if post.gain_m.12 %}<td>{{ post.gain_m.12 }}</td>{% endif %}
-          {% if post.local_m_m.12 %}<td>{{ post.local_m_m.12 }}</td>{% endif %}
-        </tr>
-        
-        <tr>
-          {% if post.station_m.13 %}<td>{{ post.station_m.13 }}</td>{% endif %}
-          {% if post.comp_m.13 %}<td>{{ post.comp_m.13 }}</td>{% endif %}
-          {% if post.DIS_m.13 %}<td>{{ post.DIS_m.13 }}</td>{% endif %}
-          {% if post.azm_m.13 %}<td>{{ post.azm_m.13 }}</td>{% endif %}
-          {% if post.b_azm_m.13 %}<td>{{ post.b_azm_m.13 }}</td>{% endif %}
-          {% if post.amp_m.13 %}<td>{{ post.amp_m.13 }}</td>{% endif %}
-          {% if post.gain_m.13 %}<td>{{ post.gain_m.13 }}</td>{% endif %}
-          {% if post.local_m_m.13 %}<td>{{ post.local_m_m.13 }}</td>{% endif %}
-        </tr>
-        
-        <tr>
-          {% if post.station_m.14 %}<td>{{ post.station_m.14 }}</td>{% endif %}
-          {% if post.comp_m.14 %}<td>{{ post.comp_m.14 }}</td>{% endif %}
-          {% if post.DIS_m.14 %}<td>{{ post.DIS_m.14 }}</td>{% endif %}
-          {% if post.azm_m.14 %}<td>{{ post.azm_m.14 }}</td>{% endif %}
-          {% if post.b_azm_m.14 %}<td>{{ post.b_azm_m.14 }}</td>{% endif %}
-          {% if post.amp_m.14 %}<td>{{ post.amp_m.14 }}</td>{% endif %}
-          {% if post.gain_m.14 %}<td>{{ post.gain_m.14 }}</td>{% endif %}
-          {% if post.local_m_m.14 %}<td>{{ post.local_m_m.14 }}</td>{% endif %}
-        </tr>
-        
-        <tr>
-          {% if post.station_m.15 %}<td>{{ post.station_m.15 }}</td>{% endif %}
-          {% if post.comp_m.15 %}<td>{{ post.comp_m.15 }}</td>{% endif %}
-          {% if post.DIS_m.15 %}<td>{{ post.DIS_m.15 }}</td>{% endif %}
-          {% if post.azm_m.15 %}<td>{{ post.azm_m.15 }}</td>{% endif %}
-          {% if post.b_azm_m.15 %}<td>{{ post.b_azm_m.15 }}</td>{% endif %}
-          {% if post.amp_m.15 %}<td>{{ post.amp_m.15 }}</td>{% endif %}
-          {% if post.gain_m.15 %}<td>{{ post.gain_m.15 }}</td>{% endif %}
-          {% if post.local_m_m.15 %}<td>{{ post.local_m_m.15 }}</td>{% endif %}
-
-        
-        <br>
-</div>
-
-<img  width="160%" height="160%" src="{{ object.image2.url }}">
+      <table style="width:1000px; margin-left: 70px; font-family: Times New Roman;">
+          <tr>
+            <th>Station</th>
+            <th>Component</th>
+            <th>Distance(km)</th>
+            <th>Azimuth(degree)</th>
+            <th>Back Azimuth(degree)</th>
+            <th>Amplitude (nm)</th>
+            <th>Gain</th>
+            <th>Local Magnitude (ML)</th>
+          </tr>
+          <tr>
+            {% if post.station_m.0 %}<td>{{ post.station_m.0 }}</td>{% endif %}
+            {% if post.comp_m.0 %}<td>{{ post.comp_m.0 }}</td>{% endif %}
+            {% if post.DIS_m.0 %}<td>{{ post.DIS_m.0 }}</td>{% endif %}
+            {% if post.azm_m.0 %}<td>{{ post.azm_m.0 }}</td>{% endif %}
+            {% if post.b_azm_m.0 %}<td>{{ post.b_azm_m.0 }}</td>{% endif %}
+            {% if post.amp_m.0 %}<td>{{ post.amp_m.0 }}</td>{% endif %}
+            {% if post.gain_m.0 %}<td>{{ post.gain_m.0 }}</td>{% endif %}
+            {% if post.local_m_m.0 %}<td>{{ post.local_m_m.0 }}</td>{% endif %}
+          </tr>
           
+          <tr>
+            {% if post.station_m.1 %}<td>{{ post.station_m.1 }}</td>{% endif %}
+            {% if post.comp_m.1 %}<td>{{ post.comp_m.1 }}</td>{% endif %}
+            {% if post.DIS_m.1 %}<td>{{ post.DIS_m.1 }}</td>{% endif %}
+            {% if post.azm_m.1 %}<td>{{ post.azm_m.1 }}</td>{% endif %}
+            {% if post.b_azm_m.1 %}<td>{{ post.b_azm_m.1 }}</td>{% endif %}
+            {% if post.amp_m.1 %}<td>{{ post.amp_m.1 }}</td>{% endif %}
+            {% if post.gain_m.1 %}<td>{{ post.gain_m.1 }}</td>{% endif %}
+            {% if post.local_m_m.1 %}<td>{{ post.local_m_m.1 }}</td>{% endif %}
+          </tr>
+          
+          <tr>
+            {% if post.station_m.2 %}<td>{{ post.station_m.2 }}</td>{% endif %}
+            {% if post.comp_m.2 %}<td>{{ post.comp_m.2 }}</td>{% endif %}
+            {% if post.DIS_m.2 %}<td>{{ post.DIS_m.2 }}</td>{% endif %}
+            {% if post.azm_m.2 %}<td>{{ post.azm_m.2 }}</td>{% endif %}
+            {% if post.b_azm_m.2 %}<td>{{ post.b_azm_m.2 }}</td>{% endif %}
+            {% if post.amp_m.2 %}<td>{{ post.amp_m.2 }}</td>{% endif %}
+            {% if post.gain_m.2 %}<td>{{ post.gain_m.2 }}</td>{% endif %}
+            {% if post.local_m_m.2 %}<td>{{ post.local_m_m.2 }}</td>{% endif %}
+          </tr>
+          
+          <tr>
+            {% if post.station_m.3 %}<td>{{ post.station_m.3 }}</td>{% endif %}
+            {% if post.comp_m.3 %}<td>{{ post.comp_m.3 }}</td>{% endif %}
+            {% if post.DIS_m.3 %}<td>{{ post.DIS_m.3 }}</td>{% endif %}
+            {% if post.azm_m.3 %}<td>{{ post.azm_m.3 }}</td>{% endif %}
+            {% if post.b_azm_m.3 %}<td>{{ post.b_azm_m.3 }}</td>{% endif %}
+            {% if post.amp_m.3 %}<td>{{ post.amp_m.3 }}</td>{% endif %}
+            {% if post.gain_m.3 %}<td>{{ post.gain_m.3 }}</td>{% endif %}
+            {% if post.local_m_m.3 %}<td>{{ post.local_m_m.3 }}</td>{% endif %}
+          </tr>
+          
+          <tr>
+            {% if post.station_m.4 %}<td>{{ post.station_m.4 }}</td>{% endif %}
+            {% if post.comp_m.4 %}<td>{{ post.comp_m.4 }}</td>{% endif %}
+            {% if post.DIS_m.4 %}<td>{{ post.DIS_m.4 }}</td>{% endif %}
+            {% if post.azm_m.4 %}<td>{{ post.azm_m.4 }}</td>{% endif %}
+            {% if post.b_azm_m.4 %}<td>{{ post.b_azm_m.4 }}</td>{% endif %}
+            {% if post.amp_m.4 %}<td>{{ post.amp_m.4 }}</td>{% endif %}
+            {% if post.gain_m.4 %}<td>{{ post.gain_m.4 }}</td>{% endif %}
+            {% if post.local_m_m.4 %}<td>{{ post.local_m_m.4 }}</td>{% endif %}
+          </tr>
+          
+          <tr>
+            {% if post.station_m.5 %}<td>{{ post.station_m.5 }}</td>{% endif %}
+            {% if post.comp_m.5 %}<td>{{ post.comp_m.5 }}</td>{% endif %}
+            {% if post.DIS_m.5 %}<td>{{ post.DIS_m.5 }}</td>{% endif %}
+            {% if post.azm_m.5 %}<td>{{ post.azm_m.5 }}</td>{% endif %}
+            {% if post.b_azm_m.5 %}<td>{{ post.b_azm_m.5 }}</td>{% endif %}
+            {% if post.amp_m.5 %}<td>{{ post.amp_m.5 }}</td>{% endif %}
+            {% if post.gain_m.5 %}<td>{{ post.gain_m.5 }}</td>{% endif %}
+            {% if post.local_m_m.5 %}<td>{{ post.local_m_m.5 }}</td>{% endif %}
+          </tr>
+          
+          <tr>
+            {% if post.station_m.6 %}<td>{{ post.station_m.6 }}</td>{% endif %}
+            {% if post.comp_m.6 %}<td>{{ post.comp_m.6 }}</td>{% endif %}
+            {% if post.DIS_m.6 %}<td>{{ post.DIS_m.6 }}</td>{% endif %}
+            {% if post.azm_m.6 %}<td>{{ post.azm_m.6 }}</td>{% endif %}
+            {% if post.b_azm_m.6 %}<td>{{ post.b_azm_m.6 }}</td>{% endif %}
+            {% if post.amp_m.6 %}<td>{{ post.amp_m.6 }}</td>{% endif %}
+            {% if post.gain_m.6 %}<td>{{ post.gain_m.6 }}</td>{% endif %}
+            {% if post.local_m_m.6 %}<td>{{ post.local_m_m.6 }}</td>{% endif %}
+          </tr>
+          
+          <tr>
+            {% if post.station_m.7 %}<td>{{ post.station_m.7 }}</td>{% endif %}
+            {% if post.comp_m.7 %}<td>{{ post.comp_m.7 }}</td>{% endif %}
+            {% if post.DIS_m.7 %}<td>{{ post.DIS_m.7 }}</td>{% endif %}
+            {% if post.azm_m.7 %}<td>{{ post.azm_m.7 }}</td>{% endif %}
+            {% if post.b_azm_m.7 %}<td>{{ post.b_azm_m.7 }}</td>{% endif %}
+            {% if post.amp_m.7 %}<td>{{ post.amp_m.7 }}</td>{% endif %}
+            {% if post.gain_m.7 %}<td>{{ post.gain_m.7 }}</td>{% endif %}
+            {% if post.local_m_m.7 %}<td>{{ post.local_m_m.7 }}</td>{% endif %}
+          </tr>
+          
+          <tr>
+            {% if post.station_m.8 %}<td>{{ post.station_m.8 }}</td>{% endif %}
+            {% if post.comp_m.8 %}<td>{{ post.comp_m.8 }}</td>{% endif %}
+            {% if post.DIS_m.8 %}<td>{{ post.DIS_m.8 }}</td>{% endif %}
+            {% if post.azm_m.8 %}<td>{{ post.azm_m.8 }}</td>{% endif %}
+            {% if post.b_azm_m.8 %}<td>{{ post.b_azm_m.8 }}</td>{% endif %}
+            {% if post.amp_m.8 %}<td>{{ post.amp_m.8 }}</td>{% endif %}
+            {% if post.gain_m.8 %}<td>{{ post.gain_m.8 }}</td>{% endif %}
+            {% if post.local_m_m.8 %}<td>{{ post.local_m_m.8 }}</td>{% endif %}
+          </tr>
+          
+          <tr>
+            {% if post.station_m.9 %}<td>{{ post.station_m.9 }}</td>{% endif %}
+            {% if post.comp_m.9 %}<td>{{ post.comp_m.9 }}</td>{% endif %}
+            {% if post.DIS_m.9 %}<td>{{ post.DIS_m.9 }}</td>{% endif %}
+            {% if post.azm_m.9 %}<td>{{ post.azm_m.9 }}</td>{% endif %}
+            {% if post.b_azm_m.9 %}<td>{{ post.b_azm_m.9 }}</td>{% endif %}
+            {% if post.amp_m.9 %}<td>{{ post.amp_m.9 }}</td>{% endif %}
+            {% if post.gain_m.9 %}<td>{{ post.gain_m.9 }}</td>{% endif %}
+            {% if post.local_m_m.9 %}<td>{{ post.local_m_m.9 }}</td>{% endif %}
+          </tr>
+          
+          <tr>
+            {% if post.station_m.10 %}<td>{{ post.station_m.10 }}</td>{% endif %}
+            {% if post.comp_m.10 %}<td>{{ post.comp_m.10 }}</td>{% endif %}
+            {% if post.DIS_m.10 %}<td>{{ post.DIS_m.10 }}</td>{% endif %}
+            {% if post.azm_m.10 %}<td>{{ post.azm_m.10 }}</td>{% endif %}
+            {% if post.b_azm_m.10 %}<td>{{ post.b_azm_m.10 }}</td>{% endif %}
+            {% if post.amp_m.10 %}<td>{{ post.amp_m.10 }}</td>{% endif %}
+            {% if post.gain_m.10 %}<td>{{ post.gain_m.10 }}</td>{% endif %}
+            {% if post.local_m_m.10 %}<td>{{ post.local_m_m.10 }}</td>{% endif %}
+          </tr>
+          
+          <tr>
+            {% if post.station_m.11 %}<td>{{ post.station_m.11 }}</td>{% endif %}
+            {% if post.comp_m.11 %}<td>{{ post.comp_m.11 }}</td>{% endif %}
+            {% if post.DIS_m.11 %}<td>{{ post.DIS_m.11 }}</td>{% endif %}
+            {% if post.azm_m.11 %}<td>{{ post.azm_m.11 }}</td>{% endif %}
+            {% if post.b_azm_m.11 %}<td>{{ post.b_azm_m.11 }}</td>{% endif %}
+            {% if post.amp_m.11 %}<td>{{ post.amp_m.11 }}</td>{% endif %}
+            {% if post.gain_m.11 %}<td>{{ post.gain_m.11 }}</td>{% endif %}
+            {% if post.local_m_m.11 %}<td>{{ post.local_m_m.11 }}</td>{% endif %}
+          </tr>
+          
+          <tr>
+            {% if post.station_m.12 %}<td>{{ post.station_m.12 }}</td>{% endif %}
+            {% if post.comp_m.12 %}<td>{{ post.comp_m.12 }}</td>{% endif %}
+            {% if post.DIS_m.12 %}<td>{{ post.DIS_m.12 }}</td>{% endif %}
+            {% if post.azm_m.12 %}<td>{{ post.azm_m.12 }}</td>{% endif %}
+            {% if post.b_azm_m.12 %}<td>{{ post.b_azm_m.12 }}</td>{% endif %}
+            {% if post.amp_m.12 %}<td>{{ post.amp_m.12 }}</td>{% endif %}
+            {% if post.gain_m.12 %}<td>{{ post.gain_m.12 }}</td>{% endif %}
+            {% if post.local_m_m.12 %}<td>{{ post.local_m_m.12 }}</td>{% endif %}
+          </tr>
+          
+          <tr>
+            {% if post.station_m.13 %}<td>{{ post.station_m.13 }}</td>{% endif %}
+            {% if post.comp_m.13 %}<td>{{ post.comp_m.13 }}</td>{% endif %}
+            {% if post.DIS_m.13 %}<td>{{ post.DIS_m.13 }}</td>{% endif %}
+            {% if post.azm_m.13 %}<td>{{ post.azm_m.13 }}</td>{% endif %}
+            {% if post.b_azm_m.13 %}<td>{{ post.b_azm_m.13 }}</td>{% endif %}
+            {% if post.amp_m.13 %}<td>{{ post.amp_m.13 }}</td>{% endif %}
+            {% if post.gain_m.13 %}<td>{{ post.gain_m.13 }}</td>{% endif %}
+            {% if post.local_m_m.13 %}<td>{{ post.local_m_m.13 }}</td>{% endif %}
+          </tr>
+          
+          <tr>
+            {% if post.station_m.14 %}<td>{{ post.station_m.14 }}</td>{% endif %}
+            {% if post.comp_m.14 %}<td>{{ post.comp_m.14 }}</td>{% endif %}
+            {% if post.DIS_m.14 %}<td>{{ post.DIS_m.14 }}</td>{% endif %}
+            {% if post.azm_m.14 %}<td>{{ post.azm_m.14 }}</td>{% endif %}
+            {% if post.b_azm_m.14 %}<td>{{ post.b_azm_m.14 }}</td>{% endif %}
+            {% if post.amp_m.14 %}<td>{{ post.amp_m.14 }}</td>{% endif %}
+            {% if post.gain_m.14 %}<td>{{ post.gain_m.14 }}</td>{% endif %}
+            {% if post.local_m_m.14 %}<td>{{ post.local_m_m.14 }}</td>{% endif %}
+          </tr>
+          
+          <tr>
+            {% if post.station_m.15 %}<td>{{ post.station_m.15 }}</td>{% endif %}
+            {% if post.comp_m.15 %}<td>{{ post.comp_m.15 }}</td>{% endif %}
+            {% if post.DIS_m.15 %}<td>{{ post.DIS_m.15 }}</td>{% endif %}
+            {% if post.azm_m.15 %}<td>{{ post.azm_m.15 }}</td>{% endif %}
+            {% if post.b_azm_m.15 %}<td>{{ post.b_azm_m.15 }}</td>{% endif %}
+            {% if post.amp_m.15 %}<td>{{ post.amp_m.15 }}</td>{% endif %}
+            {% if post.gain_m.15 %}<td>{{ post.gain_m.15 }}</td>{% endif %}
+            {% if post.local_m_m.15 %}<td>{{ post.local_m_m.15 }}</td>{% endif %}
 
-{% endblock content %}
+          
+          <br>
+          <img  width="160%" height="160%" src="{{ object.image2.url }}">
+  </div>
+
+  
+            
+
+  {% endblock content %}
