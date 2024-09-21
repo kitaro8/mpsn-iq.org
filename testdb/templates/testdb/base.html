@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -11,31 +10,51 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="{% static 'testdb/main.css' %}">
-
-
 </head>
 <body>
 <style type="text/css">
   @media (max-width:885px) {
-  img#optionalstuff {
-    display: none;
+    img#optionalstuff {
+      display: none;
+    }
+    .n {
+      padding: 20px;
+    }
   }
-  .n{
-    padding: 20px;
+
+  /* Flexbox to align image and text on the same line */
+  .header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Times New Roman;
   }
-}
+
+  .header-flex img {
+    margin-right: 20px;
+    width: 10%; /* Adjust this to increase or decrease the size */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .header-flex .n {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    text-align: center;
+  }
+
 </style>
+
 <div class="general">
-  <div style="display: flex; align-items: center; justify-content: center; font-family: Times New Roman;">
+  <div class="header-flex">
     <!-- Image on the Left -->
     <div>
-      <img id="optionalstuff" src="https://i.pinimg.com/originals/9f/ad/02/9fad02e4d884d3e45c6f747a10423194.png" width="20%" height="20%" style="margin-right: 20px;">
+      <img id="optionalstuff" src="https://i.pinimg.com/originals/9f/ad/02/9fad02e4d884d3e45c6f747a10423194.png">
     </div>
-  
+
     <!-- Centered Text -->
-    <div class="n" style="color: white; text-shadow: 2px 2px 4px #000000; text-align: center;">
+    <div class="n">
       <strong style="font-size:2.1vw;">Mesopotamian Seismological Network (MPSN)</strong><br>
-      <span style="font-size: 2vw; color: white; text-shadow: 2px 2px 4px #000000;">in Iraq</span>
+      <span style="font-size: 2vw; color: white;">in Iraq</span>
     </div>
   </div>
   
@@ -64,25 +83,25 @@
     </header>
   </div>          
 </div>
-    <main role="main" class="container">
-      <div class="row">
-        <div class="col-md-8">
-          {% if messages %}
-            {% for message in messages %}
-              <div class="alert alert-{{ message.tags }}">
-                {{ message }}
-              </div>
-            {% endfor %}
-          {% endif %}
-          {% block content %}{% endblock %}
-        </div>
-      </div>
-    </main>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-8">
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+      {% block content %}{% endblock %}
+    </div>
+  </div>
+</main>
+
+<!-- Optional JavaScript -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
