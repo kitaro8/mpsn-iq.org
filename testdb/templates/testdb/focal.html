@@ -43,11 +43,18 @@
   <div style="margin-left: 80px; border-radius: 20px;
     background-color: #d5e2f0;
     padding: 40px;">
-    {% for focal in focal %}
 
-        <a href="{{ focal.file.url }}" download=""><h4 style="display: inline-block;">{{ focal.date }} ,</h4><h4 style="display: inline-block;">{{ focal.title }}</h4></a><hr>
+    {% if focal.date %}
+      {% for focal in focal %}
 
-    {% endfor %}
+          <a href="{{ focal.file.url }}" download=""><h4 style="display: inline-block;">{{ focal.date }} ,</h4><h4 style="display: inline-block;">{{ focal.title }}</h4></a><hr>
+
+      {% endfor %}
+    {% endif %}
+
+    {% else%}
+        <p>Focal Mechanism solutions are currently unavialable</p>
+    {% endif %}
   </div>
   <br>
 
