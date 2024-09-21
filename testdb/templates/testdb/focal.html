@@ -50,11 +50,12 @@
           <a href="{{ focal.file.url }}" download=""><h4 style="display: inline-block;">{{ focal.date }} ,</h4><h4 style="display: inline-block;">{{ focal.title }}</h4></a><hr>
 
       {% endfor %}
+
+      {% else%}
+      <p>Focal Mechanism solutions are currently unavialable</p>
     {% endif %}
 
-    {% else%}
-        <p>Focal Mechanism solutions are currently unavialable</p>
-    {% endif %}
+
   </div>
   <br>
 
