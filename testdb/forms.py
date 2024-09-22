@@ -36,8 +36,27 @@ class FileForm2(forms.ModelForm):
 class ImageForm(forms.ModelForm):
 	class Meta:
 		model = Post
-		fields = ['image', 'image_h', 'image_p', 'image_z']
+		fields = ['image']
 
+
+
+class ImageForm1(forms.ModelForm):
+	class Meta:
+		model = Post
+		fields = ['image_h']
+
+
+
+class ImageForm2(forms.ModelForm):
+	class Meta:
+		model = Post
+		fields = ['image_p']
+
+
+class ImageForm3(forms.ModelForm):
+	class Meta:
+		model = Post
+		fields = ['image_z']
 
 
 
