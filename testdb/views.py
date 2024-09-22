@@ -872,7 +872,6 @@ def upload(request):
 				MagnitudeMw=MagnitudeMw,
 				Region=Region, 
 				image=upload_image,
-				image2=upload_image2,
 				image_h=upload_image,
 				image_p=upload_image,
 				image_z=upload_image,
