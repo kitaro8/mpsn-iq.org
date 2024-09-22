@@ -48,7 +48,6 @@ def upload(request):
 			MagnitudeMw = request.POST['MagnitudeMw']
 			upload_image = request.FILES['image']
 			upload_image1 = request.FILES['image_h']
-			upload_image2 = request.FILES['image_p']
 			upload_image3 = request.FILES['image_z']
 			upload_file = request.FILES['file']
 
@@ -879,7 +878,6 @@ def upload(request):
 				Region=Region, 
 				image=upload_image,
 				image_h=upload_image1,
-				image_p=upload_image2,
 				image_z=upload_image3,
 				file2=upload_file2,
 				station_m=station_m,
