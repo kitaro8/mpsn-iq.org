@@ -3,7 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView
 from .models import Post, Focal, Report, Paper, stations
 from django.contrib.auth.models import User
-from .forms import FileForm, FileForm2, FileForm1, FileForm11, ImageForm, ImageForm2, NameForm, FocalForm, ContactForm, ReportForm, PaperForm
+from .forms import FileForm, FileForm2, FileForm1, FileForm11, ImageForm, NameForm, FocalForm, ContactForm, ReportForm, PaperForm
 from django.db.models import Q
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
@@ -37,16 +37,13 @@ def upload(request):
 	form = FileForm(request.POST, request.FILES)
 	form = FileForm1(request.POST, request.FILES)
 	form = FileForm11(request.POST, request.FILES)
-	form = FileForm2(request.POST, request.FILES)
 	form = ImageForm(request.POST, request.FILES)
-	form = ImageForm2(request.POST, request.FILES)
 	form = NameForm(request.POST)
 	if request.method =='POST':
 		if form.is_valid():
 			Region = request.POST['Region']
 			MagnitudeMw = request.POST['MagnitudeMw']
 			upload_image = request.FILES['image']
-			upload_image2 = request.FILES['image2']
 			upload_file = request.FILES['file']
 
 			upload_file1 = request.FILES['file1']
@@ -876,6 +873,9 @@ def upload(request):
 				Region=Region, 
 				image=upload_image,
 				image2=upload_image2,
+				image_h=upload_image,
+				image_p=upload_image,
+				image_z=upload_image,
 				file2=upload_file2,
 				station_m=station_m,
 				station_m2=station_m2,
@@ -1214,6 +1214,9 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     'Region',
     'image',
     'image2',
+	'image_h',
+	'image_p',
+	'image_z',
     'station',
     'comp',
     'DIS',

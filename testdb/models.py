@@ -17,7 +17,7 @@ class Post(models.Model):
     Magnitude = models.CharField(max_length=100, blank=True)
     MagnitudeMw = models.CharField(max_length=100, blank=True,)
     Region = models.CharField(max_length=100)
-    image = models.ImageField(default='default1.jpg', upload_to='image_maps', blank=True)
+    image = models.ImageField(default='default1.jpg', upload_to='image_maps',null=True, blank=True)
     image2 = models.ImageField(default='default1.jpg', upload_to='image_ml', blank=True)
     station = ArrayField(models.CharField(max_length=200), blank=True)
     comp = ArrayField(models.CharField(max_length=200), blank=True)
@@ -29,6 +29,12 @@ class Post(models.Model):
     file = models.FileField(upload_to='data')
     file2 = models.FileField(upload_to='sac', blank=True)
     file3 = models.FileField(upload_to='data2', blank=True)
+
+
+    image_h = models.ImageField(default='default1.jpg', upload_to='image_ml', null=True, blank=True)
+    image_p = models.ImageField(default='default1.jpg', upload_to='image_ml', null=True, blank=True)
+    image_z = models.ImageField(default='default1.jpg', upload_to='image_ml', null=True, blank=True)
+
 
     station_m = ArrayField(models.CharField(max_length=200), blank=True, default=list)
     comp_m = ArrayField(models.CharField(max_length=200), blank=True, default=list)

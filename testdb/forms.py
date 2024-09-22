@@ -36,13 +36,10 @@ class FileForm2(forms.ModelForm):
 class ImageForm(forms.ModelForm):
 	class Meta:
 		model = Post
-		fields = ['image']
+		fields = ['image', 'image_h', 'image_p', 'image_z']
 
 
-class ImageForm2(forms.ModelForm):
-	class Meta:
-		model = Post
-		fields = ['image2']
+
 
 class NameForm(forms.Form):
 	Region = forms.CharField(label='Region', max_length=100)
