@@ -16,8 +16,8 @@
           <p><strong>Depth: </strong>{{ post.Depth }} km</p>
       {% endif %}
 
-      <p><strong>Magnitude: </strong>{{ post.Magnitude }} ML</p>
-      <p><strong>Magnitude Mw: </strong>{{ post.MagnitudeMw }} </p>
+      <p><strong>Local Magnitude (ML): </strong>{{ post.Magnitude }}</p>
+      <p><strong>Moment Magnitude (Mw): </strong>{{ post.MagnitudeMw }} </p>
       <p style="width: 100%;"><strong>Location uncertainty: </strong>+/-{{ post.lu1 }} in N-S Direction | +/-{{ post.lu2 }} in E-W Direction</p>
       <p><strong>RMS error: </strong>{{ post.RMS }}</p>
       <p><strong>Azimuthal Gap: </strong>{{ post.Gap }}°</p>
