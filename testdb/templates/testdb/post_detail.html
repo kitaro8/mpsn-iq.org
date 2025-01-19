@@ -1,33 +1,32 @@
 {% extends "testdb/base.html" %}
 {% block content %}
 <br>
-    <div style="margin-left: 120px; font-size: 17px; font-family: Times New Roman;">
-      {% if object.author == user %}
-        <div>
-          <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post_update' object.id %}">Update</a>
-          <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post_delete' object.id %}">Delete</a>
-        </div>
-      {% endif %}
-      <p><strong>Date - Time (UTC): </strong>{{ post.event }}</p>
-      <p style="width:100%"><strong>Location: </strong>{{ post.Latitude }}N, {{ post.Longitude }}E</p>
-      {% if post.Depth == "0.00" %}
-          <p><strong>Depth: </strong>10 km</p>
-      {% else %}
-          <p><strong>Depth: </strong>{{ post.Depth }} km</p>
-      {% endif %}
-
-      <p><strong>Local Magnitude (ML): </strong>{{ post.Magnitude }}</p>
-      <p><strong>Moment Magnitude (Mw): </strong>{{ post.MagnitudeMw }} </p>
-      <p style="width: 100%;"><strong>Location uncertainty: </strong>+/-{{ post.lu1 }} in N-S Direction | +/-{{ post.lu2 }} in E-W Direction</p>
-      <p><strong>RMS error: </strong>{{ post.RMS }}</p>
-      <p><strong>Azimuthal Gap: </strong>{{ post.Gap }}°</p>
-      <p><strong>Source: </strong>Mesopotamian Seismological Network (MPSN) in Iraq</p>
-      <a href="{% url 'post_phase' post.id %}">Phase (Arrival times)</a><br>
-      <a href="{% url 'mag_value' post.id %}">Magnitude Value</a><br>
-      <a href="{{ post.file2.url }}"  target="_blank">Wave File Download</a><hr>
-      <img  width="70%" height="70%" src="{{ object.image.url }}">
-      <br>
+    <div style="margin-left: 120px; font-size: 17px; font-family: Times New Roman; display: flex; align-items: center;">
+      <div style="flex: 1;">
+        {% if object.author == user %}
+          <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post_update' object.id %}">Update</a>
+            <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post_delete' object.id %}">Delete</a>
+          </div>
+        {% endif %}
+        <p><strong>Date - Time (UTC): </strong>{{ post.event }}</p>
+        <p style="width:100%"><strong>Location: </strong>{{ post.Latitude }}N, {{ post.Longitude }}E</p>
+        {% if post.Depth == "0.00" %}
+            <p><strong>Depth: </strong>10 km</p>
+        {% else %}
+            <p><strong>Depth: </strong>{{ post.Depth }} km</p>
+        {% endif %}
+        <p><strong>Local Magnitude (ML): </strong>{{ post.Magnitude }}</p>
+        <p><strong>Moment Magnitude (Mw): </strong>{{ post.MagnitudeMw }} </p>
+        <p style="width: 100%;"><strong>Location uncertainty: </strong>+/-{{ post.lu1 }} in N-S Direction | +/-{{ post.lu2 }} in E-W Direction</p>
+        <p><strong>RMS error: </strong>{{ post.RMS }}</p>
+        <p><strong>Azimuthal Gap: </strong>{{ post.Gap }}°</p>
+        <p><strong>Source: </strong>Mesopotamian Seismological Network (MPSN) in Iraq</p>
+        <a href="{% url 'post_phase' post.id %}">Phase (Arrival times)</a><br>
+        <a href="{% url 'mag_value' post.id %}">Magnitude Value</a><br>
+        <a href="{{ post.file2.url }}"  target="_blank">Wave File Download</a>
+      </div>
+      <img width="70%" height="70%" src="{{ object.image.url }}">
     </div>
-    <br> 
-
+    <br>
 {% endblock content %}
