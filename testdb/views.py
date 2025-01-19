@@ -1,9 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView
-from .models import Post, Focal, Report, Paper, stations
+from .models import Post, Post2, Focal, Report, Paper, stations
 from django.contrib.auth.models import User
-from .forms import FileForm, FileForm2, FileForm1, FileForm11, ImageForm, ImageForm1, ImageForm2, ImageForm3, NameForm, FocalForm, ContactForm, ReportForm, PaperForm
+from .forms import FileForm, FileForm2, FileForm1, FileForm11, ImageForm, ImageForm1, ImageForm2, ImageForm3, NameForm, Post2FileForm, Post2FileForm2, Post2FileForm1, Post2FileForm11, Post2ImageForm, Post2ImageForm1, Post2ImageForm2, Post2ImageForm3, Post2NameForm, FocalForm, ContactForm, ReportForm, PaperForm
 from django.db.models import Q
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
@@ -42,6 +42,886 @@ def upload(request):
 	form = ImageForm2(request.POST, request.FILES)
 	form = ImageForm3(request.POST, request.FILES)
 	form = NameForm(request.POST)
+	if request.method =='POST':
+		if form.is_valid():
+			Region = request.POST['Region']
+			MagnitudeMw = request.POST['MagnitudeMw']
+			upload_image = request.FILES['image']
+			upload_image1 = request.FILES['image_h']
+			upload_image3 = request.FILES['image_z']
+			upload_file = request.FILES['file']
+
+			upload_file1 = request.FILES['file1']
+			upload_file11 = request.FILES['file11']
+
+			upload_file2 = request.FILES['file2']
+			lines = upload_file.read()
+			lines1 = upload_file1.readlines()
+			lines11 = upload_file11.readlines()
+
+
+			station = []
+			comp = []
+			DIS = []
+			AZM = []
+			ARR_TIME = []
+			RES = []
+			PHASE = []
+			
+			
+			station_m = []
+			comp_m = []
+			DIS_m = []
+			azm_m = []
+			b_azm_m = []
+			amp_m  = []
+			gain_m  = []
+			local_m_m  = []
+
+
+			station_m2 = []
+			comp_m2 = []
+			DIS_m2 = []
+			azm_m2 = []
+			b_azm_m2 = []
+			amp_m2  = []
+			gain_m2  = []
+			local_m_m2  = []
+
+
+
+			for line in lines1:
+				parts = line.decode('utf-8').split()
+
+				if len(parts) > 0:
+					station_m.append(parts[0])  # 0th column
+				if len(parts) > 1:
+					comp_m.append(parts[1])     # 1st column
+				if len(parts) > 2:
+					DIS_m.append(parts[2])      # 2nd column
+				if len(parts) > 3:
+					azm_m.append(parts[3])      # 3rd column
+				if len(parts) > 4:
+					b_azm_m.append(parts[4])    # 4th column
+				if len(parts) > 7:
+					amp_m.append(parts[8])      # 7th column
+				if len(parts) > 8:
+					gain_m.append(parts[9])     # 8th column
+				if len(parts) > 9:
+					local_m_m.append(parts[7])  # 9th column
+
+			# 5.380024, etc.
+
+			# Now each list will store the respective values from all rows together.
+
+
+
+
+			for line in lines11:
+				parts = line.decode('utf-8').split()
+
+				if len(parts) > 0:
+					station_m2.append(parts[0])  # 0th column
+				if len(parts) > 1:
+					comp_m2.append(parts[1])     # 1st column
+				if len(parts) > 2:
+					DIS_m2.append(parts[2])      # 2nd column
+				if len(parts) > 3:
+					azm_m2.append(parts[3])      # 3rd column
+				if len(parts) > 4:
+					b_azm_m2.append(parts[4])    # 4th column
+				if len(parts) > 7:
+					amp_m2.append(parts[8])      # 7th column
+				if len(parts) > 8:
+					gain_m2.append(parts[9])     # 8th column
+				if len(parts) > 9:
+					local_m_m2.append(parts[7])  # 9th column
+			# Example: '4.522512'
+
+
+# Now you have separate lists for each value from the rows.
+
+			
+			# for line in lines1:
+				
+			# 	parts = line.decode('utf-8').split()
+
+			# 	if parts:
+			# 		station_m.append(parts[0])
+			# 	if parts:
+			# 		station_m.append(parts[1])
+			# 	if parts:
+			# 		station_m.append(parts[2])
+			# 	if parts:
+			# 		station_m.append(parts[3])
+			# 	if parts:
+			# 		station_m.append(parts[4])
+			# 	if parts:
+			# 		station_m.append(parts[5])
+			# 	if parts:
+			# 		station_m.append(parts[6])
+			# 	if parts:
+			# 		station_m.append(parts[7])
+			# 	if parts:
+			# 		station_m.append(parts[8])
+			# 	if parts:
+			# 		station_m.append(parts[9])
+			# 	# if parts:
+			# 	# 	station_m.append(parts[10])
+			# 	# if parts:
+			# 	# 	station_m.append(parts[11])
+			# 	# if parts:
+			# 	# 	station_m.append(parts[12])
+			# 	# if parts:
+			# 	# 	station_m.append(parts[13])
+			# 	# if parts:
+			# 	# 	station_m.append(parts[14])
+
+
+			# 	if parts:
+			# 		comp_m.append(parts)
+			# 	if parts:
+			# 		comp_m.append(parts[1])
+			# 	if parts:
+			# 		comp_m.append(parts[2])
+			# 	if parts:
+			# 		comp_m.append(parts[3])
+			# 	if parts:
+			# 		comp_m.append(parts[4])
+			# 	if parts:
+			# 		comp_m.append(parts[5])
+			# 	if parts:
+			# 		comp_m.append(parts[6])
+			# 	if parts:
+			# 		comp_m.append(parts[7])
+			# 	if parts:
+			# 		comp_m.append(parts[8])
+			# 	if parts:
+			# 		comp_m.append(parts[9])
+
+
+			# 	if parts:
+			# 		DIS_m.append(parts[0])
+			# 	if parts:
+			# 		DIS_m.append(parts[1])
+			# 	if parts:
+			# 		DIS_m.append(parts[2])
+			# 	if parts:
+			# 		DIS_m.append(parts[3])
+			# 	if parts:
+			# 		DIS_m.append(parts[4])
+			# 	if parts:
+			# 		DIS_m.append(parts[5])
+			# 	if parts:
+			# 		DIS_m.append(parts[6])
+			# 	if parts:
+			# 		DIS_m.append(parts[7])
+			# 	if parts:
+			# 		DIS_m.append(parts[8])
+			# 	if parts:
+			# 		DIS_m.append(parts[9])
+
+
+
+			# 	if parts:
+			# 		azm_m.append(parts[0])
+			# 	if parts:
+			# 		azm_m.append(parts[1])
+			# 	if parts:
+			# 		azm_m.append(parts[2])
+			# 	if parts:
+			# 		azm_m.append(parts[3])
+			# 	if parts:
+			# 		azm_m.append(parts[4])
+			# 	if parts:
+			# 		azm_m.append(parts[5])
+			# 	if parts:
+			# 		azm_m.append(parts[6])
+			# 	if parts:
+			# 		azm_m.append(parts[7])
+			# 	if parts:
+			# 		azm_m.append(parts[8])
+			# 	if parts:
+			# 		azm_m.append(parts[9])
+
+
+
+
+
+			# 	if parts:
+			# 		b_azm_m.append(parts[0])
+			# 	if parts:
+			# 		b_azm_m.append(parts[1])
+			# 	if parts:
+			# 		b_azm_m.append(parts[2])
+			# 	if parts:
+			# 		b_azm_m.append(parts[3])
+			# 	if parts:
+			# 		b_azm_m.append(parts[4])
+			# 	if parts:
+			# 		b_azm_m.append(parts[5])
+			# 	if parts:
+			# 		b_azm_m.append(parts[6])
+			# 	if parts:
+			# 		b_azm_m.append(parts[7])
+			# 	if parts:
+			# 		b_azm_m.append(parts[8])
+			# 	if parts:
+			# 		b_azm_m.append(parts[9])
+				
+
+
+			# 	if parts:
+			# 		amp_m.append(parts[0])
+			# 	if parts:
+			# 		amp_m.append(parts[1])
+			# 	if parts:
+			# 		amp_m.append(parts[2])
+			# 	if parts:
+			# 		amp_m.append(parts[3])
+			# 	if parts:
+			# 		amp_m.append(parts[4])
+			# 	if parts:
+			# 		amp_m.append(parts[5])
+			# 	if parts:
+			# 		amp_m.append(parts[6])
+			# 	if parts:
+			# 		amp_m.append(parts[7])
+			# 	if parts:
+			# 		amp_m.append(parts[8])
+			# 	if parts:
+			# 		amp_m.append(parts[9])
+
+
+
+			# 	if parts:
+			# 		gain_m.append(parts[0])
+			# 	if parts:
+			# 		gain_m.append(parts[1])
+			# 	if parts:
+			# 		gain_m.append(parts[2])
+			# 	if parts:
+			# 		gain_m.append(parts[3])
+			# 	if parts:
+			# 		gain_m.append(parts[4])
+			# 	if parts:
+			# 		gain_m.append(parts[5])
+			# 	if parts:
+			# 		gain_m.append(parts[6])
+			# 	if parts:
+			# 		gain_m.append(parts[7])
+			# 	if parts:
+			# 		gain_m.append(parts[8])
+			# 	if parts:
+			# 		gain_m.append(parts[9])
+
+
+
+			# 	if parts:
+			# 		local_m_m.append(parts[0])
+			# 	if parts:
+			# 		local_m_m.append(parts[1])
+			# 	if parts:
+			# 		local_m_m.append(parts[2])
+			# 	if parts:
+			# 		local_m_m.append(parts[3])
+			# 	if parts:
+			# 		local_m_m.append(parts[4])
+			# 	if parts:
+			# 		local_m_m.append(parts[5])
+			# 	if parts:
+			# 		local_m_m.append(parts[6])
+			# 	if parts:
+			# 		local_m_m.append(parts[7])
+			# 	if parts:
+			# 		local_m_m.append(parts[8])
+			# 	if parts:
+			# 		local_m_m.append(parts[9])
+
+
+
+
+
+
+
+
+
+
+
+			# for line in lines11:
+			# 	parts = line.split()
+			# 	station_m2.append(parts[0][0])
+			# 	comp_m2.append(parts[0][1])
+			# 	DIS_m2.append(parts[0][2])
+			# 	azm_m2.append(parts[0][3])
+			# 	b_azm_m2.append(parts[0][0])
+			# 	amp_m2.append(parts[0][1])
+			# 	gain_m2.append(parts[0][2])
+			# 	local_m_m2.append(parts[0][3])			
+
+			
+			
+
+			
+			combined_values = local_m_m + local_m_m2
+
+
+			Magnitude = sum(float(x) for x in combined_values) / len(combined_values)
+
+			Magnitude = round(Magnitude, 2)
+
+
+
+
+		
+
+
+			for item in lines.split(b"\n"):
+
+				if b'RMS' in item:
+					RMS = item[34:40].strip()
+					RMS = RMS.decode()
+
+				elif b'Latitude' in item:
+					Latitude = item[32:40].strip()
+					Latitude = Latitude.decode()
+					lu1 = item[61:73].strip()
+					lu1 = lu1.decode()
+			        
+
+				elif b'Longitude' in item:
+					Longitude = item[32:40].strip()
+					Longitude = Longitude.decode()
+					lu2 = item[61:73].strip()
+					lu2 = lu2.decode()
+
+			        
+				elif b'Depth' in item:
+					Depth = item[34:40].strip()
+					Depth = Depth.decode()
+
+				elif b'Gap' in item:
+					Gap = item[36:40].strip()
+					Gap = Gap.decode()
+
+				elif b'Event (OCAL)' in item:
+					item1 = item[21:31].replace(b" ", b"-")
+					item2 = item[32:40].replace(b" ", b":")
+					item3 = item[40:44].replace(b" ", b".")
+					event = item1 + b" " + item2 + item3
+					event = event.decode()
+			        
+				# elif b'Magnitude' in item:
+				# 	Magnitude = item[10:16]
+				# 	Magnitude = Magnitude.decode()
+
+
+				# elif b'MagnitudeMw' in item:
+				# 	MagnitudeMw = item[15:19]
+				# 	MagnitudeMw = MagnitudeMw.decode()
+					
+
+
+				elif b'KAR2' in item:
+					zne = item[8:9]
+					zne = zne.decode()
+					station.append('KAR2')
+					comp.append(zne)
+					dis = item[11:17]
+					dis = dis.decode()
+					DIS.append(dis)
+					azm = item[17:21]
+					azm = azm.decode()
+					AZM.append(azm)
+					arr_time = item[28:32] + b'-' + item[32:34] + b'-' + item[34:36] + b' ' + item[36:38] + b':' + item[38:40] + b':' + item[40:46]
+					arr_time = arr_time.decode()
+					ARR_TIME.append(arr_time)
+					res = item[55:59]
+					res = res.decode()
+					RES.append(res)
+					phase = item[65:68]
+					phase = phase.decode()
+					PHASE.append(phase)
+
+				elif b'SLY1' in item:
+					zne = item[8:9]
+					zne = zne.decode()
+					station.append('SLY1')
+					comp.append(zne)
+					dis = item[11:17]
+					dis = dis.decode()
+					DIS.append(dis)
+					azm = item[17:21]
+					azm = azm.decode()
+					AZM.append(azm)
+					arr_time = item[28:32] + b'-' + item[32:34] + b'-' + item[34:36] + b' ' + item[36:38] + b':' + item[38:40] + b':' + item[40:46]
+					arr_time = arr_time.decode()
+					ARR_TIME.append(arr_time)
+					res = item[55:59]
+					res = res.decode()
+					RES.append(res)
+					phase = item[65:68]
+					phase = phase.decode()
+					PHASE.append(phase)
+
+				elif b'AMR2' in item:
+					zne = item[8:9]
+					zne = zne.decode()
+					station.append('AMR2')
+					comp.append(zne)
+					dis = item[11:17]
+					dis = dis.decode()
+					DIS.append(dis)
+					azm = item[17:21]
+					azm = azm.decode()
+					AZM.append(azm)
+					arr_time = item[28:32] + b'-' + item[32:34] + b'-' + item[34:36] + b' ' + item[36:38] + b':' + item[38:40] + b':' + item[40:46]
+					arr_time = arr_time.decode()
+					ARR_TIME.append(arr_time)
+					res = item[55:59]
+					res = res.decode()
+					RES.append(res)
+					phase = item[65:68]
+					phase = phase.decode()
+					PHASE.append(phase)
+
+				elif b'AMR1' in item:
+					zne = item[8:9]
+					zne = zne.decode()
+					station.append('AMR1')
+					comp.append(zne)
+					dis = item[11:17]
+					dis = dis.decode()
+					DIS.append(dis)
+					azm = item[17:21]
+					azm = azm.decode()
+					AZM.append(azm)
+					arr_time = item[28:32] + b'-' + item[32:34] + b'-' + item[34:36] + b' ' + item[36:38] + b':' + item[38:40] + b':' + item[40:46]
+					arr_time = arr_time.decode()
+					ARR_TIME.append(arr_time)
+					res = item[55:59]
+					res = res.decode()
+					RES.append(res)
+					phase = item[65:68]
+					phase = phase.decode()
+					PHASE.append(phase)
+
+				elif b'BSR1' in item:
+					zne = item[8:9]
+					zne = zne.decode()
+					station.append('BSR1')
+					comp.append(zne)
+					dis = item[11:17]
+					dis = dis.decode()
+					DIS.append(dis)
+					azm = item[17:21]
+					azm = azm.decode()
+					AZM.append(azm)
+					arr_time = item[28:32] + b'-' + item[32:34] + b'-' + item[34:36] + b' ' + item[36:38] + b':' + item[38:40] + b':' + item[40:46]
+					arr_time = arr_time.decode()
+					ARR_TIME.append(arr_time)
+					res = item[55:59]
+					res = res.decode()
+					RES.append(res)
+					phase = item[65:68]
+					phase = phase.decode()
+					PHASE.append(phase)
+
+				elif b'BSR2' in item:
+					zne = item[8:9]
+					zne = zne.decode()
+					station.append('BSR2')
+					comp.append(zne)
+					dis = item[11:17]
+					dis = dis.decode()
+					DIS.append(dis)
+					azm = item[17:21]
+					azm = azm.decode()
+					AZM.append(azm)
+					arr_time = item[28:32] + b'-' + item[32:34] + b'-' + item[34:36] + b' ' + item[36:38] + b':' + item[38:40] + b':' + item[40:46]
+					arr_time = arr_time.decode()
+					ARR_TIME.append(arr_time)
+					res = item[55:59]
+					res = res.decode()
+					RES.append(res)
+					phase = item[65:68]
+					phase = phase.decode()
+					PHASE.append(phase)
+
+				elif b'NSR1' in item:
+					zne = item[8:9]
+					zne = zne.decode()
+					station.append('NSR1')
+					comp.append(zne)
+					dis = item[11:17]
+					dis = dis.decode()
+					DIS.append(dis)
+					azm = item[17:21]
+					azm = azm.decode()
+					AZM.append(azm)
+					arr_time = item[28:32] + b'-' + item[32:34] + b'-' + item[34:36] + b' ' + item[36:38] + b':' + item[38:40] + b':' + item[40:46]
+					arr_time = arr_time.decode()
+					ARR_TIME.append(arr_time)
+					res = item[55:59]
+					res = res.decode()
+					RES.append(res)
+					phase = item[65:68]
+					phase = phase.decode()
+					PHASE.append(phase)
+
+				elif b'NSR2' in item:
+					zne = item[8:9]
+					zne = zne.decode()
+					station.append('NSR2')
+					comp.append(zne)
+					dis = item[11:17]
+					dis = dis.decode()
+					DIS.append(dis)
+					azm = item[17:21]
+					azm = azm.decode()
+					AZM.append(azm)
+					arr_time = item[28:32] + b'-' + item[32:34] + b'-' + item[34:36] + b' ' + item[36:38] + b':' + item[38:40] + b':' + item[40:46]
+					arr_time = arr_time.decode()
+					ARR_TIME.append(arr_time)
+					res = item[55:59]
+					res = res.decode()
+					RES.append(res)
+					phase = item[65:68]
+					phase = phase.decode()
+					PHASE.append(phase)
+
+				elif b'NSR3' in item:
+					zne = item[8:9]
+					zne = zne.decode()
+					station.append('NSR3')
+					comp.append(zne)
+					dis = item[11:17]
+					dis = dis.decode()
+					DIS.append(dis)
+					azm = item[17:21]
+					azm = azm.decode()
+					AZM.append(azm)
+					arr_time = item[28:32] + b'-' + item[32:34] + b'-' + item[34:36] + b' ' + item[36:38] + b':' + item[38:40] + b':' + item[40:46]
+					arr_time = arr_time.decode()
+					ARR_TIME.append(arr_time)
+					res = item[55:59]
+					res = res.decode()
+					RES.append(res)
+					phase = item[65:68]
+					phase = phase.decode()
+					PHASE.append(phase)
+
+
+				elif b'NSR4' in item:
+					zne = item[8:9]
+					zne = zne.decode()
+					station.append('NSR4')
+					comp.append(zne)
+					dis = item[11:17]
+					dis = dis.decode()
+					DIS.append(dis)
+					azm = item[17:21]
+					azm = azm.decode()
+					AZM.append(azm)
+					arr_time = item[28:32] + b'-' + item[32:34] + b'-' + item[34:36] + b' ' + item[36:38] + b':' + item[38:40] + b':' + item[40:46]
+					arr_time = arr_time.decode()
+					ARR_TIME.append(arr_time)
+					res = item[55:59]
+					res = res.decode()
+					RES.append(res)
+					phase = item[65:68]
+					phase = phase.decode()
+					PHASE.append(phase)
+
+				elif b'KIR1' in item:
+					zne = item[8:9]
+					zne = zne.decode()
+					station.append('KIR1')
+					comp.append(zne)
+					dis = item[11:17]
+					dis = dis.decode()
+					DIS.append(dis)
+					azm = item[17:21]
+					azm = azm.decode()
+					AZM.append(azm)
+					arr_time = item[28:32] + b'-' + item[32:34] + b'-' + item[34:36] + b' ' + item[36:38] + b':' + item[38:40] + b':' + item[40:46]
+					arr_time = arr_time.decode()
+					ARR_TIME.append(arr_time)
+					res = item[55:59]
+					res = res.decode()
+					RES.append(res)
+					phase = item[65:68]
+					phase = phase.decode()
+					PHASE.append(phase)
+
+				elif b'ANB1' in item:
+					zne = item[8:9]
+					zne = zne.decode()
+					station.append('ANB1')
+					comp.append(zne)
+					dis = item[11:17]
+					dis = dis.decode()
+					DIS.append(dis)
+					azm = item[17:21]
+					azm = azm.decode()
+					AZM.append(azm)
+					arr_time = item[28:32] + b'-' + item[32:34] + b'-' + item[34:36] + b' ' + item[36:38] + b':' + item[38:40] + b':' + item[40:46]
+					arr_time = arr_time.decode()
+					ARR_TIME.append(arr_time)
+					res = item[55:59]
+					res = res.decode()
+					RES.append(res)
+					phase = item[65:68]
+					phase = phase.decode()
+					PHASE.append(phase)
+					
+				elif b'ANB2' in item:
+					zne = item[8:9]
+					zne = zne.decode()
+					station.append('ANB2')
+					comp.append(zne)
+					dis = item[11:17]
+					dis = dis.decode()
+					DIS.append(dis)
+					azm = item[17:21]
+					azm = azm.decode()
+					AZM.append(azm)
+					arr_time = item[28:32] + b'-' + item[32:34] + b'-' + item[34:36] + b' ' + item[36:38] + b':' + item[38:40] + b':' + item[40:46]
+					arr_time = arr_time.decode()
+					ARR_TIME.append(arr_time)
+					res = item[55:59]
+					res = res.decode()
+					RES.append(res)
+					phase = item[65:68]
+					phase = phase.decode()
+					PHASE.append(phase)
+					
+				elif b'DHK1' in item:
+					zne = item[8:9]
+					zne = zne.decode()
+					station.append('DHK1')
+					comp.append(zne)
+					dis = item[11:17]
+					dis = dis.decode()
+					DIS.append(dis)
+					azm = item[17:21]
+					azm = azm.decode()
+					AZM.append(azm)
+					arr_time = item[28:32] + b'-' + item[32:34] + b'-' + item[34:36] + b' ' + item[36:38] + b':' + item[38:40] + b':' + item[40:46]
+					arr_time = arr_time.decode()
+					ARR_TIME.append(arr_time)
+					res = item[55:59]
+					res = res.decode()
+					RES.append(res)
+					phase = item[65:68]
+					phase = phase.decode()
+					PHASE.append(phase)
+
+				elif b'SAM1' in item:
+					zne = item[8:9]
+					zne = zne.decode()
+					station.append('SAM1')
+					comp.append(zne)
+					dis = item[11:17]
+					dis = dis.decode()
+					DIS.append(dis)
+					azm = item[17:21]
+					azm = azm.decode()
+					AZM.append(azm)
+					arr_time = item[28:32] + b'-' + item[32:34] + b'-' + item[34:36] + b' ' + item[36:38] + b':' + item[38:40] + b':' + item[40:46]
+					arr_time = arr_time.decode()
+					ARR_TIME.append(arr_time)
+					res = item[55:59]
+					res = res.decode()
+					RES.append(res)
+					phase = item[65:68]
+					phase = phase.decode()
+					PHASE.append(phase)
+
+				elif b'SAM2' in item:
+					zne = item[8:9]
+					zne = zne.decode()
+					station.append('SAM2')
+					comp.append(zne)
+					dis = item[11:17]
+					dis = dis.decode()
+					DIS.append(dis)
+					azm = item[17:21]
+					azm = azm.decode()
+					AZM.append(azm)
+					arr_time = item[28:32] + b'-' + item[32:34] + b'-' + item[34:36] + b' ' + item[36:38] + b':' + item[38:40] + b':' + item[40:46]
+					arr_time = arr_time.decode()
+					ARR_TIME.append(arr_time)
+					res = item[55:59]
+					res = res.decode()
+					RES.append(res)
+					phase = item[65:68]
+					phase = phase.decode()
+					PHASE.append(phase)
+
+				elif b'DYL1' in item:
+					zne = item[8:9]
+					zne = zne.decode()
+					station.append('DYL1')
+					comp.append(zne)
+					dis = item[11:17]
+					dis = dis.decode()
+					DIS.append(dis)
+					azm = item[17:21]
+					azm = azm.decode()
+					AZM.append(azm)
+					arr_time = item[28:32] + b'-' + item[32:34] + b'-' + item[34:36] + b' ' + item[36:38] + b':' + item[38:40] + b':' + item[40:46]
+					arr_time = arr_time.decode()
+					ARR_TIME.append(arr_time)
+					res = item[55:59]
+					res = res.decode()
+					RES.append(res)
+					phase = item[65:68]
+					phase = phase.decode()
+					PHASE.append(phase)
+
+				elif b'BAG1' in item:
+					zne = item[8:9]
+					zne = zne.decode()
+					station.append('BAG1')
+					comp.append(zne)
+					dis = item[11:17]
+					dis = dis.decode()
+					DIS.append(dis)
+					azm = item[17:21]
+					azm = azm.decode()
+					AZM.append(azm)
+					arr_time = item[28:32] + b'-' + item[32:34] + b'-' + item[34:36] + b' ' + item[36:38] + b':' + item[38:40] + b':' + item[40:46]
+					arr_time = arr_time.decode()
+					ARR_TIME.append(arr_time)
+					res = item[55:59]
+					res = res.decode()
+					RES.append(res)
+					phase = item[65:68]
+					phase = phase.decode()
+					PHASE.append(phase)
+
+				elif b'KUT1' in item:
+					zne = item[8:9]
+					zne = zne.decode()
+					station.append('KUT1')
+					comp.append(zne)
+					dis = item[11:17]
+					dis = dis.decode()
+					DIS.append(dis)
+					azm = item[17:21]
+					azm = azm.decode()
+					AZM.append(azm)
+					arr_time = item[28:32] + b'-' + item[32:34] + b'-' + item[34:36] + b' ' + item[36:38] + b':' + item[38:40] + b':' + item[40:46]
+					arr_time = arr_time.decode()
+					ARR_TIME.append(arr_time)
+					res = item[55:59]
+					res = res.decode()
+					RES.append(res)
+					phase = item[65:68]
+					phase = phase.decode()
+					PHASE.append(phase)
+
+				elif b'TIK1' in item:
+					zne = item[8:9]
+					zne = zne.decode()
+					station.append('TIK1')
+					comp.append(zne)
+					dis = item[11:17]
+					dis = dis.decode()
+					DIS.append(dis)
+					azm = item[17:21]
+					azm = azm.decode()
+					AZM.append(azm)
+					arr_time = item[28:32] + b'-' + item[32:34] + b'-' + item[34:36] + b' ' + item[36:38] + b':' + item[38:40] + b':' + item[40:46]
+					arr_time = arr_time.decode()
+					ARR_TIME.append(arr_time)
+					res = item[55:59]
+					res = res.decode()
+					RES.append(res)
+					phase = item[65:68]
+					phase = phase.decode()
+					PHASE.append(phase)
+
+				elif b'KAR2' in item:
+					zne = item[8:9]
+					zne = zne.decode()
+					station.append('KAR2')
+					comp.append(zne)
+					dis = item[11:17]
+					dis = dis.decode()
+					DIS.append(dis)
+					azm = item[17:21]
+					azm = azm.decode()
+					AZM.append(azm)
+					arr_time = item[28:32] + b'-' + item[32:34] + b'-' + item[34:36] + b' ' + item[36:38] + b':' + item[38:40] + b':' + item[40:46]
+					arr_time = arr_time.decode()
+					ARR_TIME.append(arr_time)
+					res = item[55:59]
+					res = res.decode()
+					RES.append(res)
+					phase = item[65:68]
+					phase = phase.decode()
+					PHASE.append(phase)
+					
+
+			current_user = request.user
+			upload=Post(RMS=RMS, 
+				lu1=lu1, lu2=lu2, 
+				Latitude=Latitude, 
+				Longitude=Longitude, 
+				Depth=Depth, 
+				event=event, 
+				Gap=Gap, 
+				Magnitude=Magnitude, 
+				MagnitudeMw=MagnitudeMw,
+				Region=Region, 
+				image=upload_image,
+				image_h=upload_image1,
+				image_z=upload_image3,
+				file2=upload_file2,
+				station_m=station_m,
+				station_m2=station_m2,
+				comp_m=comp_m,
+				comp_m2=comp_m2,
+				DIS_m=DIS_m,
+				DIS_m2=DIS_m2,
+				azm_m=azm_m,
+				azm_m2=azm_m2,
+				amp_m=amp_m,
+				amp_m2=amp_m2,
+				b_azm_m=b_azm_m,
+				b_azm_m2=b_azm_m2,
+				gain_m=gain_m,
+				gain_m2=gain_m2,
+				local_m_m=local_m_m,
+				local_m_m2=local_m_m2,
+				station=station, 
+				comp=comp, 
+				DIS=DIS, 
+				AZM=AZM, 
+				ARR_TIME=ARR_TIME, 
+				RES=RES, 
+				PHASE=PHASE,
+				author=current_user, date_posted=event)
+			upload.save()
+			
+
+	return render(request, 'testdb/post_form.html')
+
+
+
+
+#========================post2
+def upload2(request):
+	form = Post2FileForm(request.POST, request.FILES)
+	form = Post2FileForm1(request.POST, request.FILES)
+	form = Post2FileForm11(request.POST, request.FILES)
+	form = Post2ImageForm(request.POST, request.FILES)
+	form = Post2ImageForm1(request.POST, request.FILES)
+	form = Post2ImageForm2(request.POST, request.FILES)
+	form = Post2ImageForm3(request.POST, request.FILES)
+	form = Post2NameForm(request.POST)
 	if request.method =='POST':
 		if form.is_valid():
 			Region = request.POST['Region']
@@ -1156,6 +2036,45 @@ class MagValueView(DetailView):
 	model = Post
 	template_name = 'testdb/mag_value.html'
 
+#================post2list
+
+
+class Post2ListView(ListView):
+	model = Post2
+	template_name = 'testdb/home.html'
+	context_object_name = 'posts'
+	paginate_by = 10
+
+
+
+class UserPostListView(ListView):
+	model = Post2
+	template_name = 'testdb/user_posts.html'
+	context_object_name = 'posts'
+	paginate_by = 5
+
+	def get_queryset(self):
+		user = get_object_or_404(User, username=self.kwargs.get('username'))
+		return Post.objects.filter(author=user).order_by('-date_posted')
+
+
+
+class Post2DetailView(DetailView):
+	model = Post2
+	template_name = 'testdb/post_detail.html'
+
+
+
+
+class Post2DetailView2(DetailView):
+	model = Post2
+	template_name = 'testdb/post_phase.html'
+
+
+class MagValue2View(DetailView):
+	model = Post2
+	template_name = 'testdb/mag_value.html'
+
 
 
 def focal(request):
@@ -1265,7 +2184,72 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 			return True
 		return False
 
+#================post2update
 
+
+class Post2UpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+	model = Post2
+	fields = [
+    'RMS',
+    'lu1',
+    'lu2',
+    'Latitude',
+    'Longitude',
+    'Depth',
+    'event',
+    'Gap',
+    'Magnitude',
+    'MagnitudeMw',
+    'Region',
+    'image',
+    'image2',
+	'image_h',
+	'image_p',
+	'image_z',
+    'station',
+    'comp',
+    'DIS',
+    'AZM',
+    'ARR_TIME',
+    'RES',
+    'PHASE',
+    'date_posted',
+    'station_m',
+    'comp_m',
+    'DIS_m',
+    'azm_m',
+    'b_azm_m',
+    'amp_m',
+    'gain_m',
+    'local_m_m',
+    'station_m2',
+    'comp_m2',
+    'DIS_m2',
+    'azm_m2',
+    'b_azm_m2',
+    'amp_m2',
+    'gain_m2',
+    'local_m_m2']
+
+	def form_valid(self, form):
+		form.instance.author = self.request.user
+		return super().form_valid(form)
+
+	def test_func(self):
+		post = self.get_object()
+		if self.request.user == post.author:
+			return True
+		return False
+
+class Post2DeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+	model = Post2
+	success_url = '/'
+
+	def test_func(self):
+		post = self.get_object()
+		if self.request.user == post.author:
+			return True
+		return False
 
 def about(request):
     return render(request, 'testdb/about.html', {'title': 'About'})

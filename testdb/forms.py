@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post, Focal, Report, Paper
+from .models import Post, Post2, Focal, Report, Paper
 
 
 class FileForm(forms.ModelForm):
@@ -61,6 +61,70 @@ class ImageForm3(forms.ModelForm):
 
 
 class NameForm(forms.Form):
+	Region = forms.CharField(label='Region', max_length=100)
+	MagnitudeMw = forms.CharField(label='MagnitudeMw', max_length=100)
+
+#===========post2
+
+class Post2FileForm(forms.ModelForm):
+	class Meta:
+		model = Post2
+		fields = ['file']
+
+
+class Post2FileForm1(forms.ModelForm):
+	class Meta:
+		model = Post2
+		fields = ['file1']
+
+class Post2FileForm11(forms.ModelForm):
+	class Meta:
+		model = Post2
+		fields = ['file11']
+
+
+class Post2FileForm2(forms.ModelForm):
+	class Meta:
+		model = Post2
+		fields = ['file2']
+
+
+
+
+
+# class FileForm3(forms.ModelForm):
+# 	class Meta:
+# 		model = Post
+# 		fields = ['file3']
+
+class Post2ImageForm(forms.ModelForm):
+	class Meta:
+		model = Post2
+		fields = ['image']
+
+
+
+class Post2ImageForm1(forms.ModelForm):
+	class Meta:
+		model = Post2
+		fields = ['image_h']
+
+
+
+class Post2ImageForm2(forms.ModelForm):
+	class Meta:
+		model = Post2
+		fields = ['image_p']
+
+
+class Post2ImageForm3(forms.ModelForm):
+	class Meta:
+		model = Post2
+		fields = ['image_z']
+
+
+
+class Post2NameForm(forms.Form):
 	Region = forms.CharField(label='Region', max_length=100)
 	MagnitudeMw = forms.CharField(label='MagnitudeMw', max_length=100)
 
