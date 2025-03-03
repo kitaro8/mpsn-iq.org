@@ -1982,17 +1982,10 @@ def search_results(request):
 
 
 def home(request):
-	context = {
-        'posts': Post.objects.all()
-    }
-	return render(request, 'testdb/home.html', context)
-
-def home2(request):
-	context = {
-        'posts2': Post2.objects.all()
-    }
-	return render(request, 'testdb/home.html', context)
-
+	
+    posts = Post.objects.all() 
+    posts2 = Post2.objects.all()  
+    return render(request, 'testdb/home.html', {'posts': posts, 'posts2': posts2})
 
 
 def search(request):
@@ -2025,17 +2018,6 @@ class UserPostListView(ListView):
 		user = get_object_or_404(User, username=self.kwargs.get('username'))
 		return Post.objects.filter(author=user).order_by('-date_posted')
 	
-
-
-class UserPost2ListView(ListView):
-	model = Post2
-	template_name = 'testdb/user_posts.html'
-	context_object_name = 'posts2'
-	paginate_by = 5
-
-	def get_queryset(self):
-		user = get_object_or_404(User, username=self.kwargs.get('username'))
-		return Post.objects.filter(author=user).order_by('-date_posted')
 
 
 
@@ -2079,6 +2061,17 @@ class Post2DetailView2(DetailView):
 	model = Post2
 	template_name = 'testdb/post2_phase.html'
 
+
+
+class UserPost2ListView(ListView):
+	model = Post2
+	template_name = 'testdb/user_posts.html'
+	context_object_name = 'posts2'
+	paginate_by = 5
+
+	def get_queryset(self):
+		user = get_object_or_404(User, username=self.kwargs.get('username'))
+		return Post.objects.filter(author=user).order_by('-date_posted')
 
 class MagValue2View(DetailView):
 	model = Post2

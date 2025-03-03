@@ -3,6 +3,9 @@ from .views import PostListView, Post2ListView, MagValueView, MagValue2View,  Po
 from . import views
 
 urlpatterns = [
+
+    
+
     path('', PostListView.as_view(), name='testdb-home'),
     path('user/<str:username>', UserPostListView.as_view(), name='user_posts'),
     
@@ -14,7 +17,7 @@ urlpatterns = [
     path('phase/<int:pk>/', views.PostDetailView2.as_view(), name='post_phase'),
 
 
-    path('', Post2ListView.as_view(), name='testdb-home2'),
+    path('post2/', Post2ListView.as_view(), name='testdb-home2'),
     path('user/<str:username>', UserPost2ListView.as_view(), name='user_posts'),
 
     path('post2/new/', views.upload2, name='post_create2'),
