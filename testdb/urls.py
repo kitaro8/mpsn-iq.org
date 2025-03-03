@@ -7,7 +7,7 @@ urlpatterns = [
     
     # path('', home, name='testdb-home'),
 
-    path('', PostListView.as_view(),Post2ListView.as_view(), name='testdb-home'),
+    path('', PostListView.as_view(), name='testdb-home'),
     path('user/<str:username>', UserPostListView.as_view(), name='user_posts'),
     
     path('post/new/', views.upload, name='post_create'),
@@ -18,7 +18,7 @@ urlpatterns = [
     path('phase/<int:pk>/', views.PostDetailView2.as_view(), name='post_phase'),
 
 
-    path('post2/', Post2ListView.as_view(), name='testdb-home2'),
+    path('/', Post2ListView.as_view(), name='testdb-home2'),
     path('user/<str:username>', UserPost2ListView.as_view(), name='user_posts'),
 
     path('post2/new/', views.upload2, name='post_create2'),
