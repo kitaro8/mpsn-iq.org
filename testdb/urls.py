@@ -10,7 +10,7 @@ urlpatterns = [
     path('user/<str:username>', UserPostListView.as_view(), name='user_posts'),
     
     path('post/new/', views.upload, name='post_create'),
-    path('post/<int:pk>/', views.PostDetailView.as_view(), name='post_detail'),
+    # path('post/<int:pk>/', views.PostDetailView.as_view(), name='post_detail'),
     path('mag_value/<int:pk>/', views.MagValueView.as_view(), name='mag_value'),
     path('post/<int:pk>/Update', PostUpdateView.as_view(), name='post_update'),
     path('post/<int:pk>/delete', PostDeleteView.as_view(), name='post_delete'),
