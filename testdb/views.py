@@ -1746,7 +1746,7 @@ def upload2(request):
 					
 
 			current_user = request.user
-			upload=Post(RMS=RMS, 
+			upload=Post2(RMS=RMS, 
 				lu1=lu1, lu2=lu2, 
 				Latitude=Latitude, 
 				Longitude=Longitude, 
