@@ -5,7 +5,7 @@ from . import views
 urlpatterns = [
 
     
-    path('', home2, name='testdb-home'),
+    path('', home2, name='testdb-home1'),
     path('', PostListView.as_view(), name='testdb-home'),
     path('user/<str:username>', UserPostListView.as_view(), name='user_posts'),
     
