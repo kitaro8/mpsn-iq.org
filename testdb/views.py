@@ -1982,10 +1982,17 @@ def search_results(request):
 
 
 def home(request):
-	
-    posts = Post.objects.all() 
-    posts2 = Post2.objects.all()  
-    return render(request, 'testdb/home.html', {'posts': posts, 'posts2': posts2})
+	context = {
+        'posts': Post.objects.all()
+    }
+	return render(request, 'testdb/home.html', context)
+
+def home2(request):
+	context = {
+        'posts2': Post2.objects.all()
+    }
+	return render(request, 'testdb/home.html', context)
+
 
 
 def search(request):
