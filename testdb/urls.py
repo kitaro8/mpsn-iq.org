@@ -1,10 +1,9 @@
 from django.urls import path
-from .views import PostListView, Post2ListView, MagValueView, MagValue2View,  PostDetailView, PostDetailView2, PostListView3, PostListView4, PostListView5, PostListView6, PostListView2, PostUpdateView, PostDeleteView, Post2UpdateView, Post2DeleteView, UserPostListView
+from .views import PostListView, Post2ListView, MagValueView, MagValue2View,  PostDetailView, PostDetailView2, PostListView3, PostListView4, PostListView5, PostListView6, PostListView2, PostUpdateView, PostDeleteView, Post2UpdateView, Post2DeleteView, UserPostListView, UserPost2ListView
 from . import views
 
 urlpatterns = [
     path('', PostListView.as_view(), name='testdb-home'),
-    path('', Post2ListView.as_view(), name='testdb-home'),
     path('user/<str:username>', UserPostListView.as_view(), name='user_posts'),
     
     path('post/new/', views.upload, name='post_create'),
@@ -15,13 +14,15 @@ urlpatterns = [
     path('phase/<int:pk>/', views.PostDetailView2.as_view(), name='post_phase'),
 
 
+    path('', Post2ListView.as_view(), name='testdb-home2'),
+    path('user/<str:username>', UserPost2ListView.as_view(), name='user_posts'),
 
     path('post2/new/', views.upload2, name='post_create2'),
-    path('post2/<int:pk>/', views.Post2DetailView.as_view(), name='post_detail2'),
-    path('mag_value2/<int:pk>/', views.MagValue2View.as_view(), name='mag_value2'),
-    path('post2/<int:pk>/Update', Post2UpdateView.as_view(), name='post_update2'),
-    path('post2/<int:pk>/delete', Post2DeleteView.as_view(), name='post_delete2'),
-    path('phase2/<int:pk>/', views.Post2DetailView2.as_view(), name='post_phase2'),
+    path('post2/<int:pk>/', views.Post2DetailView.as_view(), name='post2_detail'),
+    path('mag_value2/<int:pk>/', views.MagValue2View.as_view(), name='mag2_value'),
+    path('post2/<int:pk>/Update', Post2UpdateView.as_view(), name='post2_update'),
+    path('post2/<int:pk>/delete', Post2DeleteView.as_view(), name='post2_delete'),
+    path('phase2/<int:pk>/', views.Post2DetailView2.as_view(), name='post2_phase'),
 
     
     path('search/', PostListView3.as_view(), name='search'),

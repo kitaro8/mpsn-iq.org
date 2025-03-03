@@ -2027,7 +2027,7 @@ class UserPostListView(ListView):
 	
 
 
-class UserPostListView(ListView):
+class UserPost2ListView(ListView):
 	model = Post2
 	template_name = 'testdb/user_posts.html'
 	context_object_name = 'posts2'
@@ -2065,16 +2065,6 @@ class Post2ListView(ListView):
 	paginate_by = 10
 
 
-
-class UserPostListView(ListView):
-	model = Post2
-	template_name = 'testdb/user_posts.html'
-	context_object_name = 'posts2'
-	paginate_by = 5
-
-	def get_queryset(self):
-		user = get_object_or_404(User, username=self.kwargs.get('username'))
-		return Post.objects.filter(author=user).order_by('-date_posted')
 
 
 
