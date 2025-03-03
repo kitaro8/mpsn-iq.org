@@ -1994,9 +1994,9 @@ def home(request):
 # 	return render(request, 'testdb/home.html', context)
 
 
-def home2(request):
-    posts2 = Post2.objects.all() 
-    return render(request, 'testdb/home.html', {'posts2': posts2})
+# def home2(request):
+#     posts2 = Post2.objects.all() 
+#     return render(request, 'testdb/home.html', {'posts2': posts2})
 
 
 def search(request):

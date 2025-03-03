@@ -1,11 +1,12 @@
 from django.urls import path
-from .views import home2, PostListView, Post2ListView, MagValueView, MagValue2View,  PostDetailView, PostDetailView2, PostListView3, PostListView4, PostListView5, PostListView6, PostListView2, PostUpdateView, PostDeleteView, Post2UpdateView, Post2DeleteView, UserPostListView, UserPost2ListView
+from .views import  PostListView, Post2ListView, MagValueView, MagValue2View,  PostDetailView, PostDetailView2, PostListView3, PostListView4, PostListView5, PostListView6, PostListView2, PostUpdateView, PostDeleteView, Post2UpdateView, Post2DeleteView, UserPostListView, UserPost2ListView
 from . import views
 
 urlpatterns = [
 
     
-    path('', home2, name='testdb-home1'),
+    # path('', home, name='testdb-home'),
+
     path('', PostListView.as_view(), name='testdb-home'),
     path('user/<str:username>', UserPostListView.as_view(), name='user_posts'),
     
