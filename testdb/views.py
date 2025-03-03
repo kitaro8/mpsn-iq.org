@@ -1988,6 +1988,13 @@ def home(request):
 	return render(request, 'testdb/home.html', context)
 
 
+def home2(request):
+	context = {
+        'posts2': Post2.objects.all()
+    }
+	return render(request, 'testdb/home.html', context)
+
+
 def search(request):
 	context = {
         'posts': Post.objects.all()
@@ -2042,7 +2049,7 @@ class MagValueView(DetailView):
 class Post2ListView(ListView):
 	model = Post2
 	template_name = 'testdb/home.html'
-	context_object_name = 'posts'
+	context_object_name = 'posts2'
 	paginate_by = 10
 
 
@@ -2050,7 +2057,7 @@ class Post2ListView(ListView):
 class UserPostListView(ListView):
 	model = Post2
 	template_name = 'testdb/user_posts.html'
-	context_object_name = 'posts'
+	context_object_name = 'posts2'
 	paginate_by = 5
 
 	def get_queryset(self):
@@ -2061,19 +2068,19 @@ class UserPostListView(ListView):
 
 class Post2DetailView(DetailView):
 	model = Post2
-	template_name = 'testdb/post_detail.html'
+	template_name = 'testdb/post2_detail.html'
 
 
 
 
 class Post2DetailView2(DetailView):
 	model = Post2
-	template_name = 'testdb/post_phase.html'
+	template_name = 'testdb/post2_phase.html'
 
 
 class MagValue2View(DetailView):
 	model = Post2
-	template_name = 'testdb/mag_value.html'
+	template_name = 'testdb/mag2_value.html'
 
 
 

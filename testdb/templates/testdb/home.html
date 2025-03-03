@@ -58,6 +58,16 @@
     {% endif %}
 </div>
 
+<div>
+  {% for post in posts2 %}
+
+      <p><strong>Date - Time (UTC): </strong>{{ post.event }}</p>
+
+      <img width="70%" height="70%" src="{{ object.image.url }}">
+
+  {% endfor %}
+</div>
+
 {% endblock content %}
 
 
