@@ -74,7 +74,7 @@
       </tr>
     {% for post2 in posts2 %}
       <tr>
-        <td><a href="{% url 'post2_detail' post.id %}">{{ post2.event }}</a></td>
+        <td><a href="{% url 'post2_detail' post2.id %}">{{ post2.event }}</a></td>
         <td>{{ post2.Latitude }}</td>
         <td>{{ post2.Longitude }}</td>
         {% if post2.Depth == "0.00" %}
