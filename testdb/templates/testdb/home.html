@@ -56,15 +56,39 @@
         <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
       {% endif %}
     {% endif %}
-
-
+<br>
+<br>
+<br>
+<br>
+<br>
+    <p>post2</p>
+    <table style="width:1000px; margin-left: 70px; font-family: Times New Roman;">
+      <tr>
+        <th>Origin Time (UTC)</th>
+        <th>Latitude (deg-N)</th>
+        <th>Longitude (deg-E)</th>
+        <th>Depth (km)</th>
+        <th> Magnitude (ML)</th>
+        <th> Magnitude (MW)</th>
+        <th>Region</th>
+      </tr>
     {% for post in posts2 %}
-
-      <p><strong>Date - Time (UTC): </strong>{{ post.event }}</p>
-      <p><strong>Magnitude: </strong>{{ post.Magnitude }}</p>
-
-
+      <tr>
+        <td><a href="{% url 'post_detail2' post.id %}">{{ post.event }}</a></td>
+        <td>{{ post.Latitude }}</td>
+        <td>{{ post.Longitude }}</td>
+        {% if post.Depth == "0.00" %}
+          <td>10</td>
+        {% else %}
+          <td>{{ post.Depth }}</td>
+        {% endif %}
+        <td>{{ post.Magnitude }}</td>
+        <td>{{ post.MagnitudeMw }}</td>
+        <td>{{ post.Region }}</td>
+      </tr>
     {% endfor %}
+  </table>
+</div>
 </div>
 
 
