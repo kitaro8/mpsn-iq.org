@@ -1981,11 +1981,11 @@ def search_results(request):
 
 
 
-# def home(request):
-# 	context = {
-#         'posts': Post.objects.all()
-#     }
-# 	return render(request, 'testdb/home.html', context)
+def home(request):
+	context = {
+        'posts': Post.objects.all()
+    }
+	return render(request, 'testdb/home.html', context)
 
 # def home2(request):
 # 	context = {
@@ -1994,10 +1994,9 @@ def search_results(request):
 # 	return render(request, 'testdb/home.html', context)
 
 
-def home(request):
-    posts = Post.objects.all()  
+def home2(request):
     posts2 = Post2.objects.all() 
-    return render(request, 'testdb/home.html', {'posts': posts, 'posts2': posts2})
+    return render(request, 'testdb/home.html', {'posts2': posts2})
 
 
 def search(request):
