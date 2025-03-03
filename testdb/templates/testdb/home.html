@@ -72,19 +72,19 @@
         <th> Magnitude (MW)</th>
         <th>Region</th>
       </tr>
-    {% for post2 in posts2 %}
+    {% for post in posts2 %}
       <tr>
-        <td><a href="{% url 'post2_detail' post2.id %}">{{ post2.event }}</a></td>
-        <td>{{ post2.Latitude }}</td>
-        <td>{{ post2.Longitude }}</td>
-        {% if post2.Depth == "0.00" %}
+        <td><a href="{% url 'post2_detail' post.id %}">{{ post.event }}</a></td>
+        <td>{{ post.Latitude }}</td>
+        <td>{{ post.Longitude }}</td>
+        {% if post.Depth == "0.00" %}
           <td>10</td>
         {% else %}
-          <td>{{ post2.Depth }}</td>
+          <td>{{ post.Depth }}</td>
         {% endif %}
-        <td>{{ post2.Magnitude }}</td>
-        <td>{{ post2.MagnitudeMw }}</td>
-        <td>{{ post2.Region }}</td>
+        <td>{{ post.Magnitude }}</td>
+        <td>{{ post.MagnitudeMw }}</td>
+        <td>{{ post.Region }}</td>
       </tr>
     {% endfor %}
   </table>
