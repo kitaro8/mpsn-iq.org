@@ -56,17 +56,18 @@
         <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
       {% endif %}
     {% endif %}
-</div>
 
-<div>
-  {% for post in posts2 %}
+
+    {% for post in posts2 %}
 
       <p><strong>Date - Time (UTC): </strong>{{ post.event }}</p>
       <p><strong>Magnitude: </strong>{{ post.Magnitude }}</p>
 
 
-  {% endfor %}
+    {% endfor %}
 </div>
+
+
 
 {% endblock content %}
 
