@@ -7,7 +7,7 @@ urlpatterns = [
     
     # path('', home, name='testdb-home'),
 
-    path('', PostListView.as_view(), name='testdb-home'),
+    path('', PostListView.as_view(),Post2ListView.as_view(), name='testdb-home'),
     path('user/<str:username>', UserPostListView.as_view(), name='user_posts'),
     
     path('post/new/', views.upload, name='post_create'),
