@@ -2265,7 +2265,7 @@ class Post2DeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 	success_url = '/'
 
 	def test_func(self):
-		2 = self.get_object()
+		post2 = self.get_object()
 		if self.request.user == post2.author:
 			return True
 		return False
