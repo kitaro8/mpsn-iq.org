@@ -7,8 +7,6 @@ from .forms import FileForm, FileForm2, FileForm1, FileForm11, ImageForm, ImageF
 from django.db.models import Q
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
-from django.core.paginator import Paginator
-
 
 
 
@@ -1997,21 +1995,9 @@ def search_results(request):
 
 
 def home(request):
-    posts = Post.objects.all()
-    posts2 = Post2.objects.all()
-
-    # Merge posts and posts2 into a single list (optional, if you want a combined pagination)
-    all_posts = list(posts) + list(posts2)
-
-    # Pagination
-    paginator = Paginator(all_posts, 10)  # Show 10 posts per page
-    page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
-
-    return render(request, 'testdb/home.html', {
-        'page_obj': page_obj,  # Paginator object
-        'is_paginated': page_obj.has_other_pages(),  # Check if pagination is needed
-    })
+    posts = Post.objects.all()  
+    posts2 = Post2.objects.all() 
+    return render(request, 'testdb/home.html', {'posts': posts, 'posts2': posts2})
 
 
 def search(request):

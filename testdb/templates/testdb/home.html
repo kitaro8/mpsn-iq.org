@@ -17,7 +17,7 @@
             <th> Magnitude (MW)</th>
             <th>Region</th>
           </tr>
-        {% for post in page_obj  %}
+        {% for post in posts %}
           <tr>
             <td><a href="{% url 'post_detail' post.id %}">{{ post.event }}</a></td>
             <td>{{ post.Latitude }}</td>
@@ -52,7 +52,7 @@
         <th> Magnitude (MW)</th>
         <th>Region</th>
       </tr>
-    {% for post in page_obj  %}
+    {% for post in posts2 %}
       <tr>
         <td><a href="{% url 'post2_detail' post.id %}">{{ post.event }}</a></td>
         <td>{{ post.Latitude }}</td>
