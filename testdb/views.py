@@ -1983,12 +1983,15 @@ def search_results(request):
 
 def home(request):
 	context = {
-        'posts': Post.objects.all(),
-		'posts2': Post2.objects.all()
+        'posts': Post.objects.all()
     }
 	return render(request, 'testdb/home.html', context)
 
-
+def home2(request):
+	context = {
+        'posts2': Post2.objects.all()
+    }
+	return render(request, 'testdb/home.html', context)
 
 
 
@@ -2016,6 +2019,18 @@ class UserPostListView(ListView):
 	model = Post
 	template_name = 'testdb/user_posts.html'
 	context_object_name = 'posts'
+	paginate_by = 5
+
+	def get_queryset(self):
+		user = get_object_or_404(User, username=self.kwargs.get('username'))
+		return Post.objects.filter(author=user).order_by('-date_posted')
+	
+
+
+class UserPostListView(ListView):
+	model = Post2
+	template_name = 'testdb/user_posts.html'
+	context_object_name = 'posts2'
 	paginate_by = 5
 
 	def get_queryset(self):
@@ -2240,8 +2255,8 @@ class Post2UpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 		return super().form_valid(form)
 
 	def test_func(self):
-		post = self.get_object()
-		if self.request.user == post.author:
+		post2 = self.get_object()
+		if self.request.user == post2.author:
 			return True
 		return False
 
@@ -2250,8 +2265,8 @@ class Post2DeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 	success_url = '/'
 
 	def test_func(self):
-		post = self.get_object()
-		if self.request.user == post.author:
+		2 = self.get_object()
+		if self.request.user == post2.author:
 			return True
 		return False
 
