@@ -56,33 +56,12 @@
 </div>
 <!-- Post2 Data -->
 <br><br><br><br><br>
-<p>Post2</p>
-<table style="width:1000px; margin-left: 70px; font-family: Times New Roman;">
-    <tr>
-        <th>Origin Time (UTC)</th>
-        <th>Latitude (deg-N)</th>
-        <th>Longitude (deg-E)</th>
-        <th>Depth (km)</th>
-        <th> Magnitude (ML)</th>
-        <th> Magnitude (MW)</th>
-        <th>Region</th>
-    </tr>
     {% for post in posts2 %}
-    <tr>
-        <td><a href="{% url 'post2_detail' post.id %}">{{ post.event }}</a></td>
-        <td>{{ post.Latitude }}</td>
-        <td>{{ post.Longitude }}</td>
-        {% if post.Depth == "0.00" %}
-            <td>10</td>
-        {% else %}
-            <td>{{ post.Depth }}</td>
-        {% endif %}
-        <td>{{ post.Magnitude }}</td>
-        <td>{{ post.MagnitudeMw }}</td>
-        <td>{{ post.Region }}</td>
-    </tr>
+        <p><a href="{% url 'post2_detail' post.id %}">{{ post.event }}</a></p>
+        <img width="25%" height="25%" src="{{ post.image }}">
+        <p>{{post.Region}}</p>
+        <p>{{ post.Magnitude }}</p>
     {% endfor %}
-</table>
 
 <!-- Pagination for Post2 -->
 <div style="margin-left: 70px;">
