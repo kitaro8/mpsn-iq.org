@@ -1981,18 +1981,41 @@ def search_results(request):
 
 
 
-def home(request):
-	context = {
-        'posts': Post.objects.all()
-    }
-	return render(request, 'testdb/home.html', context)
+# def home(request):
+# 	context = {
+#         'posts': Post.objects.all()
+#     }
+# 	return render(request, 'testdb/home.html', context)
 
-def home2(request):
-	context = {
-        'posts2': Post2.objects.all()
-    }
-	return render(request, 'testdb/home.html', context)
+# def home2(request):
+# 	context = {
+#         'posts2': Post2.objects.all()
+#     }
+# 	return render(request, 'testdb/home.html', context)
 
+
+from django.core.paginator import Paginator
+
+def combined_list_view(request):
+    # Get all data for both models
+    post_list = Post.objects.all()
+    post2_list = Post2.objects.all()
+
+    # Paginate Post
+    post_paginator = Paginator(post_list, 10)  # Show 10 posts per page
+    post_page_number = request.GET.get('post_page', 1)
+    posts = post_paginator.get_page(post_page_number)
+
+    # Paginate Post2
+    post2_paginator = Paginator(post2_list, 10)  # Show 10 post2 per page
+    post2_page_number = request.GET.get('post2_page', 1)
+    posts2 = post2_paginator.get_page(post2_page_number)
+
+    context = {
+        'posts': posts,         # Paginated Post
+        'posts2': posts2,       # Paginated Post2
+    }
+    return render(request, 'testdb/home.html', context)
 
 # def home2(request):
 #     posts2 = Post2.objects.all() 

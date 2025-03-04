@@ -1,10 +1,10 @@
 from django.urls import path
-from .views import  PostListView, Post2ListView, MagValueView, MagValue2View,  PostDetailView, PostDetailView2, PostListView3, PostListView4, PostListView5, PostListView6, PostListView2, PostUpdateView, PostDeleteView, Post2UpdateView, Post2DeleteView, UserPostListView, UserPost2ListView
+from .views import combined_list_view, PostListView, Post2ListView, MagValueView, MagValue2View,  PostDetailView, PostDetailView2, PostListView3, PostListView4, PostListView5, PostListView6, PostListView2, PostUpdateView, PostDeleteView, Post2UpdateView, Post2DeleteView, UserPostListView, UserPost2ListView
 from . import views
 
 urlpatterns = [
 
-    
+    path('', combined_list_view, name='testdb-home'),
     # path('', home, name='testdb-home'),
 
     path('', PostListView.as_view(), name='testdb-home'),
