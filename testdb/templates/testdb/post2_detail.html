@@ -1,6 +1,10 @@
 {% extends "testdb/base.html" %}
 {% block content %}
 <br>
+
+{% for post in posts2 %}
+  {% if post.id %}
+
     <div style="margin-left: 120px; font-size: 17px; font-family: Times New Roman; display: flex; align-items: center;">
       <div style="flex: 0 0 auto; margin-left: -55px;">
         {% if object.author == user %}
@@ -28,5 +32,10 @@
       </div>
       <img width="70%" height="70%" src="{{ object.image.url }}">
     </div>
+
+    {% else %}
+        <p>No ID available for this post</p>
+    {% endif %}
+{% endfor %}
     <br>
 {% endblock content %}
