@@ -3,7 +3,6 @@
 <br>
 
 {% for post in posts2 %}
-  {% if post.id %}
 
     <div style="margin-left: 120px; font-size: 17px; font-family: Times New Roman; display: flex; align-items: center;">
       <div style="flex: 0 0 auto; margin-left: -55px;">
@@ -26,16 +25,13 @@
         <p><strong>RMS error: </strong>{{ post.RMS }}</p>
         <p><strong>Azimuthal Gap: </strong>{{ post.Gap }}°</p>
         <p><strong>Source: </strong>Mesopotamian Seismological Network (MPSN) in Iraq</p>
-        <a href="{% url 'post2_phase' post.id %}">Phase (Arrival times)</a><br>
+        <a href="{% url 'post2_phase' post2.id %}">Phase (Arrival times)</a><br>
         <a href="{% url 'mag2_value' post.id %}">Magnitude Value</a><br>
         <a href="{{ post.file2.url }}"  target="_blank">Wave File Download</a>
       </div>
       <img width="70%" height="70%" src="{{ object.image.url }}">
     </div>
-
-    {% else %}
-        <p>No ID available for this post</p>
-    {% endif %}
-{% endfor %}
     <br>
+{% endfor %}
+
 {% endblock content %}
