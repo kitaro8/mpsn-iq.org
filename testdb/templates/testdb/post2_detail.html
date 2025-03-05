@@ -5,8 +5,8 @@
       <div style="flex: 0 0 auto; margin-left: -55px;">
         {% if object.author == user %}
           <div>
-            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post_update' object.id %}">Update</a>
-            <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post_delete' object.id %}">Delete</a>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post2_update' object.id %}">Update</a>
+            <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post2_delete' object.id %}">Delete</a>
           </div>
         {% endif %}
         <p><strong>Date - Time (UTC): </strong>{{ post.event }}</p>
@@ -22,8 +22,8 @@
         <p><strong>RMS error: </strong>{{ post.RMS }}</p>
         <p><strong>Azimuthal Gap: </strong>{{ post.Gap }}°</p>
         <p><strong>Source: </strong>Mesopotamian Seismological Network (MPSN) in Iraq</p>
-        <a href="{% url 'post_phase' post.id %}">Phase (Arrival times)</a><br>
-        <a href="{% url 'mag_value' post.id %}">Magnitude Value</a><br>
+        <a href="{% url 'post2_phase' post.id %}">Phase (Arrival times)</a><br>
+        <a href="{% url 'mag2_value' post.id %}">Magnitude Value</a><br>
         <a href="{{ post.file2.url }}"  target="_blank">Wave File Download</a>
       </div>
       <img width="70%" height="70%" src="{{ object.image.url }}">
