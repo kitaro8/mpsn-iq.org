@@ -13,16 +13,16 @@
         {% endif %}
         <p><strong>Date - Time (UTC): </strong>{{ object.event }}</p>
         <p style="width:100%"><strong>Location: </strong>{{ object.Latitude }}N, {{ object.Longitude }}E</p>
-        {% if post.Depth == "0.00" %}
+        {% if object.Depth == "0.00" %}
             <p><strong>Depth: </strong>10 km</p>
         {% else %}
-            <p><strong>Depth: </strong>{{ post.Depth }} km</p>
+            <p><strong>Depth: </strong>{{ object.Depth }} km</p>
         {% endif %}
-        <p><strong>Local Magnitude (ML): </strong>{{ post.Magnitude }}</p>
-        <p><strong>Moment Magnitude (Mw): </strong>{{ post.MagnitudeMw }} </p>
-        <p style="width: 100%;"><strong>Location uncertainty: </strong>+/-{{ post.lu1 }} in N-S Direction | +/-{{ post.lu2 }} in E-W Direction</p>
-        <p><strong>RMS error: </strong>{{ post.RMS }}</p>
-        <p><strong>Azimuthal Gap: </strong>{{ post.Gap }}°</p>
+        <p><strong>Local Magnitude (ML): </strong>{{ object.Magnitude }}</p>
+        <p><strong>Moment Magnitude (Mw): </strong>{{ object.MagnitudeMw }} </p>
+        <p style="width: 100%;"><strong>Location uncertainty: </strong>+/-{{ object.lu1 }} in N-S Direction | +/-{{ object.lu2 }} in E-W Direction</p>
+        <p><strong>RMS error: </strong>{{ object.RMS }}</p>
+        <p><strong>Azimuthal Gap: </strong>{{ object.Gap }}°</p>
         <p><strong>Source: </strong>Mesopotamian Seismological Network (MPSN) in Iraq</p>
         <a href="{% url 'post2_phase' object.id %}">Phase (Arrival times)</a><br>
         <a href="{% url 'mag2_value' object.id %}">Magnitude Value</a><br>
