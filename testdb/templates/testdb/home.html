@@ -57,6 +57,17 @@
 <!-- Post2 Data -->
 <br><br><br><br><br>
     {% for post in posts2 %}
+
+
+    <a href="/Earthquake_information/earthquake.php?id=1776065">
+    <div class="qusea-icon intensmap"><img src="{{ post.image.url }}" alt="intensity map">
+    </div>
+    <div class="qusea-date">{{ post.event }}
+
+    </div>
+    <div class="qusea-label">{{ post.Magnitude }}, {{post.Region}}</div>
+  </a>
+
         <p><a href="{% url 'post2_detail' post.id %}">{{ post.event }}</a></p>
         <img width="25%" height="25%" src="{{ post.image.url }}">
         <p>{{post.Region}}</p>
