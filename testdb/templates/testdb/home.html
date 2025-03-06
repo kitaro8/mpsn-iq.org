@@ -82,6 +82,27 @@
         </div>
     </div>
 
+  <!-- Pagination for Earthquake News -->
+<div style="margin-left: 70px;">
+  {% if posts2.has_previous %}
+      <a class="btn btn-outline-info mb-4" href="?post_page={{ posts.number }}&post2_page=1">First</a>
+      <a class="btn btn-outline-info mb-4" href="?post_page={{ posts.number }}&post2_page={{ posts2.previous_page_number }}">Previous</a>
+  {% endif %}
+
+  {% for num in posts2.paginator.page_range %}
+      {% if posts2.number == num %}
+          <a class="btn btn-info mb-4" href="?post_page={{ posts.number }}&post2_page={{ num }}">{{ num }}</a>
+      {% elif num > posts2.number|add:'-3' and num < posts2.number|add:'3' %}
+          <a class="btn btn-outline-info mb-4" href="?post_page={{ posts.number }}&post2_page={{ num }}">{{ num }}</a>
+      {% endif %}
+  {% endfor %}
+
+  {% if posts2.has_next %}
+      <a class="btn btn-outline-info mb-4" href="?post_page={{ posts.number }}&post2_page={{ posts2.next_page_number }}">Next</a>
+      <a class="btn btn-outline-info mb-4" href="?post_page={{ posts.number }}&post2_page={{ posts2.paginator.num_pages }}">Last</a>
+  {% endif %}
+</div>
+
     <!-- Right Side: Earthquake Table -->
     <div class="table-container">
         <pre class="flex-container">Earthquakes in Iraq and adjacent areas, M 3.5+</pre><br><br>
@@ -135,25 +156,6 @@
     {% endif %}
 </div>
 
-<!-- Pagination for Earthquake News -->
-<div style="margin-left: 70px;">
-    {% if posts2.has_previous %}
-        <a class="btn btn-outline-info mb-4" href="?post_page={{ posts.number }}&post2_page=1">First</a>
-        <a class="btn btn-outline-info mb-4" href="?post_page={{ posts.number }}&post2_page={{ posts2.previous_page_number }}">Previous</a>
-    {% endif %}
 
-    {% for num in posts2.paginator.page_range %}
-        {% if posts2.number == num %}
-            <a class="btn btn-info mb-4" href="?post_page={{ posts.number }}&post2_page={{ num }}">{{ num }}</a>
-        {% elif num > posts2.number|add:'-3' and num < posts2.number|add:'3' %}
-            <a class="btn btn-outline-info mb-4" href="?post_page={{ posts.number }}&post2_page={{ num }}">{{ num }}</a>
-        {% endif %}
-    {% endfor %}
-
-    {% if posts2.has_next %}
-        <a class="btn btn-outline-info mb-4" href="?post_page={{ posts.number }}&post2_page={{ posts2.next_page_number }}">Next</a>
-        <a class="btn btn-outline-info mb-4" href="?post_page={{ posts.number }}&post2_page={{ posts2.paginator.num_pages }}">Last</a>
-    {% endif %}
-</div>
 
 {% endblock content %}
