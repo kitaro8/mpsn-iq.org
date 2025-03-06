@@ -1,152 +1,113 @@
 {% extends "testdb/base.html" %}
 {% block content %}
 
-  <title>Home</title>
+<title>Home</title>
 <br>
-  
 
-  <div class="table-responsive-lg">
-    <pre class="flex-container">Earthquakes in Iraq and adjacent areas, M 3.5+</pre><br><br>
-      <table style="width:1000px; margin-left: 70px; font-family: Times New Roman;">
-          <tr>
-            <th>Origin Time (UTC)</th>
-            <th>Latitude (deg-N)</th>
-            <th>Longitude (deg-E)</th>
-            <th>Depth (km)</th>
-            <th> Magnitude (ML)</th>
-            <th> Magnitude (MW)</th>
-            <th>Region</th>
-          </tr>
-        {% for post in posts %}
-          <tr>
-            <td><a href="{% url 'post_detail' post.id %}">{{ post.event }}</a></td>
-            <td>{{ post.Latitude }}</td>
-            <td>{{ post.Longitude }}</td>
-            {% if post.Depth == "0.00" %}
-              <td>10</td>
-            {% else %}
-              <td>{{ post.Depth }}</td>
-            {% endif %}
-            <td>{{ post.Magnitude }}</td>
-            <td>{{ post.MagnitudeMw }}</td>
-            <td>{{ post.Region }}</td>
-          </tr>
-        {% endfor %}
-      </table>
-  </div>
-<br>
-<div style="margin-left: 70px;">
-  {% if posts.has_previous %}
-      <a class="btn btn-outline-info mb-4" href="?post_page=1&post2_page={{ posts2.number }}">First</a>
-      <a class="btn btn-outline-info mb-4" href="?post_page={{ posts.previous_page_number }}&post2_page={{ posts2.number }}">Previous</a>
-  {% endif %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 20px;
+    }
+    .earthquake-news {
+        width: 40%;
+    }
+    .news-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .news-item {
+        text-decoration: none;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #ddd;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .news-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+    .news-date {
+        font-style: italic;
+        color: gray;
+        margin: 5px 0;
+    }
+    .news-details {
+        font-weight: bold;
+    }
+    .table-container {
+        width: 55%;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
 
-  {% for num in posts.paginator.page_range %}
-      {% if posts.number == num %}
-          <a class="btn btn-info mb-4" href="?post_page={{ num }}&post2_page={{ posts2.number }}">{{ num }}</a>
-      {% elif num > posts.number|add:'-3' and num < posts.number|add:'3' %}
-          <a class="btn btn-outline-info mb-4" href="?post_page={{ num }}&post2_page={{ posts2.number }}">{{ num }}</a>
-      {% endif %}
-  {% endfor %}
+<div class="container">
+    <!-- Left Side: Earthquake News -->
+    <div class="earthquake-news">
+        <h2>Earthquake news</h2>
+        <div class="news-container">
+            {% for post in posts2 %}
+            <a href="{% url 'post2_detail' post.id %}" class="news-item">
+                <div class="news-image">
+                    <img src="{{ post.image.url }}" alt="intensity map">
+                </div>
+                <div class="news-date">{{ post.event }}</div>
+                <div class="news-details">Magnitude {{ post.Magnitude }} earthquake in {{ post.Region }}</div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
 
-  {% if posts.has_next %}
-      <a class="btn btn-outline-info mb-4" href="?post_page={{ posts.next_page_number }}&post2_page={{ posts2.number }}">Next</a>
-      <a class="btn btn-outline-info mb-4" href="?post_page={{ posts.paginator.num_pages }}&post2_page={{ posts2.number }}">Last</a>
-  {% endif %}
+    <!-- Right Side: Earthquake Table -->
+    <div class="table-container">
+        <pre class="flex-container">Earthquakes in Iraq and adjacent areas, M 3.5+</pre><br><br>
+        <table>
+            <tr>
+                <th>Origin Time (UTC)</th>
+                <th>Latitude (deg-N)</th>
+                <th>Longitude (deg-E)</th>
+                <th>Depth (km)</th>
+                <th>Magnitude (ML)</th>
+                <th>Magnitude (MW)</th>
+                <th>Region</th>
+            </tr>
+            {% for post in posts %}
+            <tr>
+                <td><a href="{% url 'post_detail' post.id %}">{{ post.event }}</a></td>
+                <td>{{ post.Latitude }}</td>
+                <td>{{ post.Longitude }}</td>
+                {% if post.Depth == "0.00" %}
+                <td>10</td>
+                {% else %}
+                <td>{{ post.Depth }}</td>
+                {% endif %}
+                <td>{{ post.Magnitude }}</td>
+                <td>{{ post.MagnitudeMw }}</td>
+                <td>{{ post.Region }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
 </div>
-<!-- Post2 Data -->
-<br><br><br><br><br>
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Earthquake News</title>
-  <style>
-      body {
-          font-family: Arial, sans-serif;
-      }
-      .earthquake-news {
-          padding: 20px;
-      }
-      .earthquake-news h2 {
-          font-size: 24px;
-          font-weight: bold;
-      }
-      .news-container {
-          display: flex;
-          gap: 15px;
-      }
-      .news-item {
-          width: 30%;
-          text-decoration: none;
-          color: black;
-          display: flex;
-          flex-direction: column;
-          border: 1px solid #ddd;
-          padding: 10px;
-          border-radius: 5px;
-      }
-      .news-image img {
-          width: 100%;
-          height: auto;
-          border-radius: 5px;
-      }
-      .news-date {
-          font-style: italic;
-          color: gray;
-          margin: 5px 0;
-      }
-      .news-details {
-          font-weight: bold;
-      }
-  </style>
-</head>
-<body>
-
-  <div class="earthquake-news">
-      <h2>Earthquake news</h2>
-      <div class="news-container">
-          {% for post in posts2 %}
-          <a href="{% url 'post2_detail' post.id %}" class="news-item">
-              <div class="news-image">
-                  <img src="{{ post.image.url }}" alt="intensity map">
-              </div>
-              <div class="news-date">{{ post.event }}</div>
-              <div class="news-details">Magnitude {{ post.Magnitude }} earthquake in {{ post.Region }}</div>
-          </a>
-          {% endfor %}
-      </div>
-  </div>
-
-</body>
-
-
-<!-- Pagination for Post2 -->
-<div style="margin-left: 70px;">
-    {% if posts2.has_previous %}
-        <a class="btn btn-outline-info mb-4" href="?post_page={{ posts.number }}&post2_page=1">First</a>
-        <a class="btn btn-outline-info mb-4" href="?post_page={{ posts.number }}&post2_page={{ posts2.previous_page_number }}">Previous</a>
-    {% endif %}
-
-    {% for num in posts2.paginator.page_range %}
-        {% if posts2.number == num %}
-            <a class="btn btn-info mb-4" href="?post_page={{ posts.number }}&post2_page={{ num }}">{{ num }}</a>
-        {% elif num > posts2.number|add:'-3' and num < posts2.number|add:'3' %}
-            <a class="btn btn-outline-info mb-4" href="?post_page={{ posts.number }}&post2_page={{ num }}">{{ num }}</a>
-        {% endif %}
-    {% endfor %}
-
-    {% if posts2.has_next %}
-        <a class="btn btn-outline-info mb-4" href="?post_page={{ posts.number }}&post2_page={{ posts2.next_page_number }}">Next</a>
-        <a class="btn btn-outline-info mb-4" href="?post_page={{ posts.number }}&post2_page={{ posts2.paginator.num_pages }}">Last</a>
-    {% endif %}
-</div>
-
-
-
 
 {% endblock content %}
-
-
-
-
