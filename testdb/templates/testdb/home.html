@@ -56,19 +56,70 @@
 </div>
 <!-- Post2 Data -->
 <br><br><br><br><br>
-    {% for post in posts2 %}
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Earthquake News</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+      }
+      .earthquake-news {
+          padding: 20px;
+      }
+      .earthquake-news h2 {
+          font-size: 24px;
+          font-weight: bold;
+      }
+      .news-container {
+          display: flex;
+          gap: 15px;
+      }
+      .news-item {
+          width: 30%;
+          text-decoration: none;
+          color: black;
+          display: flex;
+          flex-direction: column;
+          border: 1px solid #ddd;
+          padding: 10px;
+          border-radius: 5px;
+      }
+      .news-image img {
+          width: 100%;
+          height: auto;
+          border-radius: 5px;
+      }
+      .news-date {
+          font-style: italic;
+          color: gray;
+          margin: 5px 0;
+      }
+      .news-details {
+          font-weight: bold;
+      }
+  </style>
+</head>
+<body>
 
-    <a href="{% url 'post2_detail' post.id %}">
-    <div class="qusea-icon intensmap"><img width="55%" height="55%" src="{{ post.image.url }}" alt="intensity map">
-    </div>
-    <div class="qusea-date">{{ post.event }}
+  <div class="earthquake-news">
+      <h2>Earthquake news</h2>
+      <div class="news-container">
+          {% for post in posts2 %}
+          <a href="{% url 'post2_detail' post.id %}" class="news-item">
+              <div class="news-image">
+                  <img src="{{ post.image.url }}" alt="intensity map">
+              </div>
+              <div class="news-date">{{ post.event }}</div>
+              <div class="news-details">Magnitude {{ post.Magnitude }} earthquake in {{ post.Region }}</div>
+          </a>
+          {% endfor %}
+      </div>
+  </div>
 
-    </div>
-    <div class="qusea-label">Magnitude: {{ post.Magnitude }}, {{post.Region}}</div>
-  </a>
+</body>
 
-    {% endfor %}
 
 <!-- Pagination for Post2 -->
 <div style="margin-left: 70px;">
