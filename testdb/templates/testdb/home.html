@@ -8,7 +8,7 @@
     body {
         font-family: Arial, sans-serif;
     }
-    .container {
+    .content-wrapper {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
@@ -47,21 +47,9 @@
     .table-container {
         width: 55%;
     }
-    table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-    th, td {
-        border: 1px solid #ddd;
-        padding: 8px;
-        text-align: left;
-    }
-    th {
-        background-color: #f2f2f2;
-    }
 </style>
 
-<div class="container">
+<div class="content-wrapper">
     <!-- Left Side: Earthquake News -->
     <div class="earthquake-news">
         <h2>Earthquake news</h2>
@@ -81,14 +69,14 @@
     <!-- Right Side: Earthquake Table -->
     <div class="table-container">
         <pre class="flex-container">Earthquakes in Iraq and adjacent areas, M 3.5+</pre><br><br>
-        <table>
+        <table style="width:1000px; margin-left: 70px; font-family: Times New Roman;">
             <tr>
                 <th>Origin Time (UTC)</th>
                 <th>Latitude (deg-N)</th>
                 <th>Longitude (deg-E)</th>
                 <th>Depth (km)</th>
-                <th>Magnitude (ML)</th>
-                <th>Magnitude (MW)</th>
+                <th> Magnitude (ML)</th>
+                <th> Magnitude (MW)</th>
                 <th>Region</th>
             </tr>
             {% for post in posts %}
@@ -108,6 +96,48 @@
             {% endfor %}
         </table>
     </div>
+</div>
+
+<!-- Pagination for Table -->
+<div style="margin-left: 70px;">
+    {% if posts.has_previous %}
+        <a class="btn btn-outline-info mb-4" href="?post_page=1&post2_page={{ posts2.number }}">First</a>
+        <a class="btn btn-outline-info mb-4" href="?post_page={{ posts.previous_page_number }}&post2_page={{ posts2.number }}">Previous</a>
+    {% endif %}
+
+    {% for num in posts.paginator.page_range %}
+        {% if posts.number == num %}
+            <a class="btn btn-info mb-4" href="?post_page={{ num }}&post2_page={{ posts2.number }}">{{ num }}</a>
+        {% elif num > posts.number|add:'-3' and num < posts.number|add:'3' %}
+            <a class="btn btn-outline-info mb-4" href="?post_page={{ num }}&post2_page={{ posts2.number }}">{{ num }}</a>
+        {% endif %}
+    {% endfor %}
+
+    {% if posts.has_next %}
+        <a class="btn btn-outline-info mb-4" href="?post_page={{ posts.next_page_number }}&post2_page={{ posts2.number }}">Next</a>
+        <a class="btn btn-outline-info mb-4" href="?post_page={{ posts.paginator.num_pages }}&post2_page={{ posts2.number }}">Last</a>
+    {% endif %}
+</div>
+
+<!-- Pagination for Earthquake News -->
+<div style="margin-left: 70px;">
+    {% if posts2.has_previous %}
+        <a class="btn btn-outline-info mb-4" href="?post_page={{ posts.number }}&post2_page=1">First</a>
+        <a class="btn btn-outline-info mb-4" href="?post_page={{ posts.number }}&post2_page={{ posts2.previous_page_number }}">Previous</a>
+    {% endif %}
+
+    {% for num in posts2.paginator.page_range %}
+        {% if posts2.number == num %}
+            <a class="btn btn-info mb-4" href="?post_page={{ posts.number }}&post2_page={{ num }}">{{ num }}</a>
+        {% elif num > posts2.number|add:'-3' and num < posts2.number|add:'3' %}
+            <a class="btn btn-outline-info mb-4" href="?post_page={{ posts.number }}&post2_page={{ num }}">{{ num }}</a>
+        {% endif %}
+    {% endfor %}
+
+    {% if posts2.has_next %}
+        <a class="btn btn-outline-info mb-4" href="?post_page={{ posts.number }}&post2_page={{ posts2.next_page_number }}">Next</a>
+        <a class="btn btn-outline-info mb-4" href="?post_page={{ posts.number }}&post2_page={{ posts2.paginator.num_pages }}">Last</a>
+    {% endif %}
 </div>
 
 {% endblock content %}
