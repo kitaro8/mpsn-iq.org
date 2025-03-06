@@ -2078,7 +2078,7 @@ class Post2ListView(ListView):
 	model = Post2
 	template_name = 'testdb/home.html'
 	context_object_name = 'posts2'
-	paginate_by = 10
+	paginate_by = 3
 
 
 

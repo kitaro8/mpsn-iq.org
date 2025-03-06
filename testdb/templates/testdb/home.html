@@ -8,21 +8,28 @@
     body {
         font-family: Arial, sans-serif;
     }
+    
     .content-wrapper {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
         padding: 20px;
     }
+
+    /* Earthquake News Section */
     .earthquake-news {
-        width: 40%;
+        width: 45%;
     }
+    
     .news-container {
         display: flex;
-        flex-direction: column;
         gap: 15px;
+        flex-wrap: wrap;
     }
+
     .news-item {
+        flex: 1;
+        min-width: 30%;
         text-decoration: none;
         color: black;
         display: flex;
@@ -31,21 +38,30 @@
         padding: 10px;
         border-radius: 5px;
     }
+
     .news-image img {
         width: 100%;
         height: auto;
         border-radius: 5px;
     }
+
     .news-date {
         font-style: italic;
         color: gray;
         margin: 5px 0;
     }
+
     .news-details {
         font-weight: bold;
     }
+
+    /* Table Section */
     .table-container {
-        width: 55%;
+        width: 50%;
+    }
+
+    .table-container table {
+        width: 100%;
     }
 </style>
 
@@ -69,14 +85,14 @@
     <!-- Right Side: Earthquake Table -->
     <div class="table-container">
         <pre class="flex-container">Earthquakes in Iraq and adjacent areas, M 3.5+</pre><br><br>
-        <table style="width:1000px; margin-left: 70px; font-family: Times New Roman;">
+        <table style="margin-left: 70px; font-family: Times New Roman;">
             <tr>
                 <th>Origin Time (UTC)</th>
                 <th>Latitude (deg-N)</th>
                 <th>Longitude (deg-E)</th>
                 <th>Depth (km)</th>
-                <th> Magnitude (ML)</th>
-                <th> Magnitude (MW)</th>
+                <th>Magnitude (ML)</th>
+                <th>Magnitude (MW)</th>
                 <th>Region</th>
             </tr>
             {% for post in posts %}
