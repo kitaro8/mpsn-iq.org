@@ -62,7 +62,7 @@
             font-family: Arial, sans-serif;
         }
         .earthquake-news {
-            padding: 20px;
+          padding: 10px; margin-left:60px;
         }
         .earthquake-news h2 {
             font-size: 24px;
@@ -97,7 +97,7 @@
         }
     </style>
 <div class="earthquake-news">
-  <h2>Earthquake news</h2>
+  <pre class="flex-container">Earthquake news</pre><br><br>
   <div class="news-container">
       {% for post in posts2 %}
       <a href="{% url 'post2_detail' post.id %}" class="news-item">
