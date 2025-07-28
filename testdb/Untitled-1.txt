@@ -1,0 +1,251 @@
+// ==========================
+// Program 1: Factors of a number
+// Issue: INCOMPLETE CODE
+// Description: Reads n integers and prints their factors. Missing reading the integers properly.
+// ==========================
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        int num;
+        // MISSING: should read num from user input here
+        for (int j = 1; j <= num; j++) {
+            if (num % j == 0)
+                cout << j << " ";
+        }
+        cout << endl;
+    }
+}
+
+// ==========================
+// Program 2: Multiplication Table
+// Issue: ERROR CODE
+// Description: Prints multiplication table but contains a mistake in loop bounds.
+// ==========================
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num;
+    cin >> num;
+    for (int i = 0; i <= 12; i++) { // ERROR: Should start from i = 1
+        cout << num << " x " << i << " = " << num * i << endl;
+    }
+}
+
+// ==========================
+// Program 3: Sum of Digits
+// Issue: INCOMPLETE CODE
+// Description: Reads n integers and prints the sum of digits for each.
+// ==========================
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        int num;
+        // MISSING: reading num value
+        int sum = 0;
+        while (num > 0) {
+            sum += num % 10;
+            num /= 10;
+        }
+        cout << sum << endl;
+    }
+}
+
+// ==========================
+// Program 4: Factorial
+// Issue: ERROR CODE
+// Description: Reads integers and prints their factorials. Wrong initialization.
+// ==========================
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    while (n--) {
+        int num;
+        cin >> num;
+        int fact = 1;
+        for (int i = 1; i <= num; i++) {
+            fact *= i;
+        }
+        cout << fact << endl;
+    }
+}
+
+// ==========================
+// Program 5: Maximum Sum of Digits (Even Numbers)
+// Issue: INCOMPLETE CODE
+// Description: Reads even integers and finds one with maximum sum of digits.
+// ==========================
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, maxSum = -1, result = -1;
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        int num;
+        // MISSING: reading num value
+        if (num % 2 == 0) {
+            int temp = num, sum = 0;
+            while (temp > 0) {
+                sum += temp % 10;
+                temp /= 10;
+            }
+            if (sum > maxSum) {
+                maxSum = sum;
+                result = num;
+            }
+        }
+    }
+    cout << result << endl;
+}
+
+// ==========================
+// Program 6: Maximum Average
+// Issue: ERROR CODE
+// Description: Reads m marks for each student and finds the maximum average.
+// ==========================
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, m;
+    cin >> n >> m;
+    float maxAvg = 0;
+    for (int i = 0; i < n; i++) {
+        float sum = 0;
+        for (int j = 0; j < m; j++) {
+            int mark;
+            cin >> mark;
+            sum += mark;
+        }
+        float avg = sum / m;
+        if (avg > maxAvg) { // ERROR: Should handle equal averages
+            maxAvg = avg;
+        }
+    }
+    cout << maxAvg << endl;
+}
+
+// ==========================
+// Program 7: Prime Counting
+// Issue: INCOMPLETE CODE
+// Description: Reads an integer n and counts primes <= n.
+// ==========================
+#include <iostream>
+using namespace std;
+
+bool isPrime(int num) {
+    if (num < 2) return false;
+    for (int i = 2; i * i <= num; i++) {
+        if (num % i == 0) return false;
+    }
+    return true;
+}
+
+int main() {
+    int n, count = 0;
+    cin >> n;
+    for (int i = 2; i <= n; i++) {
+        if (isPrime(i)) count++;
+    }
+    cout << count << endl;
+}
+
+// ==========================
+// Program 8: Perfect Numbers
+// Issue: ERROR CODE
+// Description: Print the first 1000 perfect numbers. Wrong logic.
+// ==========================
+#include <iostream>
+using namespace std;
+
+int main() {
+    int count = 0, num = 2;
+    while (count < 1000) {
+        int sum = 1;
+        for (int i = 2; i <= num/2; i++) {
+            if (num % i == 0)
+                sum += i;
+        }
+        if (sum == num) {
+            cout << num << endl;
+            count++;
+        }
+        num++;
+    }
+}
+
+// ==========================
+// Program 9: Series Sum
+// Issue: INCOMPLETE CODE
+// Description: Compute sum of given series.
+// ==========================
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    float sum = 0;
+    int x = 2, y = 3;
+    for (int i = 1; i <= n; i++) {
+        sum += (float)(x+1)/(y*pow(2,i));
+        x += 2;
+        y += 4;
+    }
+    cout << sum << endl;
+}
+
+// ==========================
+// Program 10: Amicable Numbers
+// Issue: ERROR CODE
+// Description: Checks if two numbers are amicable but wrong sum of factors.
+// ==========================
+#include <iostream>
+using namespace std;
+
+int sumFactors(int num) {
+    int sum = 1;
+    for (int i = 2; i <= num/2; i++) {
+        if (num % i == 0) sum += i;
+    }
+    return sum;
+}
+
+int main() {
+    int x, y;
+    cin >> x >> y;
+    if (sumFactors(x) == y && sumFactors(y) == x)
+        cout << "Friendly";
+    else
+        cout << "Not Friendly";
+}
+
+// ==========================
+// Program 11: Pattern Printing
+// Issue: INCOMPLETE CODE
+// Description: Prints a pattern of stars.
+// ==========================
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    for (int i = 1; i <= n; i++) {
+        // MISSING: inner loop for stars
+        cout << endl;
+    }
+}
